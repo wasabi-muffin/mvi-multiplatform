@@ -37,5 +37,5 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
 }
 
 application {
-    mainClass.set("MainKt")
+    mainClass.set("com.gmvalentino.backend.MainKt")
 }
