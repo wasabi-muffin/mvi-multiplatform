@@ -1,8 +1,9 @@
 package com.gmvalentino.main
 
 import com.gmvalentino.Result
+import com.gmvalentino.entities.Task
 
 sealed class MainResult : Result {
     object Loading : MainResult()
-    data class Counter(val value: Long) : MainResult()
+    data class Tasks(val data: List<Task>) : MainResult()
 }

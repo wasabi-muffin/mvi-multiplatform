@@ -1,20 +1,20 @@
 package com.gmvalentino
 
-import com.gmvalentino.usecases.GetCounterUseCase
-import com.gmvalentino.usecases.GetCounterUseCaseProtocol
-import com.gmvalentino.usecases.UpdateCounterUseCase
-import com.gmvalentino.usecases.UpdateCounterUseCaseProtocol
+import com.gmvalentino.usecases.GetTasksUseCase
+import com.gmvalentino.usecases.GetTasksUseCaseProtocol
+import com.gmvalentino.usecases.UpdateTaskUseCase
+import com.gmvalentino.usecases.UpdateTaskUseCaseProtocol
 import org.koin.dsl.module
 
 val domainModule = module {
-    factory<GetCounterUseCaseProtocol> {
-        GetCounterUseCase(
+    factory<GetTasksUseCaseProtocol> {
+        GetTasksUseCase(
             get()
         )
     }
 
-    factory<UpdateCounterUseCaseProtocol> {
-        UpdateCounterUseCase(
+    factory<UpdateTaskUseCaseProtocol> {
+        UpdateTaskUseCase(
             get()
         )
     }

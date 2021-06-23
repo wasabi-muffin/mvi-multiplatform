@@ -19,6 +19,8 @@ kotlin {
                 implementation(Deps1.Ktor.commonSerialization)
                 implementation(Deps1.kotlinxDateTime)
                 api(Deps1.kermit)
+                implementation(project(":common:data:models"))
+                implementation(project(":common:data:repository"))
             }
         }
 

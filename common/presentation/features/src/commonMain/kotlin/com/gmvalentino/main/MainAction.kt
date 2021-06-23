@@ -3,6 +3,6 @@ package com.gmvalentino.main
 import com.gmvalentino.Action
 
 sealed class MainAction : Action {
-    data class Add(val value: Int) : MainAction()
-    object LoadCounter : MainAction()
+    data class Toggle(val id: String) : MainAction()
+    object LoadTasks : MainAction()
 }

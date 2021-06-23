@@ -10,6 +10,7 @@ dependencies {
     with(Deps.Kotlinx) {
         implementation(serializationCore) // JVM dependency
         implementation(coroutinesCore)
+        implementation(dateTime)
     }
 
     with(Deps.Ktor) {

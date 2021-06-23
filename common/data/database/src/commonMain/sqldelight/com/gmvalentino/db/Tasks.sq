@@ -1,0 +1,24 @@
+CREATE TABLE Tasks(
+id TEXT NOT NULL PRIMARY KEY,
+title TEXT NOT NULL,
+description TEXT NOT NULL,
+date TEXT NOT NULL,
+is_complete INTEGER AS Boolean NOT NULL
+);
+
+getTasks:
+SELECT *
+FROM Tasks;
+
+addTask:
+INSERT INTO Tasks
+VALUES :task;
+
+updateTask:
+UPDATE Tasks
+SET is_complete = :isComplete
+WHERE id = :id;
+
+deleteTask:
+DELETE FROM Tasks
+WHERE id = :id;

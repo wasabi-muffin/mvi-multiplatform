@@ -11,6 +11,7 @@ object Versions {
     const val ktor = "1.6.0"
     const val kotlinxSerialization = "1.2.1"
     const val kotlinxHtmlJs = "0.7.3"
+    const val kotlinxDateTime = "0.2.1"
 
     const val compose = "1.0.0-beta09"
     const val navCompose = "2.4.0-alpha03"
@@ -60,7 +61,9 @@ object Deps {
     object Kotlinx {
         const val serializationCore = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.kotlinxSerialization}"
         const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlinCoroutines}"
+        const val dateTime = "org.jetbrains.kotlinx:kotlinx-datetime:${Versions.kotlinxDateTime}"
         const val htmlJs = "org.jetbrains.kotlinx:kotlinx-html-js:${Versions.kotlinxHtmlJs}"
+
     }
 
     object Android {

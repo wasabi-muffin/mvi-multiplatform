@@ -23,28 +23,19 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.buttonAdd.setOnClickListener {
-            viewModel.dispatch(MainIntent.Increment)
-        }
-
-        binding.buttonMinus.setOnClickListener {
-            viewModel.dispatch(MainIntent.Decrement)
-        }
-
-        binding.buttonNext.setOnClickListener {
-            startActivity(
-                Intent(this, SecondActivity::class.java)
-            )
+        binding.buttonToggle.setOnClickListener {
+            viewModel.dispatch(MainIntent.Toggle("1"))
         }
 
         lifecycleScope.launchWhenResumed {
             viewModel.state.collect {
-                binding.textCounter.text = it.counter.toString()
                 binding.textName.text = if (it.isLoading) {
                     "Loading"
                 } else {
-                    "User"
+                    it.tasks.firstOrNull()?.title
                 }
+
+                binding.textStatus.text = it.tasks.firstOrNull()?.isComplete.toString()
             }
         }
     }

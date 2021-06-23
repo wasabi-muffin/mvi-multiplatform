@@ -5,9 +5,10 @@ import com.gmvalentino.Reducer
 class MainReducer : Reducer<MainState, MainResult> {
     override suspend fun reduce(state: MainState, result: MainResult): MainState {
         return when (result) {
-            is MainResult.Counter -> {
+            is MainResult.Tasks -> {
                 state.copy(
-                    counter = result.value
+                    tasks = result.data,
+                    isLoading = false
                 )
             }
             is MainResult.Loading -> {

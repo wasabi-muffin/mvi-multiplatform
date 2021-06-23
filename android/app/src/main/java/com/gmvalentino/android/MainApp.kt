@@ -17,7 +17,6 @@ class MainApp : Application() {
 
                 single<Context> { this@MainApp }
                 viewModel { MainViewModel(get()) }
-                viewModel { SecondViewModel(get()) }
                 single<SharedPreferences> {
                     get<Context>().getSharedPreferences("KAMPSTARTER_SETTINGS", MODE_PRIVATE)
                 }

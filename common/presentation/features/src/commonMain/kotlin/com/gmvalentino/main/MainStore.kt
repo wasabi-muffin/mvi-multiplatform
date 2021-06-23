@@ -12,5 +12,5 @@ class MainStore(
     interpreter = interpreter,
     reducer = reducer,
     processor = processor,
-    loaders = Loader(MainAction.LoadCounter)
+    loaders = Loader(MainAction.LoadTasks)
 )

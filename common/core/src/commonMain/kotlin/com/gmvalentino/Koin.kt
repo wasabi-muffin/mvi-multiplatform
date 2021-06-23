@@ -1,7 +1,6 @@
 package com.gmvalentino
 
 import com.gmvalentino.main.mainModule
-import com.gmvalentino.second.secondModule
 import kotlinx.datetime.Clock
 import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
@@ -22,8 +21,7 @@ fun initKoin(appModule: Module): KoinApplication {
             databaseModule,
             sqliteDriverModule,
             settingsModule,
-            mainModule,
-            secondModule
+            mainModule
         )
     }
 

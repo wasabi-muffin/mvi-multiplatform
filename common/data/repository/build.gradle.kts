@@ -10,8 +10,6 @@ kotlin {
                 implementation(Deps1.Ktor.commonSerialization)
                 implementation(Deps1.kotlinxDateTime)
                 implementation(project(":common:domain"))
-                implementation(project(":common:data:api"))
-                implementation(project(":common:data:database"))
                 implementation(project(":common:data:models"))
                 api(Deps1.kermit)
             }
