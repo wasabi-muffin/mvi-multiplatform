@@ -1,3 +1,3 @@
 package com.gmvalentino
 
-interface Action : Processable
+interface Action

@@ -2,6 +2,7 @@ package com.gmvalentino.android
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import co.touchlab.kermit.Kermit
@@ -36,6 +37,12 @@ class MainActivity : AppCompatActivity(), KoinComponent {
                 }
 
                 binding.textStatus.text = it.tasks.firstOrNull()?.isComplete.toString()
+            }
+        }
+
+        lifecycleScope.launchWhenResumed {
+            viewModel.events.collect {
+                Toast.makeText(this@MainActivity, "TEST", Toast.LENGTH_LONG).show()
             }
         }
     }

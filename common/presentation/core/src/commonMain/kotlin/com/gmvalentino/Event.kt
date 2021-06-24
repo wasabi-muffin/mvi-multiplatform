@@ -1,3 +1,3 @@
 package com.gmvalentino
 
-interface Processable
+interface Event

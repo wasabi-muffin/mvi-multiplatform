@@ -7,7 +7,7 @@ class MainStore(
     interpreter: MainInterpreter,
     processor: MainProcessor,
     reducer: MainReducer
-) : Store<MainState, MainIntent, MainAction, MainResult>(
+) : Store<MainIntent, MainAction, MainResult, MainState, MainEvent>(
     initialState = MainState(),
     interpreter = interpreter,
     reducer = reducer,

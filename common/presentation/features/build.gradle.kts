@@ -13,6 +13,7 @@ kotlin {
                 implementation(Deps1.stately)
                 implementation(Deps1.koinCore)
                 api(Deps1.kermit)
+                implementation(Deps.Kotlinx.dateTime)
                 implementation(project(":common:presentation:core"))
                 implementation(project(":common:domain"))
                 implementation(project(":common:data:repository"))

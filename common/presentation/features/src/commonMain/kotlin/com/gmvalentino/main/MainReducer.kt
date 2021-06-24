@@ -14,6 +14,17 @@ class MainReducer : Reducer<MainState, MainResult> {
             is MainResult.Loading -> {
                 state.copy(isLoading = true)
             }
+            is MainResult.Toggled -> {
+                state.copy(
+                    tasks = state.tasks.map {
+                        if (it.id == result.id) {
+                            it.copy(isComplete = result.isCompleted)
+                        } else {
+                            it
+                        }
+                    }
+                )
+            }
         }
     }
 }
