@@ -1,6 +1,6 @@
 package com.gmvalentino.main
 
-import com.gmvalentino.Processor
+import com.gmvalentino.BaseProcessor
 import com.gmvalentino.usecases.GetTasksUseCaseProtocol
 import com.gmvalentino.usecases.UpdateTaskUseCaseProtocol
 import com.gmvalentino.usecases.UseCase
@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.map
 class MainProcessor(
     private val getTasksUseCase: GetTasksUseCaseProtocol,
     private val updateTaskUseCase: UpdateTaskUseCaseProtocol
-) : Processor<MainState, MainAction, MainResult, MainEvent>() {
+) : BaseProcessor<MainState, MainAction, MainResult, MainEvent>() {
 
     override suspend fun process(
         state: MainState,
@@ -24,7 +24,7 @@ class MainProcessor(
 
     private suspend fun handleLoad(): Flow<MainResult> = flow {
         emit(MainResult.Loading)
-        emitAll(getTasksUseCase.execute(UseCase.None).map { MainResult.Tasks(it) })
+        emitAll(getTasksUseCase.execute(UseCase.None).map(MainResult::Tasks))
     }
 
     private suspend fun handleToggle(
@@ -40,7 +40,7 @@ class MainProcessor(
         //     )
         // )
         publish(MainEvent.Test)
-        emit(MainResult.Toggled("1", !isComplete))
+        emit(MainResult.Toggled(action.id, !isComplete))
         // }
     }
 }

@@ -6,7 +6,7 @@ kotlin {
         commonMain {
             dependencies {
                 implementation(Deps1.Coroutines.common)
-                implementation(Deps1.koinCore)
+                implementation(Deps.Koin.core)
                 implementation(Deps1.Ktor.commonSerialization)
                 implementation(Deps1.kotlinxDateTime)
                 implementation(project(":common:domain"))

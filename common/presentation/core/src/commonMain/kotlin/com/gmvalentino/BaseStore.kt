@@ -32,7 +32,7 @@ abstract class BaseStore<
     out EVENT : Event>(
     initialState: STATE,
     private val interpreter: Interpreter<INTENT, ACTION>,
-    private val processor: Processor<STATE, ACTION, RESULT, EVENT>,
+    private val processor: BaseProcessor<STATE, ACTION, RESULT, EVENT>,
     private val reducer: Reducer<STATE, RESULT>,
     private val loaders: Loader<ACTION> = Loader(),
     private vararg val middlewares: Middleware
@@ -43,12 +43,7 @@ abstract class BaseStore<
     private val intents = MutableSharedFlow<INTENT>()
 
     private val _state = MutableStateFlow(initialState)
-    override val state: StateFlow<STATE> get() = _state
-
-    private val _error: Channel<Error> = Channel(UNLIMITED)
-    val error: Flow<Throwable> by lazy {
-        _error.receiveAsFlow().shareIn(scope, SharingStarted.WhileSubscribed())
-    }
+    override val state: StateFlow<STATE> = _state
 
     override val events: Flow<EVENT> =
         processor.events.shareIn(scope, SharingStarted.WhileSubscribed(), 1)

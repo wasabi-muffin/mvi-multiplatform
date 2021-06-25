@@ -34,8 +34,13 @@ android {
         isAbortOnError = true
     }
 
+    composeOptions {
+        kotlinCompilerExtensionVersion = Versions.compose
+    }
+
     buildFeatures {
         viewBinding = true
+        compose = true
     }
 
     kotlinOptions {
@@ -49,24 +54,48 @@ dependencies {
     implementation(project(":common:presentation:features"))
     implementation(project(":common:presentation:core"))
     implementation(project(":common:core"))
-    implementation(Deps1.AndroidX.recyclerView)
-    implementation(Deps1.AndroidX.swipeRefresh)
-    implementation(Deps1.material)
+
+    with(Deps.Kotlinx) {
+        implementation(dateTime)
+    }
+
+    with(Deps.Android) {
+        implementation(material)
+        implementation(osmdroidAndroid)
+    }
+
+    with(Deps.AndroidX) {
+        implementation(lifecycleRuntimeKtx)
+        implementation(lifecycleViewmodelKtx)
+        implementation(activityCompose)
+    }
+
+    with(Deps.Compose) {
+        implementation(ui)
+        implementation(uiGraphics)
+        implementation(uiTooling)
+        implementation(foundationLayout)
+        implementation(material)
+        implementation(navigation)
+        implementation(accompanistCoil)
+        implementation(accompanistPlaceholder)
+    }
+
+    with(Deps.Koin) {
+        implementation(core)
+        implementation(android)
+        implementation(compose)
+        testImplementation(test)
+        testImplementation(testJUnit4)
+    }
+
+    with(Deps.Test) {
+        testImplementation(junit)
+        testImplementation(testCore)
+        testImplementation(robolectric)
+        testImplementation(mockito)
+        androidTestImplementation(testRunner)
+    }
+
     coreLibraryDesugaring(Deps1.desugarJdkLibs)
-    implementation(Deps1.AndroidX.appcompat)
-    implementation(Deps1.AndroidX.core_ktx)
-    implementation(Deps1.Ktor.androidCore)
-    implementation(Deps1.AndroidX.constraintlayout)
-    implementation(Deps1.SqlDelight.runtimeJdk)
-    implementation(Deps1.SqlDelight.driverAndroid)
-    implementation(Deps1.Coroutines.common)
-    implementation(Deps1.Coroutines.android)
-    implementation(Deps1.multiplatformSettings)
-    implementation(Deps1.koinCore)
-    implementation(Deps1.koinAndroid)
-    implementation(Deps1.AndroidX.lifecycle_runtime)
-    implementation(Deps1.AndroidX.lifecycle_viewmodel)
-    implementation(Deps1.AndroidX.lifecycle_viewmodel_extensions)
-    implementation(Deps1.AndroidX.lifecycle_livedata)
-    testImplementation(Deps1.junit)
 }

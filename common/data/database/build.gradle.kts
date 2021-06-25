@@ -15,7 +15,7 @@ kotlin {
             dependencies {
                 implementation(Deps1.SqlDelight.runtime)
                 implementation(Deps1.SqlDelight.coroutinesExtensions)
-                implementation(Deps1.koinCore)
+                implementation(Deps.Koin.core)
                 implementation(Deps1.Ktor.commonSerialization)
                 implementation(Deps1.kotlinxDateTime)
                 api(Deps1.kermit)

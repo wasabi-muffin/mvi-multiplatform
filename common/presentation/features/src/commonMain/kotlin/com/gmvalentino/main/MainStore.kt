@@ -3,6 +3,7 @@ package com.gmvalentino.main
 import com.gmvalentino.BaseStore
 import com.gmvalentino.Loader
 import com.gmvalentino.Middleware
+import com.gmvalentino.transformers.LoggingMiddleware
 
 class MainStore(
     interpreter: MainInterpreter,
@@ -15,5 +16,5 @@ class MainStore(
     reducer = reducer,
     processor = processor,
     loaders = Loader(MainAction.LoadTasks),
-    middlewares = middlewares
+    middlewares = arrayOf(LoggingMiddleware)
 )

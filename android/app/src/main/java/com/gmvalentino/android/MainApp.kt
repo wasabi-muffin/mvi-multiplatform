@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
+import com.gmvalentino.android.task.TaskViewModel
 import com.gmvalentino.initKoin
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -14,9 +15,8 @@ class MainApp : Application() {
         super.onCreate()
         initKoin(
             module {
-
+                viewModel { TaskViewModel(get()) }
                 single<Context> { this@MainApp }
-                viewModel { MainViewModel(get()) }
                 single<SharedPreferences> {
                     get<Context>().getSharedPreferences("KAMPSTARTER_SETTINGS", MODE_PRIVATE)
                 }

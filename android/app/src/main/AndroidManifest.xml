@@ -12,14 +12,13 @@
         android:theme="@style/AppTheme"
         android:name="com.gmvalentino.android.MainApp"
     >
-        <activity android:name="com.gmvalentino.android.MainActivity">
+        <activity android:name="com.gmvalentino.android.ComposeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SecondActivity" />
     </application>
 
 </manifest>

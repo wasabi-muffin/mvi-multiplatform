@@ -11,7 +11,7 @@ kotlin {
             dependencies {
                 implementation(Deps1.Coroutines.common)
                 implementation(Deps1.stately)
-                implementation(Deps1.koinCore)
+                implementation(Deps.Koin.core)
                 api(Deps1.kermit)
                 implementation(Deps.Kotlinx.dateTime)
                 implementation(project(":common:presentation:core"))

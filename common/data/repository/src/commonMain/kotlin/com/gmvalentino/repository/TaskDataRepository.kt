@@ -23,9 +23,6 @@ class TaskDataRepository(
         //     }
         // )
         val test = remoteDataSource.getTasks().map(TaskMapper::modelToEntity)
-        Kermit().d("Test") {
-            test.toString()
-        }
         emit(test)
     }
 
