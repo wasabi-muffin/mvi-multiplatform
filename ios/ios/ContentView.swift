@@ -9,13 +9,14 @@ import SwiftUI
 import MVIMultiplatform
 
 struct ContentView: View {
-    
-    let viewModel = ViewModel<BaseStore<MainIntent, MainAction, MainResult, MainState, MainEvent>, MainIntent, MainAction, MainResult, MainState, MainEvent>(
+    @StateObject var viewModel = BaseViewModel<MainIntent, MainState, MainEvent>(
         store: StoreProvider().main()
     )
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TaskListView(tasks: viewModel.state.tasks) { task in
+            viewModel.dispatch(MainIntent.Toggle(id: task.id))
+        }
     }
 }
 

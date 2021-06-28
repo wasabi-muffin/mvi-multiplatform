@@ -1,9 +1,11 @@
 package com.gmvalentino.android.task
 
-import androidx.lifecycle.ViewModel
+import com.gmvalentino.android.BaseViewModel
+import com.gmvalentino.main.MainEvent
 import com.gmvalentino.main.MainIntent
+import com.gmvalentino.main.MainState
 import com.gmvalentino.main.MainStore
 
 class TaskViewModel(
-    val store: MainStore
-) : ViewModel()
+    store: MainStore
+) : BaseViewModel<MainIntent, MainState, MainEvent>(store)

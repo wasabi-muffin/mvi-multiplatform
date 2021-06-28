@@ -15,8 +15,10 @@
 		FA82335B268789B500B6FB7C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA82335A268789B500B6FB7C /* Preview Assets.xcassets */; };
 		FA823366268789B500B6FB7C /* iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA823365268789B500B6FB7C /* iosTests.swift */; };
 		FA823371268789B600B6FB7C /* iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA823370268789B600B6FB7C /* iosUITests.swift */; };
-		FABEC7DD268898F000A12B25 /* SwiftUIStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEC7DC268898F000A12B25 /* SwiftUIStore.swift */; };
 		FABEC7E52689690900A12B25 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEC7E42689690900A12B25 /* MainApp.swift */; };
+		FABEC7E7268997FC00A12B25 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEC7E6268997FC00A12B25 /* BaseViewModel.swift */; };
+		FABEC7E92689C78E00A12B25 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEC7E82689C78E00A12B25 /* TaskListView.swift */; };
+		FABEC7EB2689CA7900A12B25 /* TaskItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEC7EA2689CA7900A12B25 /* TaskItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +59,10 @@
 		FA82336C268789B600B6FB7C /* iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA823370268789B600B6FB7C /* iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosUITests.swift; sourceTree = "<group>"; };
 		FA823372268789B600B6FB7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FABEC7DC268898F000A12B25 /* SwiftUIStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIStore.swift; sourceTree = "<group>"; };
 		FABEC7E42689690900A12B25 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
+		FABEC7E6268997FC00A12B25 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		FABEC7E82689C78E00A12B25 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		FABEC7EA2689CA7900A12B25 /* TaskItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,8 +145,10 @@
 				FA823357268789B500B6FB7C /* Assets.xcassets */,
 				FA82335C268789B500B6FB7C /* Info.plist */,
 				FA823359268789B500B6FB7C /* Preview Content */,
-				FABEC7DC268898F000A12B25 /* SwiftUIStore.swift */,
 				FABEC7E42689690900A12B25 /* MainApp.swift */,
+				FABEC7E6268997FC00A12B25 /* BaseViewModel.swift */,
+				FABEC7E82689C78E00A12B25 /* TaskListView.swift */,
+				FABEC7EA2689CA7900A12B25 /* TaskItemView.swift */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -374,9 +380,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FABEC7EB2689CA7900A12B25 /* TaskItemView.swift in Sources */,
 				FA823356268789AF00B6FB7C /* ContentView.swift in Sources */,
+				FABEC7E7268997FC00A12B25 /* BaseViewModel.swift in Sources */,
+				FABEC7E92689C78E00A12B25 /* TaskListView.swift in Sources */,
 				FABEC7E52689690900A12B25 /* MainApp.swift in Sources */,
-				FABEC7DD268898F000A12B25 /* SwiftUIStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

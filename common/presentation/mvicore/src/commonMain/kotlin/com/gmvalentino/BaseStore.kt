@@ -19,7 +19,6 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.merge
 import kotlinx.coroutines.flow.shareIn
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.sync.Mutex
 
 @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
 abstract class BaseStore<
@@ -37,7 +36,6 @@ abstract class BaseStore<
 ) : Store<INTENT, STATE, EVENT> {
 
     private val scope = CoroutineScope(Dispatchers.Main + SupervisorJob())
-    private val mutex = Mutex()
     private val intents = MutableSharedFlow<INTENT>()
 
     private val _state = MutableStateFlow(initialState)

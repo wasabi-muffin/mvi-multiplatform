@@ -41,7 +41,7 @@ class TaskDao(
                     Tasks(
                         task.id,
                         task.title,
-                        task.description,
+                        task.details,
                         task.date.toString(),
                         task.isComplete
                     )

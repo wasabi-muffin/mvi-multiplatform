@@ -8,7 +8,7 @@ import kotlinx.serialization.Serializable
 data class TaskModel(
     val id: String,
     val title: String,
-    val description: String,
+    @SerialName("description") val details: String,
     val date: LocalDateTime,
     @SerialName("is_complete") val isComplete: Boolean
 )

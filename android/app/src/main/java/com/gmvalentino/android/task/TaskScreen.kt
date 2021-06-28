@@ -11,12 +11,12 @@ fun TaskScreen(
     modifier: Modifier = Modifier,
 ) {
     val viewModel = getViewModel<TaskViewModel>()
-    val state = viewModel.store.state.collectAsState()
+    val state = viewModel.state.collectAsState()
 
     TaskListView(
         tasks = state.value.tasks,
         onSelected = { task ->
-            viewModel.store.dispatch(MainIntent.Toggle(task.id))
+            viewModel.dispatch(MainIntent.Toggle(task.id))
         }
     )
 }

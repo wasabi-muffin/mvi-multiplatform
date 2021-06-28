@@ -3,7 +3,6 @@ package com.gmvalentino.android
 import android.app.Application
 import com.gmvalentino.MultiplatformApplication
 import com.gmvalentino.StoreInjector
-import com.gmvalentino.StoreProvider
 import com.gmvalentino.android.task.TaskViewModel
 import com.gmvalentino.getStore
 import com.gmvalentino.main.MainStore
@@ -25,7 +24,7 @@ class MainApp : Application() {
                 module {
                     viewModel {
                         TaskViewModel(
-                            StoreProvider.main()
+                            StoreInjector { getStore<MainStore>() }.store()
                         )
                     }
                 }

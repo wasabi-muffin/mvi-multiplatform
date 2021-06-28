@@ -8,7 +8,7 @@ object TaskMapper {
     fun modelToEntity(model: TaskModel) = Task(
         model.id,
         model.title,
-        model.description,
+        model.details,
         model.date,
         model.isComplete
     )
@@ -16,7 +16,7 @@ object TaskMapper {
     fun entityToModel(entity: Task) = TaskModel(
         entity.id,
         entity.title,
-        entity.description,
+        entity.details,
         entity.date,
         entity.isComplete
     )

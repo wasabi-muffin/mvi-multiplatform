@@ -38,7 +38,7 @@ fun TaskItemView(
         Column {
             Text(text = task.title, style = TextStyle(fontSize = 20.sp))
             Text(
-                text = task.description,
+                text = task.details,
                 style = TextStyle(color = Color.DarkGray, fontSize = 14.sp)
             )
         }
