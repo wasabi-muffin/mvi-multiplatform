@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="/usr/local/Cellar/gradle/6.5.1/libexec" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/android" />
+            <option value="$PROJECT_DIR$/android/app" />
+            <option value="$PROJECT_DIR$/backend" />
+            <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/common/core" />
+            <option value="$PROJECT_DIR$/common/data" />
+            <option value="$PROJECT_DIR$/common/data/api" />
+            <option value="$PROJECT_DIR$/common/data/database" />
+            <option value="$PROJECT_DIR$/common/data/models" />
+            <option value="$PROJECT_DIR$/common/data/repository" />
+            <option value="$PROJECT_DIR$/common/data/settings" />
+            <option value="$PROJECT_DIR$/common/domain" />
+            <option value="$PROJECT_DIR$/common/iosmodule" />
+            <option value="$PROJECT_DIR$/common/presentation" />
+            <option value="$PROJECT_DIR$/common/presentation/features" />
+            <option value="$PROJECT_DIR$/common/presentation/mvicore" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

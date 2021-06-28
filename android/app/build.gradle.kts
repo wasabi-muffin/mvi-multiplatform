@@ -31,7 +31,7 @@ android {
 
     lintOptions {
         isWarningsAsErrors = true
-        isAbortOnError = true
+        isAbortOnError = false
     }
 
     composeOptions {
@@ -52,7 +52,7 @@ android {
 dependencies {
     implementation(project(":common:domain"))
     implementation(project(":common:presentation:features"))
-    implementation(project(":common:presentation:core"))
+    implementation(project(":common:presentation:mvicore"))
     implementation(project(":common:core"))
 
     with(Deps.Kotlinx) {

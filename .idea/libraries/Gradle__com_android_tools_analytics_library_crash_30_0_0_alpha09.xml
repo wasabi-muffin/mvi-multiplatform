@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.android.tools.analytics-library:crash:30.0.0-alpha09">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.analytics-library/crash/30.0.0-alpha09/e8c81bc5f04aa0f903b1c6d0c8a4f3e7744bfb4d/crash-30.0.0-alpha09.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.analytics-library/crash/30.0.0-alpha09/c351bb81707f3b7a5f42adb83fc9798f75a93cae/crash-30.0.0-alpha09-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

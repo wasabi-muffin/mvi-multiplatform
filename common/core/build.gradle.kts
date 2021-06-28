@@ -1,4 +1,14 @@
 buildTargets = setOf(BuildTarget.Android, BuildTarget.Ios)
+projectDependencies = setOf(
+    Module.Domain,
+    Module.Api,
+    Module.Database,
+    Module.Repository,
+    Module.Settings,
+    Module.Models,
+    Module.MviCore,
+    Module.Features
+)
 setupMultiplatform()
 
 kotlin {
@@ -11,13 +21,6 @@ kotlin {
                 implementation(Deps1.Ktor.commonSerialization)
                 implementation(Deps1.kotlinxDateTime)
                 api(Deps1.kermit)
-                implementation(project(":common:domain"))
-                implementation(project(":common:data:api"))
-                implementation(project(":common:data:database"))
-                implementation(project(":common:data:repository"))
-                implementation(project(":common:data:settings"))
-                implementation(project(":common:presentation:core"))
-                implementation(project(":common:presentation:features"))
             }
         }
 
@@ -38,15 +41,6 @@ kotlin {
                     }
                 }
             }
-        }
-    }
-
-    // Configure the framework which is generated internally by cocoapods plugin
-    targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget> {
-        binaries.withType<org.jetbrains.kotlin.gradle.plugin.mpp.Framework> {
-            isStatic = true
-            export(Deps1.kermit)
-            transitiveExport = true
         }
     }
 }

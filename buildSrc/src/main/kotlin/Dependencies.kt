@@ -7,7 +7,7 @@ object Versions1 {
     const val gradle = "4.2.0"
 
     val buildToolsVersion = "30.0.3"
-    val coroutines = "1.5.0"
+    val coroutines = "1.5.0-native-mt"
     val kermit = "0.1.9"
     val koin = "3.0.2"
     val ktlint_gradle_plugin = "10.0.0"

@@ -1,4 +1,8 @@
 buildTargets = setOf(BuildTarget.Android, BuildTarget.Ios)
+projectDependencies = setOf(
+    Module.Domain,
+    Module.Models
+)
 setupMultiplatform()
 
 kotlin {
@@ -9,8 +13,6 @@ kotlin {
                 implementation(Deps.Koin.core)
                 implementation(Deps1.Ktor.commonSerialization)
                 implementation(Deps1.kotlinxDateTime)
-                implementation(project(":common:domain"))
-                implementation(project(":common:data:models"))
                 api(Deps1.kermit)
             }
         }

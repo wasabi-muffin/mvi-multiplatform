@@ -2,6 +2,7 @@ package com.gmvalentino
 
 import co.touchlab.kermit.Kermit
 import co.touchlab.kermit.NSLogLogger
+import com.russhwolf.settings.AppleSettings
 import kotlinx.cinterop.ObjCClass
 import kotlinx.cinterop.getOriginalKotlinClass
 import org.koin.core.Koin

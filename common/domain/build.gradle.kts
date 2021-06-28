@@ -1,4 +1,5 @@
 buildTargets = setOf(BuildTarget.Android, BuildTarget.Ios)
+
 setupMultiplatform()
 
 kotlin {
@@ -14,4 +15,6 @@ kotlin {
             }
         }
     }
+
+    setupCocoapods()
 }

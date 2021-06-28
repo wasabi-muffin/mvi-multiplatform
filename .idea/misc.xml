@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/compose-model-1624618988852.xml" value="0.25" />
+        <entry key="../../../../layout/compose-model-1624620784799.xml" value="0.3" />
+        <entry key="../../../../layout/compose-model-1624621765828.xml" value="0.165" />
+        <entry key="android/app/src/main/res/layout/activity_main.xml" value="0.14907407407407408" />
+        <entry key="android/app/src/main/res/layout/item_breed.xml" value="0.20820668693009117" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

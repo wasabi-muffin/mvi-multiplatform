@@ -1,6 +1,12 @@
 buildTargets = setOf(BuildTarget.Android, BuildTarget.Ios)
 setupMultiplatform()
 
+plugins {
+    kotlin("multiplatform")
+    kotlin("native.cocoapods")
+}
+
+
 kotlin {
     sourceSets {
         commonMain {

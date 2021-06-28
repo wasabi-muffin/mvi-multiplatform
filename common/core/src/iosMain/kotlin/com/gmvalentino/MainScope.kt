@@ -13,7 +13,7 @@ class MainScope(private val mainContext: CoroutineContext, private val log: Kerm
 
     internal val job = SupervisorJob()
     private val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
-        printThrowable(throwable)
+        // printThrowable(throwable)
         showError(throwable)
     }
 

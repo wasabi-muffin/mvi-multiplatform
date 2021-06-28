@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="models-jvm">
+    <output-path>$PROJECT_DIR$/common/data/models/build/libs</output-path>
+    <root id="archive" name="models-jvm.jar">
+      <element id="module-output" name="mvi-multiplatform.common.data.models.jvmMain" />
+    </root>
+  </artifact>
+</component>

@@ -1,8 +1,8 @@
-import org.jetbrains.kotlin.gradle.plugin.mpp.Framework
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
-
 buildTargets = setOf(BuildTarget.Android, BuildTarget.Ios)
-
+projectDependencies = setOf(
+    Module.Models,
+    Module.Repository
+)
 setupMultiplatform()
 
 kotlin {
@@ -21,8 +21,6 @@ kotlin {
                 implementation(Deps1.Ktor.commonSerialization)
                 implementation(Deps1.kotlinxDateTime)
                 api(Deps1.kermit)
-                implementation(project(":common:data:models"))
-                implementation(project(":common:data:repository"))
             }
         }
 
@@ -43,15 +41,6 @@ kotlin {
                     }
                 }
             }
-        }
-    }
-
-    // Configure the framework which is generated internally by cocoapods plugin
-    targets.withType<KotlinNativeTarget> {
-        binaries.withType<Framework> {
-            isStatic = true
-            export(Deps1.kermit)
-            transitiveExport = true
         }
     }
 }

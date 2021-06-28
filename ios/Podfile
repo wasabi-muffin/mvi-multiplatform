@@ -1,0 +1,29 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'ios' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for ios
+  pod 'iosmodule', :path => '../common/iosmodule'
+#  pod 'domain', 	:path => '../common/domain'
+#  pod 'models', 	:path => '../common/data/models'
+#  pod 'mvicore',   :path => '../common/presentation/mvicore'
+#  pod 'repository', 	:path => '../common/data/repository'
+#  pod 'api', 		:path => '../common/data/api'
+#  pod 'database', 	:path => '../common/data/database'
+#  pod 'settings', 	:path => '../common/data/settings'
+#  pod 'features', 	:path => '../common/presentation/features'
+#  pod 'core', 		:path => '../common/core'
+
+  target 'iosTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'iosUITests' do
+    # Pods for testing
+  end
+
+end
