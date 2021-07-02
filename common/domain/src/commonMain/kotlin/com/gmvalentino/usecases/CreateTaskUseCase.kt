@@ -5,13 +5,13 @@ import com.gmvalentino.repositories.TaskRepository
 
 class CreateTaskUseCase(
     private val repository: TaskRepository
-) : CreateTaskUseCaseProtocol() {
-    override suspend fun task(arguments: Args) {
+) : CreateTaskUseCaseProtocol {
+    override suspend fun execute(arguments: CreateTaskUseCaseProtocol.Args) {
         return repository.addTask(arguments.task)
     }
 }
 
-abstract class CreateTaskUseCaseProtocol : UseCase<Unit, CreateTaskUseCaseProtocol.Args>() {
+interface CreateTaskUseCaseProtocol : UseCase<Unit, CreateTaskUseCaseProtocol.Args> {
     data class Args(
         val task: Task
     ) : UseCase.Arguments()

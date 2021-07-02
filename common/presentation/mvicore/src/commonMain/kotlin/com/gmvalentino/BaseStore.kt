@@ -10,6 +10,7 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asFlow
@@ -19,6 +20,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.merge
 import kotlinx.coroutines.flow.shareIn
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.sync.Mutex
 
 @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
 abstract class BaseStore<
@@ -37,11 +39,12 @@ abstract class BaseStore<
 
     private val scope = CoroutineScope(Dispatchers.Main + SupervisorJob())
     private val intents = MutableSharedFlow<INTENT>()
+    private val mutex = Mutex()
 
     private val _state = MutableStateFlow(initialState)
     override val state: StateFlow<STATE> = _state
 
-    override val events: Flow<EVENT> =
+    override val events: SharedFlow<EVENT> =
         processor.events.shareIn(scope, SharingStarted.WhileSubscribed(), 1)
 
     init {

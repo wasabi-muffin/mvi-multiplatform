@@ -15,7 +15,10 @@ struct TaskItemView: View {
     
     var body: some View {
         HStack {
-            Text(task.title)
+            VStack {
+                Text(task.title)
+                Text(task.details)
+            }
             Spacer()
             CheckBox(checked: task.isComplete)
         }
@@ -36,16 +39,13 @@ struct CheckBox: View {
 
 
 struct TaskItemView_Previews: PreviewProvider {
-    struct TaskItemViewHolder : View {
-        @SwiftUI.State var task = Task(id: "1", title: "Title 1", content: "Description 1", date: LocalDateTime.init(year: 2020, month: Month.april, dayOfMonth: 1, hour: 12, minute: 0, second: 0, nanosecond: 0), isComplete: true)
-
-        var body: some View {
-            TaskItemView(task: task) { }
-        }
-    }
-    
     static var previews: some View {
-        TaskItemViewHolder()
+        TaskItemView(task: Task(id: "1", title: "Title", details: "Details", date: LocalDateTime.init(year: 2020, monthNumber: 1, dayOfMonth: 1, hour: 12, minute: 0, second: 0, nanosecond: 0), isComplete: true), onClick: { })
     }
 }
 
+struct CheckBox_Preview: PreviewProvider {
+    static var previews: some View {
+        CheckBox(checked: true)
+    }
+}

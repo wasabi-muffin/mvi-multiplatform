@@ -15,7 +15,7 @@ struct TaskListView: View {
     
     var body: some View {
         List(tasks, id:\.id) { task in
-            TaskItemView(task: task, onClick: { onItemSelected(task) })
+//            TaskItemView(task: task, onClick: { onItemSelected(task) })
         }
     }
 }
@@ -24,7 +24,7 @@ struct TaskListView_Previews: PreviewProvider {
     static var previews: some View {
         TaskListView(
             tasks: [
-                Task(id: "1", title: "Title 1", content: "Description 1", date: LocalDateTime.init(year: 2020, month: Month.april, dayOfMonth: 1, hour: 12, minute: 0, second: 0, nanosecond: 0), isComplete: true)
+                Task(id: "1", title: "Title 1", details: "Description 1", date: LocalDateTime.init(year: 2020, month: Month.january, dayOfMonth: 1, hour: 12, minute: 0, second: 0, nanosecond: 0), isComplete: true)
             ]) { _ in }
     }
 }
