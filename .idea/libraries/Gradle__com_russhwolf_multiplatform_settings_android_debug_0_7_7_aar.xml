@@ -1,0 +1,24 @@
+<component name="libraryTable">
+  <library name="Gradle: com.russhwolf:multiplatform-settings-android-debug:0.7.7@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/eaba4acc65599d29e1f302079e14bfdf/transformed/multiplatform-settings-debug/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0ef284b17b37267c4395655a22befd41/transformed/multiplatform-settings-debug/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/18734fa4153ed930102dc7f7ac1e89f6/transformed/multiplatform-settings-debug/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/dfa96aefa517a20f3de516653e8868b5/transformed/multiplatform-settings-debug/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8cdd4f5718f0098a880e23df6387438a/transformed/multiplatform-settings-debug/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/eca52f7d9f3231f075b8a384a826b825/transformed/multiplatform-settings-debug/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/949117125b9c7876f8f8eae37185b0ab/transformed/multiplatform-settings-debug/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c2dfc71d0853e9035d42d788bb304071/transformed/multiplatform-settings-debug/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b4d554a2423093d07e2d727e4502b351/transformed/multiplatform-settings-debug/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/fa88270e4add62619a68b923ee6f4cca/transformed/multiplatform-settings-debug/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/b4d554a2423093d07e2d727e4502b351/transformed/multiplatform-settings-debug/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b4d554a2423093d07e2d727e4502b351/transformed/multiplatform-settings-debug/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.russhwolf/multiplatform-settings-android-debug/0.7.7/511847c2111e1df40a3c792b858fbbff89a23193/multiplatform-settings-android-debug-0.7.7-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.russhwolf/multiplatform-settings-android-debug/0.7.7/7ed8b048a5d4f4bf19100c054fd73d0843b56df9/multiplatform-settings-android-debug-0.7.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: co.touchlab:stately-common-jvm:1.1.7">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/co.touchlab/stately-common-jvm/1.1.7/ee4dee3ee3013763ddaa04a49ad65f3d70a49c43/stately-common-jvm-1.1.7.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/co.touchlab/stately-common-jvm/1.1.7/e141ba1be0ae16aa2426740adffeea6c75a22b73/stately-common-jvm-1.1.7-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/co.touchlab/stately-common-jvm/1.1.7/47379e3d98d9722d48e73dc0821d80b5d8e60aa7/stately-common-jvm-1.1.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

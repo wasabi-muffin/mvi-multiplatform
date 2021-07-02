@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.core:core-ktx:1.1.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/125cbff871afdcea2186d7c8ef8b0e64/transformed/core-ktx-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/be4e458e9d994195ce17894a51555bc6/transformed/core-ktx-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8927b0368fcde0aad52ebb79156ea33f/transformed/core-ktx-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d46e7d32a71d75ae1570ffa6d6d51121/transformed/core-ktx-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9caf39859387c84993c3f5a97e175ee4/transformed/core-ktx-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1c973c722f818fbe9f724b5cd65c5eb7/transformed/core-ktx-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/972b3da3ea36fb1dd8b7eba37691efd3/transformed/core-ktx-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3509b691b81da744471a84da1e4b5569/transformed/core-ktx-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c4c051f64696f67f601345e593e1436e/transformed/core-ktx-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a12f2388f93b00cc82e4c552a15946a8/transformed/core-ktx-1.1.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/c4c051f64696f67f601345e593e1436e/transformed/core-ktx-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c4c051f64696f67f601345e593e1436e/transformed/core-ktx-1.1.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.core/core-ktx/1.1.0/8e51cf92327310f53f74ba17a62d465f6fdde392/core-ktx-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

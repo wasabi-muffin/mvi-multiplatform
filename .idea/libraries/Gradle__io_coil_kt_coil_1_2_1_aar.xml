@@ -1,0 +1,24 @@
+<component name="libraryTable">
+  <library name="Gradle: io.coil-kt:coil:1.2.1@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/aa1abb3e336b7bca2aad636fef6e4355/transformed/coil-1.2.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ce000470138fb7c930f056286eb3d3c9/transformed/coil-1.2.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ce79679d92234469d5aadebf10a54615/transformed/coil-1.2.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/33f918abf843641b088bd5dd7a0b626b/transformed/coil-1.2.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1cc7f459483d5b3f4e5baec3ac260b75/transformed/coil-1.2.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8557ab5171df0828436df3e9b3b7f6c4/transformed/coil-1.2.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9eae31fb863d8358cbbc89136269e22d/transformed/coil-1.2.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/bd89057735636585aafd95bb1c171133/transformed/coil-1.2.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1ecad0157b7547d196dd843cc4355e1a/transformed/coil-1.2.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9d7a270d46d9760ddded023a8e9c1217/transformed/coil-1.2.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1ecad0157b7547d196dd843cc4355e1a/transformed/coil-1.2.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/1ecad0157b7547d196dd843cc4355e1a/transformed/coil-1.2.1/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.coil-kt/coil/1.2.1/39346e63a61c6d2b8835e478da05ccf9ed011a14/coil-1.2.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.coil-kt/coil/1.2.1/8a6ae286f6b0fdf71fb7f5763b618d8493b4d179/coil-1.2.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

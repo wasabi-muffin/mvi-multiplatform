@@ -1,0 +1,24 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.test:monitor:1.3.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a5d9bf5718358be8c66a8f1d4bb53240/transformed/monitor-1.3.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/424a471cff8b13acda0698af41ecafd9/transformed/monitor-1.3.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2ab0c9032fed6793f603766078c4713c/transformed/monitor-1.3.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/bc4f1d68174ebd6591be03d14ee1e15b/transformed/monitor-1.3.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9356844b5f9a1005bbd2e64a494bc273/transformed/monitor-1.3.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/bd2e7c76677d166f39268bea4ec9879e/transformed/monitor-1.3.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/179d26c060464f55c2510f3d8f2c635d/transformed/monitor-1.3.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/58fefd3b57c703c35535ced2fe4195e3/transformed/monitor-1.3.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2d402525c1498987ccd52b6243887c3c/transformed/monitor-1.3.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b0261a9d53c3ebd153a59b1af0299336/transformed/monitor-1.3.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/2d402525c1498987ccd52b6243887c3c/transformed/monitor-1.3.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2d402525c1498987ccd52b6243887c3c/transformed/monitor-1.3.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.test/monitor/1.3.0/3a80466a460e22ec785a9c0ad1a1cbaf6a08c0ee/monitor-1.3.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.test/monitor/1.3.0/42fd8fe34ba94b2e75f5df0b3184887af6f98670/monitor-1.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

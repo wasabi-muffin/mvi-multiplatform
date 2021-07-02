@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.savedstate:savedstate-ktx:1.1.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/189c1da83d960fe22f24106b1916c63f/transformed/savedstate-ktx-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9e0c0b830c71dff9bc4054584e6bd8f3/transformed/savedstate-ktx-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c0a0b97f72ad9c91460c6538b43fff4f/transformed/savedstate-ktx-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c43d0d0fea59c2cc0b1fbba5b201e3c3/transformed/savedstate-ktx-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/10825a57e8d6ed29c9210e5f1b7e8da5/transformed/savedstate-ktx-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c3ad80bcfbd56f708ed1dda41a2cb0b1/transformed/savedstate-ktx-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1382c05d0ce867bcfe2a9007cbbffe6a/transformed/savedstate-ktx-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9d4f2c74eb082d6e63f967de11c7adc6/transformed/savedstate-ktx-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/654ca007aa532dee623da676e0d36e63/transformed/savedstate-ktx-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d2c433e9b37ccde9c46432f58590f94f/transformed/savedstate-ktx-1.1.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/654ca007aa532dee623da676e0d36e63/transformed/savedstate-ktx-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/654ca007aa532dee623da676e0d36e63/transformed/savedstate-ktx-1.1.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.savedstate/savedstate-ktx/1.1.0/9292f5a5bc3895f9759d7b6f30291743c1187698/savedstate-ktx-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,16 @@
+PODS:
+  - iosmodule (0.0.1)
+
+DEPENDENCIES:
+  - iosmodule (from `../../common/iosmodule`)
+
+EXTERNAL SOURCES:
+  iosmodule:
+    :path: "../../common/iosmodule"
+
+SPEC CHECKSUMS:
+  iosmodule: 39c1b4d55a19659476ca4bdd1a6c206084ded057
+
+PODFILE CHECKSUM: 8d837922127ebc863ce2213a9012db0e55c62975
+
+COCOAPODS: 1.10.1
