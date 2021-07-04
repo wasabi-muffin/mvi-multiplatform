@@ -4,12 +4,11 @@ plugins {
 }
 
 android {
-    compileSdkVersion(Versions1.androidCompileSdk)
-    buildToolsVersion = Versions1.buildToolsVersion
+    compileSdk = Versions.androidCompileSdk
     defaultConfig {
         applicationId = "com.gmvalentino"
-        minSdkVersion(Versions1.androidMinSdk)
-        targetSdkVersion(Versions1.androidTargetSdk)
+        minSdk = Versions.androidMinSdk
+        targetSdk = Versions.androidTargetSdk
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -97,5 +96,5 @@ dependencies {
         androidTestImplementation(testRunner)
     }
 
-    coreLibraryDesugaring(Deps1.desugarJdkLibs)
+    coreLibraryDesugaring(Deps.Android.desugarJdkLibs)
 }

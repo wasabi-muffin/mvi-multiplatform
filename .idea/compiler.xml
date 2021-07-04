@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="11">
+    <bytecodeTargetLevel target="12">
       <module name="mvi-multiplatform.common.data.models.commonMain" target="1.8" />
       <module name="mvi-multiplatform.common.data.models.commonTest" target="1.8" />
       <module name="mvi-multiplatform.common.data.models.jvmMain" target="1.8" />

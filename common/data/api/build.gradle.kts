@@ -9,35 +9,33 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                implementation(Deps1.SqlDelight.runtime)
-                implementation(Deps1.SqlDelight.coroutinesExtensions)
-                implementation(Deps1.Ktor.commonCore)
-                implementation(Deps1.Ktor.commonJson)
-                implementation(Deps1.Ktor.commonLogging)
-                implementation(Deps1.Coroutines.common)
-                implementation(Deps1.stately)
-                implementation(Deps1.multiplatformSettings)
+                implementation(Deps.SqlDelight.runtime)
+                implementation(Deps.SqlDelight.coroutineExtensions)
+                implementation(Deps.Ktor.clientCore)
+                implementation(Deps.Ktor.clientJson)
+                implementation(Deps.Ktor.clientLogging)
+                implementation(Deps.Ktor.clientSerialization)
+                implementation(Deps.Ktor.serialization)
+                implementation(Deps.Kotlinx.coroutinesCore)
                 implementation(Deps.Koin.core)
-                implementation(Deps1.Ktor.commonSerialization)
-                implementation(Deps1.kotlinxDateTime)
-                api(Deps1.kermit)
+                implementation(Deps.Kotlinx.dateTime)
+                api(Deps.Log.kermit)
             }
         }
 
         androidMain {
             dependencies {
-                implementation(kotlin("stdlib", Versions1.kotlin))
-                implementation(Deps1.Coroutines.android)
-                implementation(Deps1.Ktor.androidCore)
+                implementation(Deps.Ktor.clientAndroid)
+                implementation(kotlin("stdlib", Versions.kotlin))
             }
         }
 
         iosMain {
             dependencies {
-                implementation(Deps1.Ktor.ios)
-                implementation(Deps1.Coroutines.common) {
+                implementation(Deps.Ktor.clientIos)
+                implementation(Deps.Kotlinx.coroutinesCore) {
                     version {
-                        strictly(Versions1.coroutines)
+                        strictly(Versions.kotlinCoroutines)
                     }
                 }
             }

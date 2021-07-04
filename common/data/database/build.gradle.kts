@@ -13,28 +13,28 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                implementation(Deps1.SqlDelight.runtime)
-                implementation(Deps1.SqlDelight.coroutinesExtensions)
+                implementation(Deps.SqlDelight.runtime)
+                implementation(Deps.SqlDelight.coroutineExtensions)
                 implementation(Deps.Koin.core)
-                implementation(Deps1.Ktor.commonSerialization)
-                implementation(Deps1.kotlinxDateTime)
-                api(Deps1.kermit)
+                implementation(Deps.Ktor.serialization)
+                implementation(Deps.Kotlinx.dateTime)
+                api(Deps.Log.kermit)
             }
         }
 
         androidMain {
             dependencies {
-                implementation(kotlin("stdlib", Versions1.kotlin))
-                implementation(Deps1.SqlDelight.driverAndroid)
+                implementation(kotlin("stdlib", Versions.kotlin))
+                implementation(Deps.SqlDelight.androidDriver)
             }
         }
 
         iosMain {
             dependencies {
-                implementation(Deps1.SqlDelight.driverIos)
-                implementation(Deps1.Coroutines.common) {
+                implementation(Deps.SqlDelight.nativeDriver)
+                implementation(Deps.Kotlinx.coroutinesCore) {
                     version {
-                        strictly(Versions1.coroutines)
+                        strictly(Versions.kotlinCoroutines)
                     }
                 }
             }

@@ -1,8 +1,18 @@
 buildTargets = setOf(BuildTarget.Ios)
 setupMultiplatform()
-setupCocoapods(framework = "MVIMultiplatform")
+
+plugins {
+    kotlin("native.cocoapods")
+}
 
 kotlin {
+
+    cocoapodsConfig {
+        summary = "MVIMultiplatform"
+        homepage = "https://github.com/gmvalentino/mvi-multiplatform"
+        frameworkName = "MVIMultiplatform"
+    }
+
     sourceSets {
         commonMain {
             dependencies {
@@ -22,17 +32,5 @@ kotlin {
             transitiveExport = true
             Module.values().forEach { export(project(it.path)) }
         }
-    }
-
-    tasks.register("replaceCocoapods", Copy::class) {
-        mustRunAfter(":common:iosmodule:podspec")
-
-        val dir = project.rootDir.resolve("common/iosmodule/")
-        dir.walk()
-            .filter { it.name.contains(".podspec") }
-            .forEach { it.writeText(it.readText()
-                .replace("spec.libraries                = \"c++\"",
-                    "spec.libraries                = \"c++\", \"sqlite3\""))
-            }
     }
 }

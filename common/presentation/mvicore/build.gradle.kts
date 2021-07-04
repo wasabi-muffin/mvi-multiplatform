@@ -6,10 +6,9 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                implementation(Deps1.Coroutines.common)
-                implementation(Deps1.stately)
+                implementation(Deps.Kotlinx.coroutinesCore)
                 implementation(Deps.Koin.core)
-                api(Deps1.kermit)
+                api(Deps.Log.kermit)
             }
         }
     }

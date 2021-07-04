@@ -103,11 +103,11 @@ fun Project.setupMultiplatform() {
 fun Project.setupAndroidSdkVersions() {
     androidConfig {
 
-        compileSdkVersion(Versions1.androidCompileSdk)
+        compileSdkVersion(Versions.androidCompileSdk)
 
         defaultConfig {
-            targetSdkVersion(Versions1.androidTargetSdk)
-            minSdkVersion(Versions1.androidMinSdk)
+            targetSdkVersion(Versions.androidTargetSdk)
+            minSdkVersion(Versions.androidMinSdk)
             testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         }
 
