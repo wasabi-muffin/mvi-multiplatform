@@ -16,7 +16,7 @@ class MainApp : Application() {
         super.onCreate()
         MultiplatformApplication.initialize(
             applicationContext,
-            applicationContext.getSharedPreferences("KAMPSTARTER_SETTINGS", MODE_PRIVATE)
+            applicationContext.getSharedPreferences("Default", MODE_PRIVATE)
         )
 
         startKoin {

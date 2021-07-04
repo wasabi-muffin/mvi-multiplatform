@@ -18,7 +18,7 @@ kotlin {
                 implementation(Deps.SqlDelight.runtime)
                 implementation(Deps.SqlDelight.coroutineExtensions)
                 implementation(Deps.Koin.core)
-                implementation(Deps.Ktor.serialization)
+                implementation(Deps.Ktor.clientSerialization)
                 implementation(Deps.Kotlinx.dateTime)
                 api(Deps.Log.kermit)
             }

@@ -1,6 +1,6 @@
 buildTargets = setOf(BuildTarget.Ios)
 setupMultiplatform()
-setupCocoapods()
+setupCocoapods("MVIMultiplatform")
 
 kotlin {
 
@@ -21,6 +21,7 @@ kotlin {
         binaries.withType<org.jetbrains.kotlin.gradle.plugin.mpp.Framework> {
             isStatic = true
             transitiveExport = true
+            linkerOpts.add("-lsqlite3")
             Module.values().forEach { export(project(it.path)) }
         }
     }

@@ -15,7 +15,7 @@ struct TaskListView: View {
     
     var body: some View {
         List(tasks, id:\.id) { task in
-//            TaskItemView(task: task, onClick: { onItemSelected(task) })
+            TaskItemView(task: task, onClick: { onItemSelected(task) })
         }
     }
 }

@@ -1,4 +1,4 @@
-name: KaMPKit-Android
+name: Android
 
 on:
   workflow_dispatch:

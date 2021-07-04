@@ -1,4 +1,4 @@
-name: KaMPKit-iOS
+name: iOS
 
 on:
   workflow_dispatch:
@@ -22,8 +22,8 @@ jobs:
       - name: Build
         uses: sersoft-gmbh/xcodebuild-action@v1
         with:
-          workspace: ios/KaMPKitiOS.xcworkspace
-          scheme: KaMPKitiOS
+          workspace: ios/ios.xcworkspace
+          scheme: ios
           destination: name=iPhone 8
           sdk: iphoneos
           configuration: Debug
