@@ -1,0 +1,6 @@
+framework module MVIMultiplatform {
+    umbrella header "MVIMultiplatform.h"
+
+    export *
+    module * { export * }
+}

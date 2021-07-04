@@ -42,14 +42,6 @@ fun main() {
         }
 
         routing {
-            get("/test") {
-                val result = listOf(
-                    TestModel("Marco", "gmvalentino8@gmail.com"),
-                    TestModel("User 2", "user2@test.com"),
-                    TestModel("User 3", "user3@test.com")
-                )
-                call.respond(result)
-            }
             get("/tasks") {
                 val timeZone = TimeZone.currentSystemDefault()
                 val now = Clock.System.now()
