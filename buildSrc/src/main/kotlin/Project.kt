@@ -20,11 +20,6 @@ fun Project.setupMultiplatform() {
         setupAndroidSdkVersions()
     }
 
-    doIfBuildTargetAvailable<BuildTarget.Ios> {
-        // setupCocoapods()
-        setupFramework()
-    }
-
     repositories {
         google()
         mavenCentral()
@@ -106,8 +101,8 @@ fun Project.setupAndroidSdkVersions() {
         compileSdkVersion(Versions.androidCompileSdk)
 
         defaultConfig {
-            targetSdkVersion(Versions.androidTargetSdk)
-            minSdkVersion(Versions.androidMinSdk)
+            targetSdk = Versions.androidTargetSdk
+            minSdk = Versions.androidMinSdk
             testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         }
 
@@ -150,16 +145,4 @@ fun Project.kotlin(block: KotlinMultiplatformExtension.() -> Unit) {
 
 fun KotlinMultiplatformExtension.sourceSets(block: SourceSets.() -> Unit) {
     sourceSets.block()
-}
-
-fun Project.setupFramework() {
-    kotlin {
-        targets.withType<KotlinNativeTarget> {
-            binaries.withType<Framework> {
-                isStatic = true
-                transitiveExport = true
-                projectDependencies.forEach { export(project(it.path)) }
-            }
-        }
-    }
 }

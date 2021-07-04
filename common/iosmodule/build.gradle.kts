@@ -1,17 +1,8 @@
 buildTargets = setOf(BuildTarget.Ios)
 setupMultiplatform()
-
-plugins {
-    kotlin("native.cocoapods")
-}
+setupCocoapods()
 
 kotlin {
-
-    cocoapodsConfig {
-        summary = "MVIMultiplatform"
-        homepage = "https://github.com/gmvalentino/mvi-multiplatform"
-        frameworkName = "MVIMultiplatform"
-    }
 
     sourceSets {
         commonMain {

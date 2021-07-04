@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
     spec.summary                  = 'MVIMultiplatform'
 
     spec.static_framework         = true
-    spec.vendored_frameworks      = "build/cocoapods/framework/MVIMultiplatform.framework"
+    spec.vendored_frameworks      = "build/cocoapods/framework/Iosmodule.framework"
     spec.libraries                = "c++"
     spec.module_name              = "#{spec.name}_umbrella"
 
