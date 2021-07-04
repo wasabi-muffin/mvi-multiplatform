@@ -27,19 +27,9 @@ fun Project.setupMultiplatform() {
 
     kotlin {
         doIfBuildTargetAvailable<BuildTarget.Js> {
-            js {
-                nodejs()
+            js(IR) {
+                useCommonJs()
                 browser()
-
-                compilations.all {
-                    compileKotlinTask.kotlinOptions {
-                        metaInfo = true
-                        sourceMap = true
-                        sourceMapEmbedSources = "always"
-                        moduleKind = "umd"
-                        main = "call"
-                    }
-                }
             }
         }
 

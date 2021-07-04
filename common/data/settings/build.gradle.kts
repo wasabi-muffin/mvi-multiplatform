@@ -1,4 +1,4 @@
-buildTargets = setOf(BuildTarget.Android, BuildTarget.Ios)
+buildTargets = setOf(BuildTarget.Android, BuildTarget.Ios, BuildTarget.Js)
 setupMultiplatform()
 
 plugins {

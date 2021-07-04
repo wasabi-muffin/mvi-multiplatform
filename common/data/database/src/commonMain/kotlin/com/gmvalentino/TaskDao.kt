@@ -5,22 +5,22 @@ import com.gmvalentino.db.Tasks
 import com.gmvalentino.local.TaskLocalDataSource
 import com.gmvalentino.models.TaskModel
 import com.squareup.sqldelight.db.SqlDriver
-import com.squareup.sqldelight.runtime.coroutines.asFlow
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.single
 import kotlinx.datetime.LocalDateTime
 
 class TaskDao(
-    sqlDriver: SqlDriver
+    sqlDriver: Flow<SqlDriver>
 ) : TaskLocalDataSource {
-    private val dbRef: Db = Db(sqlDriver)
+    private val dbRef = sqlDriver.map {
+        Db(it).tasksQueries
+    }
 
     override suspend fun getTasks(): Flow<List<TaskModel>> = dbRef
-        .tasksQueries
-        .getTasks()
-        .asFlow()
+        .map { it.getTasks() }
         .map {
             it.executeAsList().map { task ->
                 TaskModel(
@@ -35,9 +35,9 @@ class TaskDao(
         .flowOn(Dispatchers.Default)
 
     override suspend fun addTask(task: TaskModel) =
-        dbRef.transactionWithContext(Dispatchers.Main) {
-            dbRef.tasksQueries
-                .addTask(
+        dbRef.flowOn(Dispatchers.Main)
+            .map {
+                it.addTask(
                     Tasks(
                         task.id,
                         task.title,
@@ -46,17 +46,20 @@ class TaskDao(
                         task.isComplete
                     )
                 )
-        }
+            }
+            .single()
 
     override suspend fun removeTask(id: String) =
-        dbRef.transactionWithContext(Dispatchers.Main) {
-            dbRef.tasksQueries
-                .deleteTask(id)
-        }
+        dbRef.flowOn(Dispatchers.Main)
+            .map {
+                it.deleteTask(id)
+            }
+            .single()
 
     override suspend fun updateTask(id: String, isComplete: Boolean) =
-        dbRef.transactionWithContext(Dispatchers.Main) {
-            dbRef.tasksQueries
-                .updateTask(isComplete, id)
-        }
+        dbRef.flowOn(Dispatchers.Main)
+            .map {
+                it.updateTask(isComplete, id)
+            }
+            .single()
 }
