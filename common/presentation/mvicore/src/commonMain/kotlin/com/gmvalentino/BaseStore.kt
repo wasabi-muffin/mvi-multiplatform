@@ -39,6 +39,7 @@ abstract class BaseStore<
 
     private val scope = CoroutineScope(Dispatchers.Main + SupervisorJob())
     private val intents = MutableSharedFlow<INTENT>()
+    private val mutex = Mutex()
 
     private val _state = MutableStateFlow(initialState)
     override val state: StateFlow<STATE> = _state

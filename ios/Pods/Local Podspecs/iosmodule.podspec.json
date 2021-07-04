@@ -11,10 +11,7 @@
   "summary": "MVIMultiplatform",
   "static_framework": true,
   "vendored_frameworks": "build/cocoapods/framework/MVIMultiplatform.framework",
-  "libraries": [
-    "c++",
-    "sqlite3"
-  ],
+  "libraries": "c++",
   "module_name": "iosmodule_umbrella",
   "pod_target_xcconfig": {
     "KOTLIN_TARGET[sdk=iphonesimulator*]": "ios_x64",

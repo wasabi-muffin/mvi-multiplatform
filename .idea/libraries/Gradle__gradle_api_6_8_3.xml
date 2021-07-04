@@ -91,7 +91,6 @@
       <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.8.3-all/6czipnbiesy2sl92ioo8dht91/gradle-6.8.3/src/file-collections" />
       <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.8.3-all/6czipnbiesy2sl92ioo8dht91/gradle-6.8.3/src/build-cache-packaging" />
       <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.8.3-all/6czipnbiesy2sl92ioo8dht91/gradle-6.8.3/src/build-cache-http" />
-      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.8.3-all/6czipnbiesy2sl92ioo8dht91/gradle-6.8.3/src/.DS_Store" />
     </SOURCES>
   </library>
 </component>

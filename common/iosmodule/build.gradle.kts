@@ -3,16 +3,10 @@ setupMultiplatform()
 setupCocoapods(framework = "MVIMultiplatform")
 
 kotlin {
-    val dependencies = setOf(
-        Deps.Kotlinx.dateTime,
-        Deps.Kotlinx.coroutinesCore
-    )
-
     sourceSets {
         commonMain {
             dependencies {
                 Module.values().forEach { api(project(it.path)) }
-                dependencies.forEach { api(it) }
             }
         }
 
@@ -24,11 +18,9 @@ kotlin {
             it.kotlinOptions.freeCompilerArgs += arrayOf("-linker-options", "-lsqlite3")
         }
         binaries.withType<org.jetbrains.kotlin.gradle.plugin.mpp.Framework> {
-            isStatic = false
+            isStatic = true
             transitiveExport = true
-            linkerOpts.add("-lsqlite3")
             Module.values().forEach { export(project(it.path)) }
-            dependencies.forEach { export(it) }
         }
     }
 
