@@ -12,7 +12,7 @@ kotlin {
         commonMain {
             dependencies {
                 implementation(Deps.Kotlinx.serializationCore)
-                implementation(Deps1.kotlinxDateTime)
+                implementation(Deps.Kotlinx.dateTime)
             }
         }
     }

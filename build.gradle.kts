@@ -6,17 +6,16 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath(Deps1.android_gradle_plugin)
-        classpath(Deps1.SqlDelight.gradle)
-        classpath("org.jetbrains.kotlin:kotlin-serialization:${Versions1.kotlin}")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10")
-        classpath(Deps.Gradle.shadow)
+        classpath(Deps.Gradle.sqlDelight)
+        classpath(Deps.Gradle.kotlinSerialization)
+        classpath(Deps.Gradle.androidGradle)
+        classpath(Deps.Gradle.kotlin)
     }
 }
 
-plugins {
-    id("org.jlleitschuh.gradle.ktlint") version Versions1.ktlint_gradle_plugin
-}
+// plugins {
+//     id("org.jlleitschuh.gradle.ktlint") version Versions1.ktlint_gradle_plugin
+// }
 
 allprojects {
     version = "0.0.1"

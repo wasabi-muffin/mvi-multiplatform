@@ -6,12 +6,11 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                implementation(Deps1.Coroutines.common)
-                implementation(Deps1.stately)
+                implementation(Deps.Kotlinx.coroutinesCore)
                 implementation(Deps.Koin.core)
-                implementation(Deps1.Ktor.commonSerialization)
-                implementation(Deps1.kotlinxDateTime)
-                api(Deps1.kermit)
+                implementation(Deps.Ktor.serialization)
+                implementation(Deps.Kotlinx.dateTime)
+                api(Deps.Log.kermit)
             }
         }
     }

@@ -1,10 +1,10 @@
 object Versions {
-    const val androidMinSdk = 21
-    const val androidCompileSdk = 29
+    const val androidMinSdk = 23
+    const val androidCompileSdk = 30
     const val androidTargetSdk = androidCompileSdk
 
     const val kotlin = "1.5.10"
-    const val gradle = "7.1.0-alpha09"
+    const val gradle = "7.0.0-beta05"
 
     const val kotlinCoroutines = "1.5.0-native-mt"
     const val koin = "3.1.0"
@@ -24,9 +24,9 @@ object Versions {
     const val robolectric = "4.4"
 
     const val sqlDelight = "1.5.0"
-    const val shadow = "7.0.0"
     const val kotlinterGradle = "3.4.5"
     const val exposed = "0.31.1"
+    const val multiplatformSettings = "0.7.7"
 
     const val material = "1.3.0"
     const val activityCompose = "1.3.0-beta2"
@@ -34,6 +34,7 @@ object Versions {
     const val lifecycleRuntimeKtx = lifecycleKtx
     const val lifecycleViewmodelKtx = lifecycleKtx
     const val osmdroidAndroid = "6.1.10"
+    const val desugarJdkLibs = "1.1.5"
 
     const val kotlinReact = "17.0.1-pre.146-kotlin-1.4.30"
     const val kotlinReactDom = "17.0.1-pre.146-kotlin-1.4.30"
@@ -54,7 +55,6 @@ object Deps {
         const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
         const val kotlinSerialization = "org.jetbrains.kotlin:kotlin-serialization:${Versions.kotlin}"
         const val kotlinter = "org.jmailen.gradle:kotlinter-gradle:${Versions.kotlinterGradle}"
-        const val shadow = "gradle.plugin.com.github.jengelman.gradle.plugins:shadow:${Versions.shadow}"
         const val sqlDelight = "com.squareup.sqldelight:gradle-plugin:${Versions.sqlDelight}"
     }
 
@@ -63,12 +63,13 @@ object Deps {
         const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlinCoroutines}"
         const val dateTime = "org.jetbrains.kotlinx:kotlinx-datetime:${Versions.kotlinxDateTime}"
         const val htmlJs = "org.jetbrains.kotlinx:kotlinx-html-js:${Versions.kotlinxHtmlJs}"
-
     }
 
     object Android {
         const val material = "com.google.android.material:material:${Versions.material}"
         const val osmdroidAndroid = "org.osmdroid:osmdroid-android:${Versions.osmdroidAndroid}"
+        const val desugarJdkLibs = "com.android.tools:desugar_jdk_libs:${Versions.desugarJdkLibs}"
+
     }
 
     object AndroidX {
@@ -127,6 +128,10 @@ object Deps {
         const val nativeDriver = "com.squareup.sqldelight:native-driver:${Versions.sqlDelight}"
         const val nativeDriverMacos = "com.squareup.sqldelight:native-driver-macosx64:${Versions.sqlDelight}"
         const val sqliteDriver = "com.squareup.sqldelight:sqlite-driver:${Versions.sqlDelight}"
+    }
+
+    object MultiplatformSettings {
+        const val core = "com.russhwolf:multiplatform-settings:${Versions.multiplatformSettings}"
     }
 
     object Exposed {
