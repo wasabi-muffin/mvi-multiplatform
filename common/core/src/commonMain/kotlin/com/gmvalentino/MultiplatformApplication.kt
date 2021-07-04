@@ -14,7 +14,6 @@ fun initApplication(appModule: Module) {
     koinApplication.koin.loadModules(
         listOf(
             appModule,
-            platformModule,
             coreModule,
             domainModule,
             repositoryModule,

@@ -1,4 +1,4 @@
-buildTargets = setOf(BuildTarget.Android, BuildTarget.Ios)
+buildTargets = setOf(BuildTarget.Android, BuildTarget.Ios, BuildTarget.Js)
 projectDependencies = setOf(
     Module.Models,
     Module.Repository
@@ -37,6 +37,12 @@ kotlin {
                         strictly(Versions.kotlinCoroutines)
                     }
                 }
+            }
+        }
+
+        jsMain {
+            dependencies {
+                implementation(Deps.SqlDelight.jsDriver)
             }
         }
     }

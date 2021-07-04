@@ -1,4 +1,4 @@
-buildTargets = setOf(BuildTarget.Android, BuildTarget.Ios, BuildTarget.Jvm)
+buildTargets = setOf(BuildTarget.Android, BuildTarget.Ios, BuildTarget.Jvm, BuildTarget.Js)
 
 setupMultiplatform()
 
