@@ -3,15 +3,15 @@ package com.gmvalentino.usecases
 import com.gmvalentino.entities.Task
 import com.gmvalentino.repositories.TaskRepository
 
-class CreateTaskUseCase(
+class CreateTask(
     private val repository: TaskRepository
-) : CreateTaskUseCaseProtocol {
-    override suspend fun execute(arguments: CreateTaskUseCaseProtocol.Args) {
+) : CreateTaskUseCase {
+    override suspend fun execute(arguments: CreateTaskUseCase.Args) {
         return repository.addTask(arguments.task)
     }
 }
 
-interface CreateTaskUseCaseProtocol : UseCase<Unit, CreateTaskUseCaseProtocol.Args> {
+interface CreateTaskUseCase : UseCase<Unit, CreateTaskUseCase.Args> {
     data class Args(
         val task: Task
     ) : UseCase.Arguments()

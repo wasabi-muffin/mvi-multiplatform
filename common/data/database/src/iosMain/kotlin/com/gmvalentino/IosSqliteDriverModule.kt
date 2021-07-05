@@ -8,13 +8,16 @@ import org.koin.dsl.module
 import kotlinx.coroutines.flow.flowOf
 
 actual val sqliteDriverModule: Module = module {
-    single {
-        flowOf(
-            NativeSqliteDriver(
-                Db.Schema,
-                "Db"
-            )
+    single<suspend () -> SqlDriver> {
+        suspend {
+            get()
+        }
+    }
+
+    single<SqlDriver> {
+        NativeSqliteDriver(
+            Db.Schema,
+            "Db"
         )
     }
 }
-

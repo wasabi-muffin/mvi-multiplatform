@@ -6,11 +6,10 @@ projectDependencies = setOf(
 setupMultiplatform()
 
 kotlin {
+
     sourceSets {
         commonMain {
             dependencies {
-                implementation(Deps.SqlDelight.runtime)
-                implementation(Deps.SqlDelight.coroutineExtensions)
                 implementation(Deps.Ktor.clientCore)
                 implementation(Deps.Ktor.clientJson)
                 implementation(Deps.Ktor.clientLogging)
@@ -25,7 +24,7 @@ kotlin {
 
         androidMain {
             dependencies {
-                implementation(Deps.Ktor.clientAndroid)
+                implementation(Deps.Ktor.clientOkhttp)
                 implementation(kotlin("stdlib", Versions.kotlin))
             }
         }

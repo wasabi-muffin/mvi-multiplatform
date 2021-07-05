@@ -22,3 +22,6 @@ WHERE id = :id;
 deleteTask:
 DELETE FROM Tasks
 WHERE id = :id;
+
+deleteAll:
+DELETE FROM Tasks;

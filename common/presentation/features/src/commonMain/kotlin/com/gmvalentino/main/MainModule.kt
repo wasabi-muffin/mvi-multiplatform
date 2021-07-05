@@ -11,6 +11,8 @@ val mainModule = module {
     single {
         MainProcessor(
             get(),
+            get(),
+            get(),
             get()
         )
     }

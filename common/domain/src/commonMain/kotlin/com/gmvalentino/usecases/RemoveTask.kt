@@ -2,15 +2,15 @@ package com.gmvalentino.usecases
 
 import com.gmvalentino.repositories.TaskRepository
 
-class RemoveTaskUseCase(
+class RemoveTask(
     private val repository: TaskRepository
-) : RemoveTaskUseCaseProtocol {
-    override suspend fun execute(arguments: RemoveTaskUseCaseProtocol.Args) {
+) : RemoveTaskUseCase {
+    override suspend fun execute(arguments: RemoveTaskUseCase.Args) {
         return repository.deleteTask(arguments.id)
     }
 }
 
-interface RemoveTaskUseCaseProtocol : UseCase<Unit, RemoveTaskUseCaseProtocol.Args> {
+interface RemoveTaskUseCase : UseCase<Unit, RemoveTaskUseCase.Args> {
     data class Args(
         val id: String
     ) : UseCase.Arguments()

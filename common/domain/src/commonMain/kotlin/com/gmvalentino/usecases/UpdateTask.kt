@@ -2,15 +2,15 @@ package com.gmvalentino.usecases
 
 import com.gmvalentino.repositories.TaskRepository
 
-class UpdateTaskUseCase(
+class UpdateTask(
     private val repository: TaskRepository
-) : UpdateTaskUseCaseProtocol {
-    override suspend fun execute(arguments: UpdateTaskUseCaseProtocol.Args) {
+) : UpdateTaskUseCase {
+    override suspend fun execute(arguments: UpdateTaskUseCase.Args) {
         return repository.updateTask(arguments.id, arguments.isComplete)
     }
 }
 
-interface UpdateTaskUseCaseProtocol : UseCase<Unit, UpdateTaskUseCaseProtocol.Args> {
+interface UpdateTaskUseCase : UseCase<Unit, UpdateTaskUseCase.Args> {
     data class Args(
         val id: String,
         val isComplete: Boolean

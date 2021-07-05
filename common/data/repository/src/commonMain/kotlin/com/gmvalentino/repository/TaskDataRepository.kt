@@ -1,7 +1,6 @@
 package com.gmvalentino.repository
 
 import co.touchlab.kermit.Kermit
-import co.touchlab.kermit.Logger
 import com.gmvalentino.entities.Task
 import com.gmvalentino.local.TaskLocalDataSource
 import com.gmvalentino.mapper.TaskMapper
@@ -17,31 +16,55 @@ class TaskDataRepository(
     private val remoteDataSource: TaskRemoteDataSource
 ) : TaskRepository {
     override suspend fun getTasks(): Flow<List<Task>> = flow {
-        // emitAll(
-        //     localDataSource.getTasks().map {
-        //         it.map(TaskMapper::modelToEntity)
-        //     }
-        // )
-        val test = remoteDataSource.getTasks().map(TaskMapper::modelToEntity)
-        emit(test)
+        runCatching {
+            remoteDataSource.getTasks()
+        }
+            .onSuccess {
+                emit(it.map(TaskMapper::modelToEntity))
+                localDataSource.saveTasks(it)
+            }
+            .onFailure {
+                Kermit().d { "Error $it" }
+            }
+        emitAll(localDataSource.getTasks().map { it.map(TaskMapper::modelToEntity) })
     }
 
     override suspend fun addTask(task: Task) {
-        localDataSource.addTask(
-            TaskMapper.entityToModel(task)
-        )
-        remoteDataSource.addTask(
-            TaskMapper.entityToModel(task)
-        )
+        runCatching {
+            remoteDataSource.addTask(
+                TaskMapper.entityToModel(task)
+            )
+        }.onSuccess {
+            localDataSource.addTask(
+                TaskMapper.entityToModel(task)
+            )
+        }
+            .onFailure {
+                throw it
+            }
     }
 
     override suspend fun deleteTask(id: String) {
-        localDataSource.removeTask(id)
-        remoteDataSource.removeTask(id)
+        runCatching {
+            remoteDataSource.removeTask(id)
+        }
+            .onSuccess {
+                localDataSource.removeTask(id)
+            }
+            .onFailure {
+                throw it
+            }
     }
 
     override suspend fun updateTask(id: String, isComplete: Boolean) {
-        localDataSource.updateTask(id, isComplete)
-        remoteDataSource.updateTask(id, isComplete)
+        runCatching {
+            remoteDataSource.updateTask(id, isComplete)
+        }
+            .onSuccess {
+                localDataSource.updateTask(id, isComplete)
+            }
+            .onFailure {
+                throw it
+            }
     }
 }

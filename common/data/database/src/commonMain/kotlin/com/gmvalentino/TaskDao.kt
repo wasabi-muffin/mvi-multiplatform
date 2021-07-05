@@ -1,28 +1,32 @@
 package com.gmvalentino
 
+import co.touchlab.kermit.Kermit
 import com.gmvalentino.db.Db
 import com.gmvalentino.db.Tasks
 import com.gmvalentino.local.TaskLocalDataSource
 import com.gmvalentino.models.TaskModel
-import com.squareup.sqldelight.db.SqlDriver
+import com.squareup.sqldelight.runtime.coroutines.asFlow
+import com.squareup.sqldelight.runtime.coroutines.mapToList
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.single
 import kotlinx.datetime.LocalDateTime
 
+@FlowPreview
 class TaskDao(
-    sqlDriver: Flow<SqlDriver>
+    private val dbRef: suspend () -> Db,
 ) : TaskLocalDataSource {
-    private val dbRef = sqlDriver.map {
-        Db(it).tasksQueries
-    }
 
-    override suspend fun getTasks(): Flow<List<TaskModel>> = dbRef
-        .map { it.getTasks() }
+    val log = Kermit(defaultTag = "SQL DEBUG")
+
+    override suspend fun getTasks(): Flow<List<TaskModel>> = dbRef()
+        .tasksQueries
+        .getTasks()
+        .asFlow()
+        .mapToList()
         .map {
-            it.executeAsList().map { task ->
+            it.map { task ->
                 TaskModel(
                     task.id,
                     task.title,
@@ -32,34 +36,41 @@ class TaskDao(
                 )
             }
         }
-        .flowOn(Dispatchers.Default)
 
-    override suspend fun addTask(task: TaskModel) =
-        dbRef.flowOn(Dispatchers.Main)
-            .map {
-                it.addTask(
+    override suspend fun saveTasks(tasks: List<TaskModel>) = dbRef().tasksQueries.run {
+        transactionWithContext(Dispatchers.Default) {
+            log.d { "Start Save Tasks" }
+            deleteAll()
+            log.d { "Delete All" }
+            tasks.forEach { task ->
+                log.d { "Add task $task" }
+                addTask(
                     Tasks(
-                        task.id,
-                        task.title,
-                        task.details,
-                        task.date.toString(),
-                        task.isComplete
+                        id = task.id,
+                        title = task.title,
+                        description = task.details,
+                        date = task.date.toString(),
+                        is_complete = task.isComplete
                     )
                 )
             }
-            .single()
+        }
+    }
+
+    override suspend fun addTask(task: TaskModel) =
+        dbRef().tasksQueries.addTask(
+            Tasks(
+                id = task.id,
+                title = task.title,
+                description = task.details,
+                date = task.date.toString(),
+                is_complete = task.isComplete
+            )
+        )
 
     override suspend fun removeTask(id: String) =
-        dbRef.flowOn(Dispatchers.Main)
-            .map {
-                it.deleteTask(id)
-            }
-            .single()
+        dbRef().tasksQueries.deleteTask(id)
 
     override suspend fun updateTask(id: String, isComplete: Boolean) =
-        dbRef.flowOn(Dispatchers.Main)
-            .map {
-                it.updateTask(isComplete, id)
-            }
-            .single()
+        dbRef().tasksQueries.updateTask(isComplete, id)
 }

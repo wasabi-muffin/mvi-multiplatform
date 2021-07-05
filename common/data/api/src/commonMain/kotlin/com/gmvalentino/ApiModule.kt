@@ -15,7 +15,7 @@ import org.koin.dsl.module
 val apiModule = module {
 
     single {
-        HttpClient {
+        provideHttpClient().config {
             install(JsonFeature) {
                 serializer = KotlinxSerializer(
                     Json {
@@ -39,3 +39,5 @@ val apiModule = module {
         )
     }
 }
+
+expect fun provideHttpClient(): HttpClient

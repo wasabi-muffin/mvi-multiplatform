@@ -115,6 +115,7 @@ object Deps {
         const val clientLogging = "io.ktor:ktor-client-logging:${Versions.ktor}"
         const val clientSerialization = "io.ktor:ktor-client-serialization:${Versions.ktor}"
         const val clientAndroid = "io.ktor:ktor-client-android:${Versions.ktor}"
+        const val clientOkhttp = "io.ktor:ktor-client-okhttp:${Versions.ktor}"
         const val clientApache = "io.ktor:ktor-client-apache:${Versions.ktor}"
         const val clientIos = "io.ktor:ktor-client-ios:${Versions.ktor}"
         const val clientCio = "io.ktor:ktor-client-cio:${Versions.ktor}"

@@ -45,7 +45,7 @@ fun TaskScreen() {
         ) {
             state.value.tasks.forEach { task ->
                 TaskItemView(task) {
-                    store.dispatch(MainIntent.Toggle(task.id))
+                    store.dispatch(MainIntent.TaskClicked(task.id))
                 }
             }
         }
