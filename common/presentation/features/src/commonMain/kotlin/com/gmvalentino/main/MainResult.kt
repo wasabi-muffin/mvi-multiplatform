@@ -1,6 +1,6 @@
 package com.gmvalentino.main
 
-import com.gmvalentino.Result
+import com.gmvalentino.contract.Result
 import com.gmvalentino.entities.Task
 
 sealed class MainResult : Result {

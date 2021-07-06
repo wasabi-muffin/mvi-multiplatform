@@ -1,6 +1,6 @@
 package com.gmvalentino.main
 
-import com.gmvalentino.Interpreter
+import com.gmvalentino.components.Interpreter
 
 class MainInterpreter : Interpreter<MainIntent, MainAction> {
     override suspend fun interpret(intent: MainIntent): MainAction = when (intent) {

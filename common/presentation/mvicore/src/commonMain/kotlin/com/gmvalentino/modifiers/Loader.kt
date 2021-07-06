@@ -1,6 +1,7 @@
 package com.gmvalentino.modifiers
 
-import com.gmvalentino.Action
+import com.gmvalentino.components.ActionModifier
+import com.gmvalentino.contract.Action
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.merge

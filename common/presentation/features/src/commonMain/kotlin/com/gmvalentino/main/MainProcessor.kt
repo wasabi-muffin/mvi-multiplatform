@@ -1,6 +1,6 @@
 package com.gmvalentino.main
 
-import com.gmvalentino.BaseProcessor
+import com.gmvalentino.components.BaseProcessor
 import com.gmvalentino.usecases.CreateTaskUseCase
 import com.gmvalentino.usecases.GetTasksUseCase
 import com.gmvalentino.usecases.RemoveTaskUseCase

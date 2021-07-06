@@ -1,5 +1,8 @@
-package com.gmvalentino
+package com.gmvalentino.components
 
+import com.gmvalentino.contract.Event
+import com.gmvalentino.contract.Intent
+import com.gmvalentino.contract.State
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow

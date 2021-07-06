@@ -1,9 +1,9 @@
-package com.gmvalentino
+package com.gmvalentino.components
 
-import com.gmvalentino.modifiers.ActionModifier
-import com.gmvalentino.modifiers.IntentModifier
-import com.gmvalentino.modifiers.ResultModifier
-import com.gmvalentino.modifiers.StateModifier
+import com.gmvalentino.contract.Action
+import com.gmvalentino.contract.Intent
+import com.gmvalentino.contract.Result
+import com.gmvalentino.contract.State
 
 class Modifiers<INTENT : Intent, ACTION : Action, RESULT : Result, STATE : State>(
     val intentModifiers: List<IntentModifier<INTENT>> = emptyList(),

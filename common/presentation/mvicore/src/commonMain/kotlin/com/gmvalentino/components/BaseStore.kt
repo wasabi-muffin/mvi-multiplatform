@@ -1,9 +1,6 @@
-package com.gmvalentino
+package com.gmvalentino.components
 
-import com.gmvalentino.modifiers.ActionModifier
-import com.gmvalentino.modifiers.IntentModifier
-import com.gmvalentino.modifiers.ResultModifier
-import com.gmvalentino.modifiers.StateModifier
+import com.gmvalentino.contract.*
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.sync.Mutex

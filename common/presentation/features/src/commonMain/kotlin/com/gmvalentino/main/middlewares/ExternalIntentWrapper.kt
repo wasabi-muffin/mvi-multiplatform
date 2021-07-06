@@ -1,6 +1,6 @@
 package com.gmvalentino.main.middlewares
 
-import com.gmvalentino.Intent
+import com.gmvalentino.contract.Intent
 import kotlinx.coroutines.flow.MutableSharedFlow
 
 object ExternalIntentWrapper {

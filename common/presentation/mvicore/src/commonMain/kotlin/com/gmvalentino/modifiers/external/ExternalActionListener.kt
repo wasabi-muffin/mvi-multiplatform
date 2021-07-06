@@ -1,8 +1,8 @@
 package com.gmvalentino.modifiers.external
 
-import com.gmvalentino.Action
-import com.gmvalentino.modifiers.ActionModifier
-import com.gmvalentino.Intent
+import com.gmvalentino.contract.Action
+import com.gmvalentino.components.ActionModifier
+import com.gmvalentino.contract.Intent
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.map

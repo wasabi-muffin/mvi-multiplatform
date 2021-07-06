@@ -1,8 +1,8 @@
 package com.gmvalentino.modifiers.external
 
-import com.gmvalentino.Intent
-import com.gmvalentino.Result
-import com.gmvalentino.modifiers.ResultModifier
+import com.gmvalentino.contract.Intent
+import com.gmvalentino.contract.Result
+import com.gmvalentino.components.ResultModifier
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.onEach

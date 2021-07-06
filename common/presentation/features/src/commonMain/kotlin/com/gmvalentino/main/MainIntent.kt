@@ -1,6 +1,6 @@
 package com.gmvalentino.main
 
-import com.gmvalentino.Intent
+import com.gmvalentino.contract.Intent
 import com.gmvalentino.entities.Task
 
 sealed class MainIntent : Intent {

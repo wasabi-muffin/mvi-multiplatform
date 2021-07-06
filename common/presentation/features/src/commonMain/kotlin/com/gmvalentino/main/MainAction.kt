@@ -1,6 +1,6 @@
 package com.gmvalentino.main
 
-import com.gmvalentino.Action
+import com.gmvalentino.contract.Action
 import com.gmvalentino.entities.Task
 
 sealed class MainAction : Action {

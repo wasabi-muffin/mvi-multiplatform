@@ -1,10 +1,14 @@
 package com.gmvalentino.modifiers
 
 import co.touchlab.kermit.Kermit
-import com.gmvalentino.Action
-import com.gmvalentino.Intent
-import com.gmvalentino.Result
-import com.gmvalentino.State
+import com.gmvalentino.components.ActionModifier
+import com.gmvalentino.components.IntentModifier
+import com.gmvalentino.components.ResultModifier
+import com.gmvalentino.components.StateModifier
+import com.gmvalentino.contract.Action
+import com.gmvalentino.contract.Intent
+import com.gmvalentino.contract.Result
+import com.gmvalentino.contract.State
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.onEach
 

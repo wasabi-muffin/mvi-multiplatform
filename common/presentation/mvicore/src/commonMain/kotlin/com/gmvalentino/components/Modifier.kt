@@ -1,9 +1,9 @@
-package com.gmvalentino.modifiers
+package com.gmvalentino.components
 
-import com.gmvalentino.Action
-import com.gmvalentino.Intent
-import com.gmvalentino.Result
-import com.gmvalentino.State
+import com.gmvalentino.contract.Action
+import com.gmvalentino.contract.Intent
+import com.gmvalentino.contract.Result
+import com.gmvalentino.contract.State
 import kotlinx.coroutines.flow.Flow
 
 interface Modifier<Any> {

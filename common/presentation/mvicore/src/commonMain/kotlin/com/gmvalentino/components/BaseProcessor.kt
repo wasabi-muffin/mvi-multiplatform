@@ -1,5 +1,9 @@
-package com.gmvalentino
+package com.gmvalentino.components
 
+import com.gmvalentino.contract.Action
+import com.gmvalentino.contract.Event
+import com.gmvalentino.contract.Result
+import com.gmvalentino.contract.State
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 

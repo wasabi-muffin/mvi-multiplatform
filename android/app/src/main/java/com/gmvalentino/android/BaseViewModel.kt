@@ -1,10 +1,10 @@
 package com.gmvalentino.android
 
 import androidx.lifecycle.ViewModel
-import com.gmvalentino.Event
-import com.gmvalentino.Intent
-import com.gmvalentino.State
-import com.gmvalentino.Store
+import com.gmvalentino.contract.Event
+import com.gmvalentino.contract.Intent
+import com.gmvalentino.contract.State
+import com.gmvalentino.components.Store
 
 open class BaseViewModel<in INTENT : Intent, out STATE : State, out EVENT : Event>(
     private val store: Store<INTENT, STATE, EVENT>

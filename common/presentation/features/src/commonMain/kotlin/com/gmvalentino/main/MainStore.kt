@@ -1,7 +1,7 @@
 package com.gmvalentino.main
 
-import com.gmvalentino.BaseStore
-import com.gmvalentino.Modifiers
+import com.gmvalentino.components.BaseStore
+import com.gmvalentino.components.Modifiers
 import com.gmvalentino.main.middlewares.ExternalIntentWrapper
 import com.gmvalentino.main.middlewares.MainExternalIntentDispatcher
 import com.gmvalentino.main.middlewares.MainExternalIntentListener
