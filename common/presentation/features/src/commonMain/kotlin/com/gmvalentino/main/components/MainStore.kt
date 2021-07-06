@@ -1,10 +1,11 @@
-package com.gmvalentino.main
+package com.gmvalentino.main.components
 
 import com.gmvalentino.components.BaseStore
 import com.gmvalentino.components.Modifiers
-import com.gmvalentino.main.middlewares.ExternalIntentWrapper
-import com.gmvalentino.main.middlewares.MainExternalIntentDispatcher
-import com.gmvalentino.main.middlewares.MainExternalIntentListener
+import com.gmvalentino.main.contract.*
+import com.gmvalentino.main.modifiers.ExternalIntentWrapper
+import com.gmvalentino.main.modifiers.MainExternalIntentDispatcher
+import com.gmvalentino.main.modifiers.MainExternalIntentSubscriber
 import com.gmvalentino.modifiers.*
 
 class MainStore(
@@ -21,7 +22,7 @@ class MainStore(
         actionModifiers = listOf(
             ActionLoader(MainAction.LoadTasks),
             ActionLogger(),
-            MainExternalIntentListener(ExternalIntentWrapper)
+            MainExternalIntentSubscriber(ExternalIntentWrapper)
         ),
         resultModifiers = listOf(
             ResultLogger(),

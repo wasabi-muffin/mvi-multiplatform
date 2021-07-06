@@ -1,4 +1,4 @@
-package com.gmvalentino.main.middlewares
+package com.gmvalentino.main.modifiers
 
 import com.gmvalentino.contract.Intent
 import kotlinx.coroutines.flow.MutableSharedFlow

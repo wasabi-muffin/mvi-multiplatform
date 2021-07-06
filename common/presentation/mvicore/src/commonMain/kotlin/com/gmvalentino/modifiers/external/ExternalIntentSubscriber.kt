@@ -8,12 +8,12 @@ import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.merge
 
-abstract class ExternalIntentListenerModifier<ACTION : Action, INTENT : Intent>(
-    private val externalIntents: Flow<INTENT>,
+abstract class ExternalIntentSubscriber<ACTION : Action, INTENT : Intent>(
+    private val intents: Flow<INTENT>,
 ) : ActionModifier<ACTION> {
     override fun apply(input: Flow<ACTION>): Flow<ACTION> = merge(
-        input, externalIntents.map { externalIntentInterpreter(it) }.filterNotNull()
+        input, intents.map(::interpret).filterNotNull()
     )
 
-    abstract fun externalIntentInterpreter(externalIntent: INTENT): ACTION?
+    abstract fun interpret(externalIntent: INTENT): ACTION?
 }

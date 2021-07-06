@@ -1,6 +1,6 @@
 package com.gmvalentino
 
-import com.gmvalentino.main.mainModule
+import com.gmvalentino.main.di.mainModule
 import kotlinx.datetime.Clock
 import org.koin.core.module.Module
 import org.koin.dsl.koinApplication

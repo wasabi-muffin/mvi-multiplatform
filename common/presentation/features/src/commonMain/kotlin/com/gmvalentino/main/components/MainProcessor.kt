@@ -1,6 +1,10 @@
-package com.gmvalentino.main
+package com.gmvalentino.main.components
 
 import com.gmvalentino.components.BaseProcessor
+import com.gmvalentino.main.contract.MainAction
+import com.gmvalentino.main.contract.MainEvent
+import com.gmvalentino.main.contract.MainResult
+import com.gmvalentino.main.contract.MainState
 import com.gmvalentino.usecases.CreateTaskUseCase
 import com.gmvalentino.usecases.GetTasksUseCase
 import com.gmvalentino.usecases.RemoveTaskUseCase

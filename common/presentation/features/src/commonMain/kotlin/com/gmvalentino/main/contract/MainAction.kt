@@ -1,4 +1,4 @@
-package com.gmvalentino.main
+package com.gmvalentino.main.contract
 
 import com.gmvalentino.contract.Action
 import com.gmvalentino.entities.Task

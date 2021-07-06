@@ -1,16 +1,16 @@
-package com.gmvalentino.main.middlewares
+package com.gmvalentino.main.modifiers
 
 import com.gmvalentino.entities.Task
-import com.gmvalentino.modifiers.external.ExternalIntentListenerModifier
-import com.gmvalentino.main.MainAction
+import com.gmvalentino.modifiers.external.ExternalIntentSubscriber
+import com.gmvalentino.main.contract.MainAction
 import kotlinx.datetime.LocalDateTime
 
-class MainExternalIntentListener(
+class MainExternalIntentSubscriber(
     externalIntentWrapper: ExternalIntentWrapper
-) : ExternalIntentListenerModifier<MainAction, ExternalIntent>(
+) : ExternalIntentSubscriber<MainAction, ExternalIntent>(
     externalIntentWrapper.externalIntents
 ) {
-    override fun externalIntentInterpreter(externalIntent: ExternalIntent): MainAction? {
+    override fun interpret(externalIntent: ExternalIntent): MainAction? {
         return MainAction.Create(
             Task(
                 id = (0..Int.MAX_VALUE).random().toString(),

@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class MVIMKermit, MVIMMainStore, MVIMMainAction, MVIMTask, MVIMMainActionCreate, MVIMMainActionRemove, MVIMMainActionToggle, MVIMMainEvent, MVIMMainIntent, MVIMMainIntentCreateClicked, MVIMMainIntentDeleteClicked, MVIMMainIntentTaskClicked, MVIMKotlinUnit, MVIMBaseProcessor<__contravariant STATE, ACTION, RESULT, EVENT>, MVIMMainState, MVIMMainResult, MVIMMainResultAdded, MVIMMainResultDeleted, MVIMMainResultError, MVIMMainResultTasks, MVIMMainResultToggled, MVIMMainStateError, MVIMKotlinEnum<E>, MVIMKotlinArray<T>, MVIMLoader<__covariant ACTION>, MVIMBaseStore<INTENT, __contravariant ACTION, __contravariant RESULT, STATE, EVENT>, MVIMMainInterpreter, MVIMMainProcessor, MVIMMainReducer, MVIMTaskModel, MVIMHttpClient, MVIMTasks, MVIMQuery<__covariant RowType>, MVIMCreateTaskUseCaseArgs, MVIMUseCaseArguments, MVIMUseCaseNone, MVIMRemoveTaskUseCaseArgs, MVIMUpdateTaskUseCaseArgs, MVIMError, MVIMKotlinThrowable, MVIMErrorBadRequest, MVIMErrorForbidden, MVIMErrorInternal, MVIMErrorNetwork, MVIMErrorNotFound, MVIMErrorRequestTimeout, MVIMErrorUnauthorized, MVIMErrorUnavailable, MVIMErrorUnknown, MVIMErrorUpgradeRequired, MVIMLocalDateTime, MVIMSeverity, MVIMLogger, MVIMTransacterTransaction, MVIMConnectionWrapper, MVIMDatabaseConfiguration, MVIMKotlinByteArray, MVIMScope, MVIMParametersHolder, MVIMKotlinLazyThreadSafetyMode, MVIMModule, MVIMLogger_, MVIMInstanceRegistry, MVIMPropertyRegistry, MVIMScopeRegistry, MVIMKoinApplication, MVIMLevel, MVIMKoin, MVIMGlobalContextKoinInstanceHolder, MVIMInstanceFactory<T>, MVIMKotlinPair<__covariant A, __covariant B>, MVIMScopeDSL, MVIMSingleInstanceFactory<T>, MVIMStringQualifier, MVIMKotlinException, MVIMKind, MVIMBeanDefinition<T>, MVIMCallbacks<T>, MVIMInstanceContext, MVIMTypeInfo, MVIMOutgoingContent, MVIMContentType, MVIMJson, MVIMInstant, MVIMDateTimePeriod, MVIMDatePeriod, MVIMKotlinRuntimeException, MVIMDateTimeUnit, MVIMDateTimeUnitDateBasedMonthBased, MVIMDateTimeUnitDateBasedDayBased, MVIMDateTimeUnitTimeBased, MVIMDateTimeUnitDateBased, MVIMDayOfWeek, MVIMKotlinIllegalArgumentException, MVIMMonth, MVIMLocalDate, MVIMTimeZone, MVIMAbstractPolymorphicSerializer<T>, MVIMZoneOffset, MVIMAttributeKey<T>, MVIMJsonFeature, MVIMJsonFeatureConfig, MVIMLogLevel, MVIMHttpRequestBuilder, MVIMLogging, MVIMLoggingConfig, MVIMHttpClientEngineConfig, MVIMIosClientEngineConfig, MVIMProxyConfig, MVIMKotlinNothing, NSMutableURLRequest, NSURLSessionConfiguration, NSURLSession, NSURLSessionTask, NSURLAuthenticationChallenge, NSURLCredential, MVIMIOException, NSError, MVIMPinnedCertificate, MVIMHttpClientConfig<T>, MVIMHttpClientCall, MVIMCoroutineDispatcher, MVIMHttpReceivePipeline, MVIMHttpRequestPipeline, MVIMHttpResponsePipeline, MVIMHttpSendPipeline, MVIMKotlinIllegalStateException, MVIMHttpResponse, MVIMHttpEngineCall, MVIMKotlinUnsupportedOperationException, MVIMUrl, MVIMHttpStatusCode, MVIMOutgoingContentNoContent, MVIMHttpMethod, MVIMHttpRequestData, MVIMHeadersBuilder, MVIMURLBuilder, MVIMPipelinePhase, MVIMPipeline<TSubject, TContext>, MVIMGMTDate, MVIMHttpProtocolVersion, MVIMFormPart<T>, MVIMInputProvider, MVIMByteReadPacket, MVIMOutgoingContentByteArrayContent, MVIMOutgoingContentWriteChannelContent, MVIMPartData, MVIMHttpResponseData, MVIMHttpResponseContainer, MVIMProxyType, MVIMBodyProgress, MVIMResponseException, MVIMDataConversion, MVIMDataConversionConfiguration, MVIMDefaultRequest, MVIMExpectSuccess, MVIMHttpCallValidator, MVIMHttpCallValidatorConfig, MVIMCharset, MVIMHttpPlainText, MVIMHttpPlainTextConfig, MVIMHttpRedirect, MVIMKotlinCancellationException, MVIMHttpSend, MVIMHttpTimeout, MVIMHttpTimeoutHttpTimeoutCapabilityConfiguration, MVIMUserAgent, MVIMUserAgentConfig, MVIMCookie, MVIMHttpCookies, MVIMHttpCookiesConfig, MVIMResponseObserver, MVIMResponseObserverConfig, MVIMHttpCacheStorage, MVIMHttpCache, MVIMHttpCacheConfig, MVIMHttpCacheEntry, MVIMFrame, MVIMWebSocketExtensionsConfig, MVIMWebSockets, MVIMWebSocketsConfig, MVIMHttpHeadersMap, MVIMConnectionOptions, MVIMHttpMessage, MVIMCloseReasonCodes, MVIMCloseReason, MVIMFrameType, MVIMWebSocketExtensionHeader, MVIMCacheControl_Visibility, MVIMCacheControl_, MVIMHeaderValueParam, MVIMHeaderValueWithParameters, MVIMContentDisposition, MVIMContentRange, MVIMContentRangeBounded, MVIMContentRangeSuffix, MVIMContentRangeTailFrom, MVIMCookieEncoding, MVIMUrlEncodingOption, MVIMHeaderValue, MVIMStringValuesBuilder, MVIMStringValuesImpl, MVIMStringValuesSingleImpl, MVIMParametersBuilder, MVIMRangeUnits, MVIMRangesSpecifier, MVIMKotlinLongRange, MVIMURLProtocol, MVIMHeaderValueEncoding, MVIMHttpAuthHeaderParameterized, MVIMHttpAuthHeader, MVIMCachingOptions, MVIMChannelIOException, MVIMDelegatingConversionServiceConfiguration<T>, MVIMWeekDay, MVIMMonth_, MVIMLock, MVIMMemory, MVIMIoBuffer, MVIMByteOrder, MVIMBuffer, MVIMBytePacketBuilder, MVIMChunkBuffer, MVIMKotlinCharArray, MVIMAbstractOutput, MVIMBytePacketBuilderBase, MVIMBytePacketBuilderPlatformBase, MVIMAbstractInput, MVIMByteReadPacketBase, MVIMByteReadPacketPlatformBase, MVIMSynchronizedObject, MVIMCharsetDecoder, MVIMCharsetEncoder, MVIMMalformedInputException, MVIMPosixException, MVIMJobSupport, MVIMCoroutineStart, MVIMKotlinAbstractCoroutineContextElement, MVIMKotlinAbstractCoroutineContextKey<B, E>, MVIMCoroutineName, MVIMMainCoroutineDispatcher, MVIMTimeoutCancellationException, MVIMBufferOverflow, MVIMKotlinNoSuchElementException, MVIMSharingCommand, MVIMChannelFlow<T>, MVIMAtomicDesc, MVIMLockFreeLinkedListNodePrepareOp, MVIMAtomicOp<__contravariant T>, MVIMOpDescriptor, MVIMLockFreeLinkedListNode, MVIMLockFreeLinkedListNodeAddLastDesc<T>, MVIMLockFreeLinkedListNodeRemoveFirstDesc<T>, MVIMLockFreeLinkedListNodeAbstractAtomicDesc, MVIMSynchronizedObjectLockState, MVIMKotlinAtomicReference<T>, MVIMThreadSafeHeap<T>, MVIMSerializersModule, MVIMJsonConfiguration, MVIMJsonElement, MVIMJsonPrimitive, NSUserDefaults, MVIMAbstractSharedLinkedListNode<T>, MVIMSharedLruCacheCacheEntry<K, V>, MVIMTraceBase, MVIMSynchronizedObjectStatus, MVIMAbstractCollectionSerializer<Element, Collection, Builder>, MVIMTaggedDecoder<Tag>, MVIMTaggedEncoder<Tag>, MVIMSerialKind, MVIMPolymorphicKind, MVIMPrimitiveKind, MVIMStructureKind, MVIMFieldType, MVIMJournalMode, MVIMDatabaseConfigurationExtended, MVIMDatabaseConfigurationLogging, MVIMDatabaseConfigurationLifecycle, MVIMDatabaseConfigurationEncryption, MVIMConcurrentDatabaseConnection, MVIMSqliteDatabase, MVIMOpenFlags, MVIMSqliteDatabaseConfig, MVIMSQLiteException, MVIMSqliteErrorType, MVIMNativeStatement, MVIMNativeDatabaseManager, MVIMNativeDatabaseConnectionTransaction, MVIMNativeDatabaseConnection, MVIMAtomic<V>, NSDate, NSDateComponents, NSTimeZone, MVIMLoggerCompanion, MVIMDefaultClientWebSocketSession, MVIMDispatchers, MVIMHttpRequestBuilderCompanion, MVIMFormBuilder, MVIMHttpResponse_, MVIMHttpStatement, MVIMNetworkAddress, MVIMProxyBuilder, MVIMFrameClose, MVIMFrameText, MVIMHttpStatusCodeCompanion, MVIMContentTypeCompanion, MVIMKotlinLongIterator, MVIMKotlinLongProgression, MVIMKotlinByteIterator, MVIMKotlinAtomicLong, MVIMByteChannelSequentialBase, MVIMKotlinDoubleArray, MVIMKotlinFloatArray, MVIMKotlinIntArray, MVIMKotlinLongArray, MVIMKotlinShortArray, MVIMMemoryCompanion, MVIMSharingStartedCompanion, MVIMKotlinIntIterator, MVIMKotlinIntProgression, MVIMKotlinIntRange, MVIMJsonNull, MVIMJsonArrayBuilder, MVIMJsonObjectBuilder, MVIMAtomicInt, MVIMAtomicLong, MVIMAtomicReference<V>, MVIMThreadLocalRef<T>, MVIMSerializersModuleBuilder, MVIMPolymorphicModuleBuilder<__contravariant Base>, MVIMClassSerialDescriptorBuilder, MVIMKotlinBooleanCompanion, MVIMKotlinByteCompanion, MVIMKotlinCharCompanion, MVIMKotlinDoubleCompanion, MVIMKotlinFloatCompanion, MVIMKotlinIntCompanion, MVIMKotlinLongCompanion, MVIMKotlinShortCompanion, MVIMKotlinStringCompanion, MVIMKotlinUByteCompanion, MVIMKotlinUIntCompanion, MVIMKotlinULongCompanion, MVIMKotlinUShortCompanion, MVIMDatabaseFileContext, MVIMEnumColumnAdapter<T>, MVIMAfterVersion, MVIMTypeQualifier, MVIMHttpTimeoutFeature, MVIMConnectTimeoutException, MVIMSocketTimeoutException, MVIMRequest, MVIMResponse, MVIMKotlinCValuesRef<T>, MVIMSingleThreadDispatcher, MVIMJsonBuilder, NSRecursiveLock, MVIMTraceFormat, MVIMAtomicArray<T>, MVIMKotlinKTypeProjection, MVIMKotlinCharIterator, MVIMKotlinDoubleIterator, MVIMKotlinFloatIterator, MVIMKotlinShortIterator, MVIMKotlinTimeMark, MVIMKotlinAutofreeScope, MVIMKotlinKVariance, MVIMKotlinDeferScope;
+@class MVIMKermit, MVIMMainStore, MVIMExternalIntentPublisher<RESULT, INTENT>, MVIMExternalIntentWrapper, MVIMExternalIntent, MVIMMainResult, MVIMExternalIntentSubscriber<ACTION, INTENT>, MVIMMainAction, MVIMMainIntent, MVIMKotlinUnit, MVIMBaseProcessor<__contravariant STATE, ACTION, RESULT, EVENT>, MVIMMainState, MVIMMainEvent, MVIMModifiers<INTENT, ACTION, RESULT, STATE>, MVIMBaseStore<INTENT, __contravariant ACTION, __contravariant RESULT, STATE, EVENT>, MVIMMainInterpreter, MVIMMainProcessor, MVIMMainReducer, MVIMTask, MVIMMainActionCreate, MVIMMainActionRemove, MVIMMainActionToggle, MVIMMainIntentCreateClicked, MVIMMainIntentDeleteClicked, MVIMMainIntentTaskClicked, MVIMMainResultAdded, MVIMMainResultDeleted, MVIMMainResultError, MVIMMainResultTasks, MVIMMainResultToggled, MVIMMainStateError, MVIMKotlinEnum<E>, MVIMKotlinArray<T>, MVIMTaskModel, MVIMBaseResponse, MVIMTasks, MVIMQuery<__covariant RowType>, MVIMCreateTaskUseCaseArgs, MVIMUseCaseArguments, MVIMUseCaseNone, MVIMRemoveTaskUseCaseArgs, MVIMUpdateTaskUseCaseArgs, MVIMError, MVIMKotlinThrowable, MVIMErrorBadRequest, MVIMErrorForbidden, MVIMErrorInternal, MVIMErrorNetwork, MVIMErrorNotFound, MVIMErrorRequestTimeout, MVIMErrorUnauthorized, MVIMErrorUnavailable, MVIMErrorUnknown, MVIMErrorUpgradeRequired, MVIMLocalDateTime, MVIMSeverity, MVIMLogger, MVIMTransacterTransaction, MVIMConnectionWrapper, MVIMDatabaseConfiguration, MVIMKotlinByteArray, MVIMScope, MVIMParametersHolder, MVIMKotlinLazyThreadSafetyMode, MVIMModule, MVIMLogger_, MVIMInstanceRegistry, MVIMPropertyRegistry, MVIMScopeRegistry, MVIMKoinApplication, MVIMLevel, MVIMKoin, MVIMGlobalContextKoinInstanceHolder, MVIMInstanceFactory<T>, MVIMKotlinPair<__covariant A, __covariant B>, MVIMScopeDSL, MVIMSingleInstanceFactory<T>, MVIMStringQualifier, MVIMKotlinException, MVIMKind, MVIMBeanDefinition<T>, MVIMCallbacks<T>, MVIMInstanceContext, MVIMTypeInfo, MVIMOutgoingContent, MVIMContentType, MVIMJson, MVIMInstant, MVIMDateTimePeriod, MVIMDatePeriod, MVIMKotlinRuntimeException, MVIMDateTimeUnit, MVIMDateTimeUnitDateBasedMonthBased, MVIMDateTimeUnitDateBasedDayBased, MVIMDateTimeUnitTimeBased, MVIMDateTimeUnitDateBased, MVIMDayOfWeek, MVIMKotlinIllegalArgumentException, MVIMMonth, MVIMLocalDate, MVIMTimeZone, MVIMAbstractPolymorphicSerializer<T>, MVIMZoneOffset, MVIMHttpClient, MVIMAttributeKey<T>, MVIMJsonFeature, MVIMJsonFeatureConfig, MVIMLogLevel, MVIMHttpRequestBuilder, MVIMLogging, MVIMLoggingConfig, MVIMHttpClientEngineConfig, MVIMIosClientEngineConfig, MVIMProxyConfig, MVIMKotlinNothing, NSMutableURLRequest, NSURLSessionConfiguration, NSURLSession, NSURLSessionTask, NSURLAuthenticationChallenge, NSURLCredential, MVIMIOException, NSError, MVIMPinnedCertificate, MVIMHttpClientConfig<T>, MVIMHttpClientCall, MVIMCoroutineDispatcher, MVIMHttpReceivePipeline, MVIMHttpRequestPipeline, MVIMHttpResponsePipeline, MVIMHttpSendPipeline, MVIMKotlinIllegalStateException, MVIMHttpResponse, MVIMHttpEngineCall, MVIMKotlinUnsupportedOperationException, MVIMUrl, MVIMHttpStatusCode, MVIMOutgoingContentNoContent, MVIMHttpMethod, MVIMHttpRequestData, MVIMHeadersBuilder, MVIMURLBuilder, MVIMPipelinePhase, MVIMPipeline<TSubject, TContext>, MVIMGMTDate, MVIMHttpProtocolVersion, MVIMFormPart<T>, MVIMInputProvider, MVIMByteReadPacket, MVIMOutgoingContentByteArrayContent, MVIMOutgoingContentWriteChannelContent, MVIMPartData, MVIMHttpResponseData, MVIMHttpResponseContainer, MVIMProxyType, MVIMBodyProgress, MVIMResponseException, MVIMDataConversion, MVIMDataConversionConfiguration, MVIMDefaultRequest, MVIMExpectSuccess, MVIMHttpCallValidator, MVIMHttpCallValidatorConfig, MVIMCharset, MVIMHttpPlainText, MVIMHttpPlainTextConfig, MVIMHttpRedirect, MVIMKotlinCancellationException, MVIMHttpSend, MVIMHttpTimeout, MVIMHttpTimeoutHttpTimeoutCapabilityConfiguration, MVIMUserAgent, MVIMUserAgentConfig, MVIMCookie, MVIMHttpCookies, MVIMHttpCookiesConfig, MVIMResponseObserver, MVIMResponseObserverConfig, MVIMHttpCacheStorage, MVIMHttpCache, MVIMHttpCacheConfig, MVIMHttpCacheEntry, MVIMFrame, MVIMWebSocketExtensionsConfig, MVIMWebSockets, MVIMWebSocketsConfig, MVIMHttpHeadersMap, MVIMConnectionOptions, MVIMHttpMessage, MVIMCloseReasonCodes, MVIMCloseReason, MVIMFrameType, MVIMWebSocketExtensionHeader, MVIMCacheControl_Visibility, MVIMCacheControl_, MVIMHeaderValueParam, MVIMHeaderValueWithParameters, MVIMContentDisposition, MVIMContentRange, MVIMContentRangeBounded, MVIMContentRangeSuffix, MVIMContentRangeTailFrom, MVIMCookieEncoding, MVIMUrlEncodingOption, MVIMHeaderValue, MVIMStringValuesBuilder, MVIMStringValuesImpl, MVIMStringValuesSingleImpl, MVIMParametersBuilder, MVIMRangeUnits, MVIMRangesSpecifier, MVIMKotlinLongRange, MVIMURLProtocol, MVIMHeaderValueEncoding, MVIMHttpAuthHeaderParameterized, MVIMHttpAuthHeader, MVIMCachingOptions, MVIMChannelIOException, MVIMDelegatingConversionServiceConfiguration<T>, MVIMWeekDay, MVIMMonth_, MVIMLock, MVIMMemory, MVIMIoBuffer, MVIMByteOrder, MVIMBuffer, MVIMBytePacketBuilder, MVIMChunkBuffer, MVIMKotlinCharArray, MVIMAbstractOutput, MVIMBytePacketBuilderBase, MVIMBytePacketBuilderPlatformBase, MVIMAbstractInput, MVIMByteReadPacketBase, MVIMByteReadPacketPlatformBase, MVIMSynchronizedObject, MVIMCharsetDecoder, MVIMCharsetEncoder, MVIMMalformedInputException, MVIMPosixException, MVIMJobSupport, MVIMCoroutineStart, MVIMKotlinAbstractCoroutineContextElement, MVIMKotlinAbstractCoroutineContextKey<B, E>, MVIMCoroutineName, MVIMMainCoroutineDispatcher, MVIMTimeoutCancellationException, MVIMBufferOverflow, MVIMKotlinNoSuchElementException, MVIMSharingCommand, MVIMChannelFlow<T>, MVIMAtomicDesc, MVIMLockFreeLinkedListNodePrepareOp, MVIMAtomicOp<__contravariant T>, MVIMOpDescriptor, MVIMLockFreeLinkedListNode, MVIMLockFreeLinkedListNodeAddLastDesc<T>, MVIMLockFreeLinkedListNodeRemoveFirstDesc<T>, MVIMLockFreeLinkedListNodeAbstractAtomicDesc, MVIMSynchronizedObjectLockState, MVIMKotlinAtomicReference<T>, MVIMThreadSafeHeap<T>, MVIMSerializersModule, MVIMJsonConfiguration, MVIMJsonElement, MVIMJsonPrimitive, NSUserDefaults, MVIMAbstractSharedLinkedListNode<T>, MVIMSharedLruCacheCacheEntry<K, V>, MVIMTraceBase, MVIMSynchronizedObjectStatus, MVIMAbstractCollectionSerializer<Element, Collection, Builder>, MVIMTaggedDecoder<Tag>, MVIMTaggedEncoder<Tag>, MVIMSerialKind, MVIMPolymorphicKind, MVIMPrimitiveKind, MVIMStructureKind, MVIMFieldType, MVIMJournalMode, MVIMDatabaseConfigurationExtended, MVIMDatabaseConfigurationLogging, MVIMDatabaseConfigurationLifecycle, MVIMDatabaseConfigurationEncryption, MVIMConcurrentDatabaseConnection, MVIMSqliteDatabase, MVIMOpenFlags, MVIMSqliteDatabaseConfig, MVIMSQLiteException, MVIMSqliteErrorType, MVIMNativeStatement, MVIMNativeDatabaseManager, MVIMNativeDatabaseConnectionTransaction, MVIMNativeDatabaseConnection, MVIMAtomic<V>, NSDate, NSDateComponents, NSTimeZone, MVIMLoggerCompanion, MVIMDefaultClientWebSocketSession, MVIMDispatchers, MVIMHttpRequestBuilderCompanion, MVIMFormBuilder, MVIMHttpResponse_, MVIMHttpStatement, MVIMNetworkAddress, MVIMProxyBuilder, MVIMFrameClose, MVIMFrameText, MVIMHttpStatusCodeCompanion, MVIMContentTypeCompanion, MVIMKotlinLongIterator, MVIMKotlinLongProgression, MVIMKotlinByteIterator, MVIMKotlinAtomicLong, MVIMByteChannelSequentialBase, MVIMKotlinDoubleArray, MVIMKotlinFloatArray, MVIMKotlinIntArray, MVIMKotlinLongArray, MVIMKotlinShortArray, MVIMMemoryCompanion, MVIMSharingStartedCompanion, MVIMKotlinIntIterator, MVIMKotlinIntProgression, MVIMKotlinIntRange, MVIMJsonNull, MVIMJsonArrayBuilder, MVIMJsonObjectBuilder, MVIMAtomicInt, MVIMAtomicLong, MVIMAtomicReference<V>, MVIMThreadLocalRef<T>, MVIMSerializersModuleBuilder, MVIMPolymorphicModuleBuilder<__contravariant Base>, MVIMClassSerialDescriptorBuilder, MVIMKotlinBooleanCompanion, MVIMKotlinByteCompanion, MVIMKotlinCharCompanion, MVIMKotlinDoubleCompanion, MVIMKotlinFloatCompanion, MVIMKotlinIntCompanion, MVIMKotlinLongCompanion, MVIMKotlinShortCompanion, MVIMKotlinStringCompanion, MVIMKotlinUByteCompanion, MVIMKotlinUIntCompanion, MVIMKotlinULongCompanion, MVIMKotlinUShortCompanion, MVIMDatabaseFileContext, MVIMEnumColumnAdapter<T>, MVIMAfterVersion, MVIMTypeQualifier, MVIMHttpTimeoutFeature, MVIMConnectTimeoutException, MVIMSocketTimeoutException, MVIMRequest, MVIMResponse, MVIMKotlinCValuesRef<T>, MVIMSingleThreadDispatcher, MVIMJsonBuilder, NSRecursiveLock, MVIMTraceFormat, MVIMAtomicArray<T>, MVIMKotlinKTypeProjection, MVIMKotlinCharIterator, MVIMKotlinDoubleIterator, MVIMKotlinFloatIterator, MVIMKotlinShortIterator, MVIMKotlinTimeMark, MVIMKotlinAutofreeScope, MVIMKotlinKVariance, MVIMKotlinDeferScope;
 
-@protocol MVIMKotlinCoroutineContext, MVIMCoroutineScope, MVIMStore, MVIMAction, MVIMEvent, MVIMIntent, MVIMInterpreter, MVIMState, MVIMFlow, MVIMProcessor, MVIMSharedFlow, MVIMGetTasksUseCase, MVIMUpdateTaskUseCase, MVIMRemoveTaskUseCase, MVIMCreateTaskUseCase, MVIMResult, MVIMReducer, MVIMKotlinComparable, MVIMJob, MVIMStateFlow, MVIMMiddleware, MVIMTaskRemoteDataSource, MVIMTaskLocalDataSource, MVIMTasksQueries, MVIMTransactionWithoutReturn, MVIMTransactionWithReturn, MVIMTransacter, MVIMDb, MVIMSqlDriver, MVIMSqlDriverSchema, MVIMTaskRepository, MVIMUseCase, MVIMKSerializer, MVIMIntentMiddleware, MVIMActionMiddleware, MVIMResultMiddleware, MVIMStateMiddleware, MVIMThrowableStringProvider, MVIMSqlPreparedStatement, MVIMSqlCursor, MVIMCloseable, MVIMDatabaseManager, MVIMColumnAdapter, MVIMQueryListener, MVIMTransactionCallbacks, MVIMKoinScopeComponent, MVIMQualifier, MVIMKotlinKClass, MVIMKotlinLazy, MVIMKoinContext, MVIMScopeCallback, MVIMKoinComponent, MVIMInput, MVIMTypeInfo, MVIMJsonSerializer, MVIMClock, MVIMEncoder, MVIMSerialDescriptor, MVIMSerializationStrategy, MVIMDecoder, MVIMDeserializationStrategy, MVIMCompositeDecoder, MVIMContentTypeMatcher, MVIMHttpClientFeature, MVIMLogger, MVIMHttpClientEngine, MVIMHttpClientEngineFactory, MVIMCloseable_, MVIMHttpClientEngineCapability, MVIMAttributes, MVIMByteReadChannel, MVIMHttpRequest, MVIMKotlinKType, MVIMHeaders, MVIMByteWriteChannel, MVIMHttpMessage, MVIMHttpMessageBuilder, MVIMKotlinSuspendFunction2, MVIMParameters, MVIMKotlinSuspendFunction1, MVIMKotlinIterator, MVIMKotlinIterable, MVIMKotlinSuspendFunction3, MVIMCookiesStorage, MVIMWebSocketExtension, MVIMReceiveChannel, MVIMSendChannel, MVIMWebSocketSession, MVIMClientWebSocketSession, MVIMDeferred, MVIMDefaultWebSocketSession, MVIMKotlinMapEntry, MVIMStringValues, MVIMKotlinSequence, MVIMDisposableHandle, MVIMWebSocketExtensionFactory, MVIMMultiPartData, MVIMNonceManager, MVIMEncoder_, MVIMConversionService, MVIMKotlinCollection, MVIMKotlinMutableIterable, MVIMKotlinMutableCollection, MVIMKotlinMutableIterator, MVIMReadSession, MVIMKotlinAppendable, MVIMByteChannel, MVIMSuspendableReadSession, MVIMObjectPool, MVIMWriterSuspendSession, MVIMChildHandle, MVIMChildJob, MVIMSelectClause0, MVIMKotlinCoroutineContextKey, MVIMKotlinCoroutineContextElement, MVIMWriterSession, MVIMOutput, MVIMParentJob, MVIMSelectInstance, MVIMKotlinSuspendFunction0, MVIMKotlinContinuation, MVIMSelectClause1, MVIMKotlinContinuationInterceptor, MVIMRunnable, MVIMCancellableContinuation, MVIMCopyableThrowable, MVIMSelectClause2, MVIMChannelIterator, MVIMBroadcastChannel, MVIMFlowCollector, MVIMMutableSharedFlow, MVIMSharingStarted, MVIMFusibleFlow, MVIMProducerScope, MVIMMainDispatcherFactory, MVIMSerialFormat, MVIMStringFormat, MVIMCompositeEncoder, MVIMSettingsListener, MVIMSettings, MVIMObservableSettings, MVIMSettingsFactory, MVIMKotlinMutableMapMutableEntry, MVIMLruCache, MVIMSerializersModuleCollector, MVIMKotlinAnnotation, MVIMStatement, MVIMDatabaseConnection, MVIMLogger_, MVIMCursor, MVIMSqliteStatement, MVIMKotlinKProperty, MVIMKotlinClosedRange, MVIMKotlinTimeSource, MVIMReaderJob, MVIMWriterJob, MVIMDigest, MVIMPipelineExecutor, MVIMKotlinNativePlacement, MVIMKotlinNativeFreeablePlacement, MVIMKotlinReadWriteProperty, MVIMKotlinReadOnlyProperty, MVIMCompletableJob, MVIMCompletableDeferred, MVIMCoroutineExceptionHandler, MVIMChannel, MVIMMutableStateFlow, MVIMKotlinSuspendFunction5, MVIMKotlinSuspendFunction4, MVIMKotlinSuspendFunction6, MVIMSelectBuilder, MVIMMutex, MVIMSemaphore, MVIMBinaryFormat, MVIMKotlinKDeclarationContainer, MVIMKotlinKAnnotatedElement, MVIMKotlinKClassifier, MVIMKotlinFunction, MVIMKotlinKCallable;
+@protocol MVIMKotlinCoroutineContext, MVIMCoroutineScope, MVIMStore, MVIMIntent, MVIMMutableSharedFlow, MVIMFlow, MVIMModifier, MVIMResultModifier, MVIMActionModifier, MVIMAction, MVIMInterpreter, MVIMState, MVIMEvent, MVIMProcessor, MVIMSharedFlow, MVIMGetTasksUseCase, MVIMUpdateTaskUseCase, MVIMRemoveTaskUseCase, MVIMCreateTaskUseCase, MVIMResult, MVIMReducer, MVIMJob, MVIMStateFlow, MVIMKotlinComparable, MVIMTaskRemoteDataSource, MVIMTaskLocalDataSource, MVIMTasksQueries, MVIMTransactionWithoutReturn, MVIMTransactionWithReturn, MVIMTransacter, MVIMDb, MVIMSqlDriver, MVIMSqlDriverSchema, MVIMTaskRepository, MVIMUseCase, MVIMKSerializer, MVIMIntentModifier, MVIMStateModifier, MVIMThrowableStringProvider, MVIMSqlPreparedStatement, MVIMSqlCursor, MVIMCloseable, MVIMDatabaseManager, MVIMColumnAdapter, MVIMQueryListener, MVIMTransactionCallbacks, MVIMKoinScopeComponent, MVIMQualifier, MVIMKotlinKClass, MVIMKotlinLazy, MVIMKoinContext, MVIMScopeCallback, MVIMKoinComponent, MVIMInput, MVIMTypeInfo, MVIMJsonSerializer, MVIMClock, MVIMEncoder, MVIMSerialDescriptor, MVIMSerializationStrategy, MVIMDecoder, MVIMDeserializationStrategy, MVIMCompositeDecoder, MVIMContentTypeMatcher, MVIMHttpClientFeature, MVIMLogger, MVIMHttpClientEngine, MVIMHttpClientEngineFactory, MVIMCloseable_, MVIMHttpClientEngineCapability, MVIMAttributes, MVIMByteReadChannel, MVIMHttpRequest, MVIMKotlinKType, MVIMHeaders, MVIMByteWriteChannel, MVIMHttpMessage, MVIMHttpMessageBuilder, MVIMKotlinSuspendFunction2, MVIMParameters, MVIMKotlinSuspendFunction1, MVIMKotlinIterator, MVIMKotlinIterable, MVIMKotlinSuspendFunction3, MVIMCookiesStorage, MVIMWebSocketExtension, MVIMReceiveChannel, MVIMSendChannel, MVIMWebSocketSession, MVIMClientWebSocketSession, MVIMDeferred, MVIMDefaultWebSocketSession, MVIMKotlinMapEntry, MVIMStringValues, MVIMKotlinSequence, MVIMDisposableHandle, MVIMWebSocketExtensionFactory, MVIMMultiPartData, MVIMNonceManager, MVIMEncoder_, MVIMConversionService, MVIMKotlinCollection, MVIMKotlinMutableIterable, MVIMKotlinMutableCollection, MVIMKotlinMutableIterator, MVIMReadSession, MVIMKotlinAppendable, MVIMByteChannel, MVIMSuspendableReadSession, MVIMObjectPool, MVIMWriterSuspendSession, MVIMChildHandle, MVIMChildJob, MVIMSelectClause0, MVIMKotlinCoroutineContextKey, MVIMKotlinCoroutineContextElement, MVIMWriterSession, MVIMOutput, MVIMParentJob, MVIMSelectInstance, MVIMKotlinSuspendFunction0, MVIMKotlinContinuation, MVIMSelectClause1, MVIMKotlinContinuationInterceptor, MVIMRunnable, MVIMCancellableContinuation, MVIMCopyableThrowable, MVIMSelectClause2, MVIMChannelIterator, MVIMBroadcastChannel, MVIMFlowCollector, MVIMSharingStarted, MVIMFusibleFlow, MVIMProducerScope, MVIMMainDispatcherFactory, MVIMSerialFormat, MVIMStringFormat, MVIMCompositeEncoder, MVIMSettingsListener, MVIMSettings, MVIMObservableSettings, MVIMSettingsFactory, MVIMKotlinMutableMapMutableEntry, MVIMLruCache, MVIMSerializersModuleCollector, MVIMKotlinAnnotation, MVIMStatement, MVIMDatabaseConnection, MVIMLogger_, MVIMCursor, MVIMSqliteStatement, MVIMKotlinKProperty, MVIMKotlinClosedRange, MVIMKotlinTimeSource, MVIMReaderJob, MVIMWriterJob, MVIMDigest, MVIMPipelineExecutor, MVIMKotlinNativePlacement, MVIMKotlinNativeFreeablePlacement, MVIMKotlinReadWriteProperty, MVIMKotlinReadOnlyProperty, MVIMCompletableJob, MVIMCompletableDeferred, MVIMCoroutineExceptionHandler, MVIMChannel, MVIMMutableStateFlow, MVIMKotlinSuspendFunction5, MVIMKotlinSuspendFunction4, MVIMKotlinSuspendFunction6, MVIMSelectBuilder, MVIMMutex, MVIMSemaphore, MVIMBinaryFormat, MVIMKotlinKDeclarationContainer, MVIMKotlinKAnnotatedElement, MVIMKotlinKClassifier, MVIMKotlinFunction, MVIMKotlinKCallable;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -176,6 +176,194 @@ __attribute__((swift_name("StoreProvider")))
 - (MVIMMainStore *)main __attribute__((swift_name("main()")));
 @end;
 
+__attribute__((swift_name("Intent")))
+@protocol MVIMIntent
+@required
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("ExternalIntent")))
+@interface MVIMExternalIntent : MVIMBase <MVIMIntent>
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)externalIntent __attribute__((swift_name("init()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("ExternalIntentWrapper")))
+@interface MVIMExternalIntentWrapper : MVIMBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)externalIntentWrapper __attribute__((swift_name("init()")));
+@property (readonly) id<MVIMMutableSharedFlow> externalIntents __attribute__((swift_name("externalIntents")));
+@end;
+
+__attribute__((swift_name("Modifier")))
+@protocol MVIMModifier
+@required
+- (id<MVIMFlow>)applyInput:(id<MVIMFlow>)input __attribute__((swift_name("apply(input:)")));
+@end;
+
+__attribute__((swift_name("ResultModifier")))
+@protocol MVIMResultModifier <MVIMModifier>
+@required
+@end;
+
+__attribute__((swift_name("ExternalIntentPublisher")))
+@interface MVIMExternalIntentPublisher<RESULT, INTENT> : MVIMBase <MVIMResultModifier>
+- (instancetype)initWithIntents:(id<MVIMMutableSharedFlow>)intents __attribute__((swift_name("init(intents:)"))) __attribute__((objc_designated_initializer));
+- (id<MVIMFlow>)applyInput:(id<MVIMFlow>)input __attribute__((swift_name("apply(input:)")));
+- (INTENT _Nullable)transformResult:(RESULT)result __attribute__((swift_name("transform(result:)")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("MainExternalIntentDispatcher")))
+@interface MVIMMainExternalIntentDispatcher : MVIMExternalIntentPublisher<MVIMMainResult *, MVIMExternalIntent *>
+- (instancetype)initWithExternalIntentWrapper:(MVIMExternalIntentWrapper *)externalIntentWrapper __attribute__((swift_name("init(externalIntentWrapper:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithIntents:(id<MVIMMutableSharedFlow>)intents __attribute__((swift_name("init(intents:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+- (MVIMExternalIntent * _Nullable)transformResult:(MVIMMainResult *)result __attribute__((swift_name("transform(result:)")));
+@end;
+
+__attribute__((swift_name("ActionModifier")))
+@protocol MVIMActionModifier <MVIMModifier>
+@required
+@end;
+
+__attribute__((swift_name("ExternalIntentSubscriber")))
+@interface MVIMExternalIntentSubscriber<ACTION, INTENT> : MVIMBase <MVIMActionModifier>
+- (instancetype)initWithIntents:(id<MVIMFlow>)intents __attribute__((swift_name("init(intents:)"))) __attribute__((objc_designated_initializer));
+- (id<MVIMFlow>)applyInput:(id<MVIMFlow>)input __attribute__((swift_name("apply(input:)")));
+- (ACTION _Nullable)interpretExternalIntent:(INTENT)externalIntent __attribute__((swift_name("interpret(externalIntent:)")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("MainExternalIntentSubscriber")))
+@interface MVIMMainExternalIntentSubscriber : MVIMExternalIntentSubscriber<MVIMMainAction *, MVIMExternalIntent *>
+- (instancetype)initWithExternalIntentWrapper:(MVIMExternalIntentWrapper *)externalIntentWrapper __attribute__((swift_name("init(externalIntentWrapper:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithIntents:(id<MVIMFlow>)intents __attribute__((swift_name("init(intents:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+- (MVIMMainAction * _Nullable)interpretExternalIntent:(MVIMExternalIntent *)externalIntent __attribute__((swift_name("interpret(externalIntent:)")));
+@end;
+
+__attribute__((swift_name("Interpreter")))
+@protocol MVIMInterpreter
+@required
+
+/**
+ @note This method converts instances of CancellationException to errors.
+ Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)interpretIntent:(id<MVIMIntent>)intent completionHandler:(void (^)(id<MVIMAction> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("interpret(intent:completionHandler:)")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("MainInterpreter")))
+@interface MVIMMainInterpreter : MVIMBase <MVIMInterpreter>
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+
+/**
+ @note This method converts instances of CancellationException to errors.
+ Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)interpretIntent:(MVIMMainIntent *)intent completionHandler:(void (^)(MVIMMainAction * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("interpret(intent:completionHandler:)")));
+@end;
+
+__attribute__((swift_name("Processor")))
+@protocol MVIMProcessor
+@required
+
+/**
+ @note This method converts instances of CancellationException to errors.
+ Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)processState:(id<MVIMState>)state action:(id<MVIMAction>)action completionHandler:(void (^)(id<MVIMFlow> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("process(state:action:completionHandler:)")));
+
+/**
+ @note This method converts instances of CancellationException to errors.
+ Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)publishEvent:(id<MVIMEvent>)event completionHandler:(void (^)(MVIMKotlinUnit * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("publish(event:completionHandler:)")));
+@property (readonly) id<MVIMFlow> events __attribute__((swift_name("events")));
+@end;
+
+__attribute__((swift_name("BaseProcessor")))
+@interface MVIMBaseProcessor<__contravariant STATE, ACTION, RESULT, EVENT> : MVIMBase <MVIMProcessor>
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+
+/**
+ @note This method converts instances of CancellationException to errors.
+ Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)publishEvent:(EVENT)event completionHandler:(void (^)(MVIMKotlinUnit * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("publish(event:completionHandler:)")));
+@property (readonly) id<MVIMSharedFlow> events __attribute__((swift_name("events")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("MainProcessor")))
+@interface MVIMMainProcessor : MVIMBaseProcessor<MVIMMainState *, MVIMMainAction *, MVIMMainResult *, MVIMMainEvent *>
+- (instancetype)initWithGetTasksUseCase:(id<MVIMGetTasksUseCase>)getTasksUseCase updateTaskUseCase:(id<MVIMUpdateTaskUseCase>)updateTaskUseCase removeTaskUseCase:(id<MVIMRemoveTaskUseCase>)removeTaskUseCase createTaskUseCase:(id<MVIMCreateTaskUseCase>)createTaskUseCase __attribute__((swift_name("init(getTasksUseCase:updateTaskUseCase:removeTaskUseCase:createTaskUseCase:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)new __attribute__((unavailable));
+
+/**
+ @note This method converts instances of CancellationException to errors.
+ Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)processState:(MVIMMainState *)state action:(MVIMMainAction *)action completionHandler:(void (^)(id<MVIMFlow> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("process(state:action:completionHandler:)")));
+@end;
+
+__attribute__((swift_name("Reducer")))
+@protocol MVIMReducer
+@required
+
+/**
+ @note This method converts instances of CancellationException to errors.
+ Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)reduceState:(id<MVIMState>)state result:(id<MVIMResult>)result completionHandler:(void (^)(id<MVIMState> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("reduce(state:result:completionHandler:)")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("MainReducer")))
+@interface MVIMMainReducer : MVIMBase <MVIMReducer>
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+
+/**
+ @note This method converts instances of CancellationException to errors.
+ Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)reduceState:(MVIMMainState *)state result:(MVIMMainResult *)result completionHandler:(void (^)(MVIMMainState * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("reduce(state:result:completionHandler:)")));
+@end;
+
+__attribute__((swift_name("Store")))
+@protocol MVIMStore
+@required
+- (id<MVIMJob>)collectOnState:(void (^)(id<MVIMState>))onState onEvent:(void (^)(id<MVIMEvent>))onEvent __attribute__((swift_name("collect(onState:onEvent:)")));
+- (void)dispatchIntent:(id<MVIMIntent>)intent __attribute__((swift_name("dispatch(intent:)")));
+- (void)dispose __attribute__((swift_name("dispose()")));
+@property (readonly) id<MVIMFlow> events __attribute__((swift_name("events")));
+@property (readonly) id<MVIMStateFlow> state __attribute__((swift_name("state")));
+@end;
+
+__attribute__((swift_name("BaseStore")))
+@interface MVIMBaseStore<INTENT, __contravariant ACTION, __contravariant RESULT, STATE, EVENT> : MVIMBase <MVIMStore>
+- (instancetype)initWithInitialState:(STATE)initialState interpreter:(id<MVIMInterpreter>)interpreter processor:(MVIMBaseProcessor<STATE, ACTION, RESULT, EVENT> *)processor reducer:(id<MVIMReducer>)reducer modifiers:(MVIMModifiers<INTENT, ACTION, RESULT, STATE> *)modifiers __attribute__((swift_name("init(initialState:interpreter:processor:reducer:modifiers:)"))) __attribute__((objc_designated_initializer));
+- (id<MVIMJob>)collectOnState:(void (^)(STATE))onState onEvent:(void (^)(EVENT))onEvent __attribute__((swift_name("collect(onState:onEvent:)")));
+- (void)dispatchIntent:(INTENT)intent __attribute__((swift_name("dispatch(intent:)")));
+- (void)dispose __attribute__((swift_name("dispose()")));
+@property (readonly) id<MVIMSharedFlow> events __attribute__((swift_name("events")));
+@property (readonly) id<MVIMStateFlow> state __attribute__((swift_name("state")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("MainStore")))
+@interface MVIMMainStore : MVIMBaseStore<MVIMMainIntent *, MVIMMainAction *, MVIMMainResult *, MVIMMainState *, MVIMMainEvent *>
+- (instancetype)initWithInterpreter:(MVIMMainInterpreter *)interpreter processor:(MVIMMainProcessor *)processor reducer:(MVIMMainReducer *)reducer __attribute__((swift_name("init(interpreter:processor:reducer:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithInitialState:(id<MVIMState>)initialState interpreter:(id<MVIMInterpreter>)interpreter processor:(MVIMBaseProcessor<id<MVIMState>, id<MVIMAction>, id<MVIMResult>, id<MVIMEvent>> *)processor reducer:(id<MVIMReducer>)reducer modifiers:(MVIMModifiers<id<MVIMIntent>, id<MVIMAction>, id<MVIMResult>, id<MVIMState>> *)modifiers __attribute__((swift_name("init(initialState:interpreter:processor:reducer:modifiers:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+@end;
+
 __attribute__((swift_name("Action")))
 @protocol MVIMAction
 @required
@@ -270,11 +458,6 @@ __attribute__((swift_name("MainEvent.Error")))
 + (instancetype)error __attribute__((swift_name("init()")));
 @end;
 
-__attribute__((swift_name("Intent")))
-@protocol MVIMIntent
-@required
-@end;
-
 __attribute__((swift_name("MainIntent")))
 @interface MVIMMainIntent : MVIMBase <MVIMIntent>
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
@@ -331,99 +514,6 @@ __attribute__((swift_name("MainIntent.TaskClicked")))
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
 @property (readonly) NSString *id __attribute__((swift_name("id")));
-@end;
-
-__attribute__((swift_name("Interpreter")))
-@protocol MVIMInterpreter
-@required
-
-/**
- @note This method converts instances of CancellationException to errors.
- Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)interpretIntent:(id<MVIMIntent>)intent completionHandler:(void (^)(id<MVIMAction> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("interpret(intent:completionHandler:)")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("MainInterpreter")))
-@interface MVIMMainInterpreter : MVIMBase <MVIMInterpreter>
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-
-/**
- @note This method converts instances of CancellationException to errors.
- Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)interpretIntent:(MVIMMainIntent *)intent completionHandler:(void (^)(MVIMMainAction * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("interpret(intent:completionHandler:)")));
-@end;
-
-__attribute__((swift_name("Processor")))
-@protocol MVIMProcessor
-@required
-
-/**
- @note This method converts instances of CancellationException to errors.
- Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)processState:(id<MVIMState>)state action:(id<MVIMAction>)action completionHandler:(void (^)(id<MVIMFlow> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("process(state:action:completionHandler:)")));
-
-/**
- @note This method converts instances of CancellationException to errors.
- Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)publishEvent:(id<MVIMEvent>)event completionHandler:(void (^)(MVIMKotlinUnit * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("publish(event:completionHandler:)")));
-@property (readonly) id<MVIMFlow> events __attribute__((swift_name("events")));
-@end;
-
-__attribute__((swift_name("BaseProcessor")))
-@interface MVIMBaseProcessor<__contravariant STATE, ACTION, RESULT, EVENT> : MVIMBase <MVIMProcessor>
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-
-/**
- @note This method converts instances of CancellationException to errors.
- Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)publishEvent:(EVENT)event completionHandler:(void (^)(MVIMKotlinUnit * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("publish(event:completionHandler:)")));
-@property (readonly) id<MVIMSharedFlow> events __attribute__((swift_name("events")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("MainProcessor")))
-@interface MVIMMainProcessor : MVIMBaseProcessor<MVIMMainState *, MVIMMainAction *, MVIMMainResult *, MVIMMainEvent *>
-- (instancetype)initWithGetTasksUseCase:(id<MVIMGetTasksUseCase>)getTasksUseCase updateTaskUseCase:(id<MVIMUpdateTaskUseCase>)updateTaskUseCase removeTaskUseCase:(id<MVIMRemoveTaskUseCase>)removeTaskUseCase createTaskUseCase:(id<MVIMCreateTaskUseCase>)createTaskUseCase __attribute__((swift_name("init(getTasksUseCase:updateTaskUseCase:removeTaskUseCase:createTaskUseCase:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-+ (instancetype)new __attribute__((unavailable));
-
-/**
- @note This method converts instances of CancellationException to errors.
- Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)processState:(MVIMMainState *)state action:(MVIMMainAction *)action completionHandler:(void (^)(id<MVIMFlow> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("process(state:action:completionHandler:)")));
-@end;
-
-__attribute__((swift_name("Reducer")))
-@protocol MVIMReducer
-@required
-
-/**
- @note This method converts instances of CancellationException to errors.
- Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)reduceState:(id<MVIMState>)state result:(id<MVIMResult>)result completionHandler:(void (^)(id<MVIMState> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("reduce(state:result:completionHandler:)")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("MainReducer")))
-@interface MVIMMainReducer : MVIMBase <MVIMReducer>
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-
-/**
- @note This method converts instances of CancellationException to errors.
- Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)reduceState:(MVIMMainState *)state result:(MVIMMainResult *)result completionHandler:(void (^)(MVIMMainState * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("reduce(state:result:completionHandler:)")));
 @end;
 
 __attribute__((swift_name("Result")))
@@ -571,33 +661,6 @@ __attribute__((swift_name("MainState.Error")))
 + (MVIMKotlinArray<MVIMMainStateError *> *)values __attribute__((swift_name("values()")));
 @end;
 
-__attribute__((swift_name("Store")))
-@protocol MVIMStore
-@required
-- (id<MVIMJob>)collectOnState:(void (^)(id<MVIMState>))onState onEvent:(void (^)(id<MVIMEvent>))onEvent __attribute__((swift_name("collect(onState:onEvent:)")));
-- (void)dispatchIntent:(id<MVIMIntent>)intent __attribute__((swift_name("dispatch(intent:)")));
-- (void)dispose __attribute__((swift_name("dispose()")));
-@property (readonly) id<MVIMFlow> events __attribute__((swift_name("events")));
-@property (readonly) id<MVIMStateFlow> state __attribute__((swift_name("state")));
-@end;
-
-__attribute__((swift_name("BaseStore")))
-@interface MVIMBaseStore<INTENT, __contravariant ACTION, __contravariant RESULT, STATE, EVENT> : MVIMBase <MVIMStore>
-- (instancetype)initWithInitialState:(STATE)initialState interpreter:(id<MVIMInterpreter>)interpreter processor:(MVIMBaseProcessor<STATE, ACTION, RESULT, EVENT> *)processor reducer:(id<MVIMReducer>)reducer loaders:(MVIMLoader<ACTION> *)loaders middlewares:(MVIMKotlinArray<id<MVIMMiddleware>> *)middlewares __attribute__((swift_name("init(initialState:interpreter:processor:reducer:loaders:middlewares:)"))) __attribute__((objc_designated_initializer));
-- (id<MVIMJob>)collectOnState:(void (^)(STATE))onState onEvent:(void (^)(EVENT))onEvent __attribute__((swift_name("collect(onState:onEvent:)")));
-- (void)dispatchIntent:(INTENT)intent __attribute__((swift_name("dispatch(intent:)")));
-- (void)dispose __attribute__((swift_name("dispose()")));
-@property (readonly) id<MVIMSharedFlow> events __attribute__((swift_name("events")));
-@property (readonly) id<MVIMStateFlow> state __attribute__((swift_name("state")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("MainStore")))
-@interface MVIMMainStore : MVIMBaseStore<MVIMMainIntent *, MVIMMainAction *, MVIMMainResult *, MVIMMainState *, MVIMMainEvent *>
-- (instancetype)initWithInterpreter:(MVIMMainInterpreter *)interpreter processor:(MVIMMainProcessor *)processor reducer:(MVIMMainReducer *)reducer middlewares:(MVIMKotlinArray<id<MVIMMiddleware>> *)middlewares __attribute__((swift_name("init(interpreter:processor:reducer:middlewares:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithInitialState:(id<MVIMState>)initialState interpreter:(id<MVIMInterpreter>)interpreter processor:(MVIMBaseProcessor<id<MVIMState>, id<MVIMAction>, id<MVIMResult>, id<MVIMEvent>> *)processor reducer:(id<MVIMReducer>)reducer loaders:(MVIMLoader<id<MVIMAction>> *)loaders middlewares:(MVIMKotlinArray<id<MVIMMiddleware>> *)middlewares __attribute__((swift_name("init(initialState:interpreter:processor:reducer:loaders:middlewares:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@end;
-
 __attribute__((swift_name("HttpRequestConfig")))
 @protocol MVIMHttpRequestConfig
 @required
@@ -613,7 +676,7 @@ __attribute__((swift_name("TaskRemoteDataSource")))
  @note This method converts instances of CancellationException to errors.
  Other uncaught Kotlin exceptions are fatal.
 */
-- (void)addTaskTask:(MVIMTaskModel *)task completionHandler:(void (^)(MVIMKotlinUnit * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("addTask(task:completionHandler:)")));
+- (void)addTaskTask:(MVIMTaskModel *)task completionHandler:(void (^)(MVIMBaseResponse * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("addTask(task:completionHandler:)")));
 
 /**
  @note This method converts instances of CancellationException to errors.
@@ -625,25 +688,26 @@ __attribute__((swift_name("TaskRemoteDataSource")))
  @note This method converts instances of CancellationException to errors.
  Other uncaught Kotlin exceptions are fatal.
 */
-- (void)removeTaskId:(NSString *)id completionHandler:(void (^)(MVIMKotlinUnit * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("removeTask(id:completionHandler:)")));
+- (void)removeTaskId:(NSString *)id completionHandler:(void (^)(MVIMBaseResponse * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("removeTask(id:completionHandler:)")));
 
 /**
  @note This method converts instances of CancellationException to errors.
  Other uncaught Kotlin exceptions are fatal.
 */
-- (void)updateTaskId:(NSString *)id isComplete:(BOOL)isComplete completionHandler:(void (^)(MVIMKotlinUnit * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("updateTask(id:isComplete:completionHandler:)")));
+- (void)updateTaskId:(NSString *)id isComplete:(BOOL)isComplete completionHandler:(void (^)(MVIMBaseResponse * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("updateTask(id:isComplete:completionHandler:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("TasksApi")))
 @interface MVIMTasksApi : MVIMBase <MVIMTaskRemoteDataSource>
-- (instancetype)initWithHttpClient:(MVIMHttpClient *)httpClient __attribute__((swift_name("init(httpClient:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 
 /**
  @note This method converts instances of CancellationException to errors.
  Other uncaught Kotlin exceptions are fatal.
 */
-- (void)addTaskTask:(MVIMTaskModel *)task completionHandler:(void (^)(MVIMKotlinUnit * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("addTask(task:completionHandler:)")));
+- (void)addTaskTask:(MVIMTaskModel *)task completionHandler:(void (^)(MVIMBaseResponse * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("addTask(task:completionHandler:)")));
 
 /**
  @note This method converts instances of CancellationException to errors.
@@ -655,13 +719,13 @@ __attribute__((swift_name("TasksApi")))
  @note This method converts instances of CancellationException to errors.
  Other uncaught Kotlin exceptions are fatal.
 */
-- (void)removeTaskId:(NSString *)id completionHandler:(void (^)(MVIMKotlinUnit * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("removeTask(id:completionHandler:)")));
+- (void)removeTaskId:(NSString *)id completionHandler:(void (^)(MVIMBaseResponse * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("removeTask(id:completionHandler:)")));
 
 /**
  @note This method converts instances of CancellationException to errors.
  Other uncaught Kotlin exceptions are fatal.
 */
-- (void)updateTaskId:(NSString *)id isComplete:(BOOL)isComplete completionHandler:(void (^)(MVIMKotlinUnit * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("updateTask(id:isComplete:completionHandler:)")));
+- (void)updateTaskId:(NSString *)id isComplete:(BOOL)isComplete completionHandler:(void (^)(MVIMBaseResponse * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("updateTask(id:isComplete:completionHandler:)")));
 @end;
 
 __attribute__((swift_name("TaskLocalDataSource")))
@@ -678,7 +742,7 @@ __attribute__((swift_name("TaskLocalDataSource")))
  @note This method converts instances of CancellationException to errors.
  Other uncaught Kotlin exceptions are fatal.
 */
-- (void)getTasksWithCompletionHandler:(void (^)(id<MVIMFlow> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getTasks(completionHandler:)")));
+- (void)getTasksWithCompletionHandler:(void (^)(NSArray<MVIMTaskModel *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getTasks(completionHandler:)")));
 
 /**
  @note This method converts instances of CancellationException to errors.
@@ -714,7 +778,7 @@ __attribute__((swift_name("TaskDao")))
  @note This method converts instances of CancellationException to errors.
  Other uncaught Kotlin exceptions are fatal.
 */
-- (void)getTasksWithCompletionHandler:(void (^)(id<MVIMFlow> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getTasks(completionHandler:)")));
+- (void)getTasksWithCompletionHandler:(void (^)(NSArray<MVIMTaskModel *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getTasks(completionHandler:)")));
 
 /**
  @note This method converts instances of CancellationException to errors.
@@ -733,7 +797,6 @@ __attribute__((swift_name("TaskDao")))
  Other uncaught Kotlin exceptions are fatal.
 */
 - (void)updateTaskId:(NSString *)id isComplete:(BOOL)isComplete completionHandler:(void (^)(MVIMKotlinUnit * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("updateTask(id:isComplete:completionHandler:)")));
-@property (readonly) MVIMKermit *log __attribute__((swift_name("log")));
 @end;
 
 __attribute__((swift_name("Transacter")))
@@ -810,7 +873,7 @@ __attribute__((swift_name("TaskRepository")))
  @note This method converts instances of CancellationException to errors.
  Other uncaught Kotlin exceptions are fatal.
 */
-- (void)getTasksWithCompletionHandler:(void (^)(id<MVIMFlow> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getTasks(completionHandler:)")));
+- (void)getTasksWithCompletionHandler:(void (^)(NSArray<MVIMTask *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getTasks(completionHandler:)")));
 
 /**
  @note This method converts instances of CancellationException to errors.
@@ -840,7 +903,7 @@ __attribute__((swift_name("TaskDataRepository")))
  @note This method converts instances of CancellationException to errors.
  Other uncaught Kotlin exceptions are fatal.
 */
-- (void)getTasksWithCompletionHandler:(void (^)(id<MVIMFlow> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getTasks(completionHandler:)")));
+- (void)getTasksWithCompletionHandler:(void (^)(NSArray<MVIMTask *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getTasks(completionHandler:)")));
 
 /**
  @note This method converts instances of CancellationException to errors.
@@ -921,7 +984,7 @@ __attribute__((swift_name("GetTasks")))
  @note This method converts instances of CancellationException to errors.
  Other uncaught Kotlin exceptions are fatal.
 */
-- (void)executeArguments:(MVIMUseCaseNone *)arguments completionHandler:(void (^)(id<MVIMFlow> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("execute(arguments:completionHandler:)")));
+- (void)executeArguments:(MVIMUseCaseNone *)arguments completionHandler:(void (^)(NSArray<MVIMTask *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("execute(arguments:completionHandler:)")));
 @end;
 
 __attribute__((swift_name("RemoveTaskUseCase")))
@@ -1170,6 +1233,31 @@ __attribute__((swift_name("Task")))
 @end;
 
 __attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("BaseResponse")))
+@interface MVIMBaseResponse : MVIMBase
+- (instancetype)initWithMsgId:(NSString * _Nullable)msgId msgTitle:(NSString * _Nullable)msgTitle msg:(NSString * _Nullable)msg __attribute__((swift_name("init(msgId:msgTitle:msg:)"))) __attribute__((objc_designated_initializer));
+- (NSString * _Nullable)component1 __attribute__((swift_name("component1()")));
+- (NSString * _Nullable)component2 __attribute__((swift_name("component2()")));
+- (NSString * _Nullable)component3 __attribute__((swift_name("component3()")));
+- (MVIMBaseResponse *)doCopyMsgId:(NSString * _Nullable)msgId msgTitle:(NSString * _Nullable)msgTitle msg:(NSString * _Nullable)msg __attribute__((swift_name("doCopy(msgId:msgTitle:msg:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString * _Nullable msg __attribute__((swift_name("msg")));
+@property (readonly) NSString * _Nullable msgId __attribute__((swift_name("msgId")));
+@property (readonly) NSString * _Nullable msgTitle __attribute__((swift_name("msgTitle")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("BaseResponse.Companion")))
+@interface MVIMBaseResponseCompanion : MVIMBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+- (id<MVIMKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("TaskModel")))
 @interface MVIMTaskModel : MVIMBase
 - (instancetype)initWithId:(NSString *)id title:(NSString *)title details:(NSString *)details date:(MVIMLocalDateTime *)date isComplete:(BOOL)isComplete __attribute__((swift_name("init(id:title:details:date:isComplete:)"))) __attribute__((objc_designated_initializer));
@@ -1198,52 +1286,64 @@ __attribute__((swift_name("TaskModel.Companion")))
 - (id<MVIMKSerializer>)serializer __attribute__((swift_name("serializer()")));
 @end;
 
-__attribute__((swift_name("Middleware")))
-@protocol MVIMMiddleware
+__attribute__((swift_name("IntentModifier")))
+@protocol MVIMIntentModifier <MVIMModifier>
 @required
-@end;
-
-__attribute__((swift_name("ActionMiddleware")))
-@protocol MVIMActionMiddleware <MVIMMiddleware>
-@required
-- (id<MVIMAction>)transformAction:(id<MVIMAction>)action __attribute__((swift_name("transform(action:)")));
-@end;
-
-__attribute__((swift_name("IntentMiddleware")))
-@protocol MVIMIntentMiddleware <MVIMMiddleware>
-@required
-- (id<MVIMIntent>)transformIntent:(id<MVIMIntent>)intent __attribute__((swift_name("transform(intent:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Loader")))
-@interface MVIMLoader<__covariant ACTION> : MVIMBase
+__attribute__((swift_name("Modifiers")))
+@interface MVIMModifiers<INTENT, ACTION, RESULT, STATE> : MVIMBase
+- (instancetype)initWithIntentModifiers:(NSArray<id<MVIMIntentModifier>> *)intentModifiers actionModifiers:(NSArray<id<MVIMActionModifier>> *)actionModifiers resultModifiers:(NSArray<id<MVIMResultModifier>> *)resultModifiers stateModifiers:(NSArray<id<MVIMStateModifier>> *)stateModifiers __attribute__((swift_name("init(intentModifiers:actionModifiers:resultModifiers:stateModifiers:)"))) __attribute__((objc_designated_initializer));
+@property (readonly) NSArray<id<MVIMActionModifier>> *actionModifiers __attribute__((swift_name("actionModifiers")));
+@property (readonly) NSArray<id<MVIMIntentModifier>> *intentModifiers __attribute__((swift_name("intentModifiers")));
+@property (readonly) NSArray<id<MVIMResultModifier>> *resultModifiers __attribute__((swift_name("resultModifiers")));
+@property (readonly) NSArray<id<MVIMStateModifier>> *stateModifiers __attribute__((swift_name("stateModifiers")));
+@end;
+
+__attribute__((swift_name("StateModifier")))
+@protocol MVIMStateModifier <MVIMModifier>
+@required
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("ActionLoader")))
+@interface MVIMActionLoader<ACTION> : MVIMBase <MVIMActionModifier>
 - (instancetype)initWithActions:(MVIMKotlinArray<ACTION> *)actions __attribute__((swift_name("init(actions:)"))) __attribute__((objc_designated_initializer));
+- (id<MVIMFlow>)applyInput:(id<MVIMFlow>)input __attribute__((swift_name("apply(input:)")));
 @property (readonly) MVIMKotlinArray<ACTION> *actions __attribute__((swift_name("actions")));
 @end;
 
-__attribute__((swift_name("ResultMiddleware")))
-@protocol MVIMResultMiddleware <MVIMMiddleware>
-@required
-- (id<MVIMResult>)transformResult:(id<MVIMResult>)result __attribute__((swift_name("transform(result:)")));
-@end;
-
-__attribute__((swift_name("StateMiddleware")))
-@protocol MVIMStateMiddleware <MVIMMiddleware>
-@required
-- (id<MVIMState>)transformState:(id<MVIMState>)state __attribute__((swift_name("transform(state:)")));
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("ActionLogger")))
+@interface MVIMActionLogger<ACTION> : MVIMBase <MVIMActionModifier>
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (id<MVIMFlow>)applyInput:(id<MVIMFlow>)input __attribute__((swift_name("apply(input:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("LoggingMiddleware")))
-@interface MVIMLoggingMiddleware : MVIMBase <MVIMIntentMiddleware, MVIMActionMiddleware, MVIMResultMiddleware, MVIMStateMiddleware>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)loggingMiddleware __attribute__((swift_name("init()")));
-- (id<MVIMAction>)transformAction:(id<MVIMAction>)action __attribute__((swift_name("transform(action:)")));
-- (id<MVIMIntent>)transformIntent:(id<MVIMIntent>)intent __attribute__((swift_name("transform(intent:)")));
-- (id<MVIMResult>)transformResult:(id<MVIMResult>)result __attribute__((swift_name("transform(result:)")));
-- (id<MVIMState>)transformState:(id<MVIMState>)state __attribute__((swift_name("transform(state:)")));
+__attribute__((swift_name("IntentLogger")))
+@interface MVIMIntentLogger<INTENT> : MVIMBase <MVIMIntentModifier>
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (id<MVIMFlow>)applyInput:(id<MVIMFlow>)input __attribute__((swift_name("apply(input:)")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("ResultLogger")))
+@interface MVIMResultLogger<RESULT> : MVIMBase <MVIMResultModifier>
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (id<MVIMFlow>)applyInput:(id<MVIMFlow>)input __attribute__((swift_name("apply(input:)")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("StateLogger")))
+@interface MVIMStateLogger<STATE> : MVIMBase <MVIMStateModifier>
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (id<MVIMFlow>)applyInput:(id<MVIMFlow>)input __attribute__((swift_name("apply(input:)")));
 @end;
 
 __attribute__((swift_name("Logger")))
@@ -11783,6 +11883,7 @@ __attribute__((swift_name("MainModuleKt")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ApiModuleKt")))
 @interface MVIMApiModuleKt : MVIMBase
++ (MVIMHttpClient *)httpClientFactory __attribute__((swift_name("httpClientFactory()")));
 @property (class, readonly) MVIMModule *apiModule __attribute__((swift_name("apiModule")));
 @end;
 

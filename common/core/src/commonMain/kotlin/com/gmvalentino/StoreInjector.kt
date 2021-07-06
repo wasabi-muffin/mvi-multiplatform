@@ -1,7 +1,7 @@
 package com.gmvalentino
 
 import com.gmvalentino.components.Store
-import com.gmvalentino.main.MainStore
+import com.gmvalentino.main.components.MainStore
 import kotlin.native.concurrent.ThreadLocal
 
 inline fun <reified STORE : Store<*, *, *>> getStore() = koinApplication.koin.get<STORE>()

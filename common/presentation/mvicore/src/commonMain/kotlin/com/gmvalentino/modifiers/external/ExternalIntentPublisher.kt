@@ -7,12 +7,12 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.onEach
 
-abstract class ExternalIntentDispatcherModifier<RESULT : Result, INTENT : Intent>(
-    private val externalIntents: MutableSharedFlow<INTENT>,
+abstract class ExternalIntentPublisher<RESULT : Result, INTENT : Intent>(
+    private val intents: MutableSharedFlow<INTENT>,
 ) : ResultModifier<RESULT> {
     override fun apply(input: Flow<RESULT>): Flow<RESULT> = input.onEach { result ->
-        resultInterpreter(result)?.let { externalIntents.emit(it) }
+        transform(result)?.let { intents.emit(it) }
     }
 
-    abstract fun resultInterpreter(result: RESULT): INTENT?
+    abstract fun transform(result: RESULT): INTENT?
 }
