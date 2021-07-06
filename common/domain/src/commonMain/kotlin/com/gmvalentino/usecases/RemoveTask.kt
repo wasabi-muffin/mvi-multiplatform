@@ -6,7 +6,7 @@ class RemoveTask(
     private val repository: TaskRepository
 ) : RemoveTaskUseCase {
     override suspend fun execute(arguments: RemoveTaskUseCase.Args) {
-        return repository.deleteTask(arguments.id)
+        repository.deleteTask(arguments.id)
     }
 }
 

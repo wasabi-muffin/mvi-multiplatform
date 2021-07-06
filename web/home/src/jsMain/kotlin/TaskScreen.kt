@@ -1,7 +1,11 @@
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import com.gmvalentino.StoreProvider
+import com.gmvalentino.entities.Task
 import com.gmvalentino.main.MainIntent
+import kotlinx.datetime.Clock
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toLocalDateTime
 import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.FlexDirection
 import org.jetbrains.compose.web.css.FlexWrap
@@ -12,7 +16,9 @@ import org.jetbrains.compose.web.css.margin
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.width
+import org.jetbrains.compose.web.dom.Button
 import org.jetbrains.compose.web.dom.Div
+import org.jetbrains.compose.web.dom.Text
 import org.jetbrains.compose.web.dom.Ul
 
 @Composable
@@ -32,6 +38,36 @@ fun TaskScreen() {
             }
         }
     ) {
+
+        Button(attrs = {
+            onClick {
+                store.dispatch(
+                    MainIntent.CreateClicked(
+                        Task(
+                            id = "1",
+                            title = "1",
+                            details = "1",
+                            date = Clock.System.now().toLocalDateTime(
+                                TimeZone.currentSystemDefault()
+                            ),
+                            isComplete = false
+                        )
+                    )
+                )
+            }
+        }) {
+            Text("Create")
+        }
+
+        Button(attrs = {
+            onClick {
+                store.dispatch(
+                    MainIntent.DeleteClicked("1")
+                )
+            }
+        }) {
+            Text("Delete")
+        }
 
         Ul(
             attrs = {

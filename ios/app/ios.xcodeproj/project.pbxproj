@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA5A8F572691C55E00E914EC /* MVIMultiplatform in Frameworks */ = {isa = PBXBuildFile; productRef = FA5A8F562691C55E00E914EC /* MVIMultiplatform */; };
+		FA403CB926930B58008FD4BD /* MVIMultiplatform in Frameworks */ = {isa = PBXBuildFile; productRef = FA403CB826930B58008FD4BD /* MVIMultiplatform */; };
 		FA823356268789AF00B6FB7C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA823355268789AF00B6FB7C /* ContentView.swift */; };
 		FA823358268789B500B6FB7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA823357268789B500B6FB7C /* Assets.xcassets */; };
 		FA82335B268789B500B6FB7C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA82335A268789B500B6FB7C /* Preview Assets.xcassets */; };
@@ -60,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA5A8F572691C55E00E914EC /* MVIMultiplatform in Frameworks */,
+				FA403CB926930B58008FD4BD /* MVIMultiplatform in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +168,7 @@
 			);
 			name = ios;
 			packageProductDependencies = (
-				FA5A8F562691C55E00E914EC /* MVIMultiplatform */,
+				FA403CB826930B58008FD4BD /* MVIMultiplatform */,
 			);
 			productName = ios;
 			productReference = FA823350268789AF00B6FB7C /* ios.app */;
@@ -631,7 +631,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FA5A8F562691C55E00E914EC /* MVIMultiplatform */ = {
+		FA403CB826930B58008FD4BD /* MVIMultiplatform */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MVIMultiplatform;
 		};

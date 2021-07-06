@@ -1,8 +1,8 @@
 package com.gmvalentino
 
-import org.koin.core.context.loadKoinModules
+import co.touchlab.kermit.Kermit
+import co.touchlab.kermit.NSLogLogger
 import org.koin.dsl.module
-import platform.Foundation.NSUserDefaults
 
 actual object MultiplatformApplication {
 

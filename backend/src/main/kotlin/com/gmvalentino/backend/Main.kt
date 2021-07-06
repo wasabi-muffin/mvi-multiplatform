@@ -1,5 +1,6 @@
 package com.gmvalentino.backend
 
+import com.gmvalentino.models.BaseResponse
 import com.gmvalentino.models.TaskModel
 import io.ktor.application.call
 import io.ktor.application.install
@@ -81,13 +82,19 @@ fun main() {
                 call.respond(result)
             }
             post("/tasks") {
-                call.respondText("{}")
+                call.respond(
+                    BaseResponse(msgId = "1", msgTitle = "Post", msg = "Successful")
+                )
             }
             delete("/tasks") {
-                call.respondText("{}")
+                call.respond(
+                    BaseResponse(msgId = "1", msgTitle = "Delete", msg = "Successful")
+                )
             }
             put("/tasks") {
-                call.respondText("{}")
+                call.respond(
+                    BaseResponse(msgId = "1", msgTitle = "Put", msg = "Successful")
+                )
             }
         }
     }.start(wait = true)

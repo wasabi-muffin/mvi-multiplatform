@@ -7,9 +7,7 @@ import com.gmvalentino.usecases.RemoveTaskUseCase
 import com.gmvalentino.usecases.UpdateTaskUseCase
 import com.gmvalentino.usecases.UseCase
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.emitAll
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.map
 
 class MainProcessor(
     private val getTasksUseCase: GetTasksUseCase,
@@ -29,12 +27,12 @@ class MainProcessor(
         is MainAction.ResolveError -> handleResolveError(action)
     }
 
-    private suspend fun handleLoad(): Flow<MainResult> = flow {
+    private suspend inline fun handleLoad(): Flow<MainResult> = flow {
         emit(MainResult.Loading)
-        emitAll(getTasksUseCase.execute(UseCase.None).map(MainResult::Tasks))
+        emit(getTasksUseCase.execute(UseCase.None).let(MainResult::Tasks))
     }
 
-    private suspend fun handleToggle(
+    private suspend inline fun handleToggle(
         state: MainState,
         action: MainAction.Toggle
     ): Flow<MainResult> = flow {
@@ -43,51 +41,35 @@ class MainProcessor(
             emit(MainResult.Error(action))
             error("No task with id ${action.id} found")
         }
-        runCatching {
-            updateTaskUseCase.execute(
-                UpdateTaskUseCase.Args(action.id, !isComplete)
-            )
-        }.onSuccess {
-            emit(MainResult.Toggled(action.id, !isComplete))
-        }.onFailure {
-            emit(MainResult.Error(action))
-        }
+        updateTaskUseCase.execute(
+            UpdateTaskUseCase.Args(action.id, !isComplete)
+        )
+        emit(MainResult.Toggled(action.id, !isComplete))
     }
 
-    private suspend fun handleRemove(
+    private suspend inline fun handleRemove(
         state: MainState,
         action: MainAction.Remove
     ): Flow<MainResult> = flow {
         emit(MainResult.Loading)
-        runCatching {
-            removeTaskUseCase.execute(
-                RemoveTaskUseCase.Args(action.id)
-            )
-        }.onSuccess {
-            val currentTasks = state.tasks.filter { it.id != action.id }
-            currentTasks.sortedBy { it.date }
-            emit(MainResult.Deleted(currentTasks))
-        }.onFailure {
-            emit(MainResult.Error(action))
-        }
+        removeTaskUseCase.execute(
+            RemoveTaskUseCase.Args(action.id)
+        )
+        val currentTasks = state.tasks.filter { it.id != action.id }.sortedBy { it.date }
+        emit(MainResult.Deleted(currentTasks))
     }
 
-    private suspend fun handleCreate(
+    private suspend inline fun handleCreate(
         state: MainState,
         action: MainAction.Create
     ): Flow<MainResult> = flow {
         emit(MainResult.Loading)
-        runCatching {
-            createTaskUseCase.execute(
-                CreateTaskUseCase.Args(action.task)
-            )
-        }.onSuccess {
-            val currentTasks = state.tasks + action.task
-            currentTasks.sortedBy { it.date }
-            emit(MainResult.Added(currentTasks))
-        }.onFailure {
-            emit(MainResult.Error(action))
-        }
+        createTaskUseCase.execute(
+            CreateTaskUseCase.Args(action.task)
+        )
+        val currentTasks = state.tasks + action.task
+        currentTasks.sortedBy { it.date }
+        emit(MainResult.Added(currentTasks))
     }
 
     private suspend fun handleResolveError(action: MainAction.ResolveError) = flow {

@@ -1,5 +1,6 @@
 package com.gmvalentino
 
+import co.touchlab.kermit.Kermit
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -14,6 +15,7 @@ import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asFlow
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flatMapMerge
 import kotlinx.coroutines.flow.map
@@ -81,6 +83,10 @@ abstract class BaseStore<
                                 middleware.transform(value) as? RESULT ?: value
                             }
                     )
+                }
+                .catch { e ->
+                    Kermit(defaultTag = "Error").d { "$e" }
+                    Kermit(defaultTag = "Error").d { e.stackTraceToString() }
                 }
                 .collect { state ->
                     _state.value = middlewares

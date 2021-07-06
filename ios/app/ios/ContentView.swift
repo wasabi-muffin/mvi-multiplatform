@@ -15,7 +15,7 @@ struct ContentView: View {
     
     var body: some View {
         TaskListView(tasks: viewModel.state.tasks) { task in
-            viewModel.dispatch(MainIntent.Toggle(id: task.id))
+            viewModel.dispatch(MainIntent.TaskClicked(id: task.id))
         }
     }
 }

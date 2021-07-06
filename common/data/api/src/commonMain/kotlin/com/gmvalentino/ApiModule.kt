@@ -14,8 +14,8 @@ import org.koin.dsl.module
 
 val apiModule = module {
 
-    single {
-        provideHttpClient().config {
+    factory {
+        HttpClient {
             install(JsonFeature) {
                 serializer = KotlinxSerializer(
                     Json {
@@ -34,10 +34,25 @@ val apiModule = module {
     }
 
     single<TaskRemoteDataSource> {
-        TasksApi(
-            get()
-        )
+        TasksApi()
     }
 }
 
 expect fun provideHttpClient(): HttpClient
+
+fun httpClientFactory(): HttpClient = HttpClient {
+    install(JsonFeature) {
+        serializer = KotlinxSerializer(
+            Json {
+                isLenient = true
+                ignoreUnknownKeys = true
+                useArrayPolymorphism = true
+            }
+        )
+        accept(ContentType.Application.Json)
+    }
+    install(Logging) {
+        logger = Logger.DEFAULT
+        level = LogLevel.INFO
+    }
+}

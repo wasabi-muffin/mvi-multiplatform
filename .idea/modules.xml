@@ -2,6 +2,28 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/iosmodule/Developer.mvi-multiplatform.common.iosmodule.iml" filepath="$PROJECT_DIR$/.idea/modules/common/iosmodule/Developer.mvi-multiplatform.common.iosmodule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/presentation/mvicore/Developer.mvi-multiplatform.common.presentation.mvicore.iml" filepath="$PROJECT_DIR$/.idea/modules/common/presentation/mvicore/Developer.mvi-multiplatform.common.presentation.mvicore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/presentation/mvicore/Developer.mvi-multiplatform.common.presentation.mvicore.jsMain.iml" filepath="$PROJECT_DIR$/.idea/modules/common/presentation/mvicore/Developer.mvi-multiplatform.common.presentation.mvicore.jsMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/presentation/mvicore/Developer.mvi-multiplatform.common.presentation.mvicore.jsTest.iml" filepath="$PROJECT_DIR$/.idea/modules/common/presentation/mvicore/Developer.mvi-multiplatform.common.presentation.mvicore.jsTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web/Developer.mvi-multiplatform.web.iml" filepath="$PROJECT_DIR$/.idea/modules/web/Developer.mvi-multiplatform.web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web/home/Developer.mvi-multiplatform.web.home.iml" filepath="$PROJECT_DIR$/.idea/modules/web/home/Developer.mvi-multiplatform.web.home.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web/home/Developer.mvi-multiplatform.web.home.commonMain.iml" filepath="$PROJECT_DIR$/.idea/modules/web/home/Developer.mvi-multiplatform.web.home.commonMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web/home/Developer.mvi-multiplatform.web.home.commonTest.iml" filepath="$PROJECT_DIR$/.idea/modules/web/home/Developer.mvi-multiplatform.web.home.commonTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web/home/Developer.mvi-multiplatform.web.home.jsMain.iml" filepath="$PROJECT_DIR$/.idea/modules/web/home/Developer.mvi-multiplatform.web.home.jsMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web/home/Developer.mvi-multiplatform.web.home.jsTest.iml" filepath="$PROJECT_DIR$/.idea/modules/web/home/Developer.mvi-multiplatform.web.home.jsTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/data/api/api.mvi-multiplatform.common.data.api.jsMain.iml" filepath="$PROJECT_DIR$/.idea/modules/common/data/api/api.mvi-multiplatform.common.data.api.jsMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/data/api/api.mvi-multiplatform.common.data.api.jsTest.iml" filepath="$PROJECT_DIR$/.idea/modules/common/data/api/api.mvi-multiplatform.common.data.api.jsTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/core/core.mvi-multiplatform.common.core.jsMain.iml" filepath="$PROJECT_DIR$/.idea/modules/common/core/core.mvi-multiplatform.common.core.jsMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/core/core.mvi-multiplatform.common.core.jsTest.iml" filepath="$PROJECT_DIR$/.idea/modules/common/core/core.mvi-multiplatform.common.core.jsTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/data/database/database.mvi-multiplatform.common.data.database.jsMain.iml" filepath="$PROJECT_DIR$/.idea/modules/common/data/database/database.mvi-multiplatform.common.data.database.jsMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/data/database/database.mvi-multiplatform.common.data.database.jsTest.iml" filepath="$PROJECT_DIR$/.idea/modules/common/data/database/database.mvi-multiplatform.common.data.database.jsTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/domain/domain.mvi-multiplatform.common.domain.jsMain.iml" filepath="$PROJECT_DIR$/.idea/modules/common/domain/domain.mvi-multiplatform.common.domain.jsMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/domain/domain.mvi-multiplatform.common.domain.jsTest.iml" filepath="$PROJECT_DIR$/.idea/modules/common/domain/domain.mvi-multiplatform.common.domain.jsTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/presentation/features/features.mvi-multiplatform.common.presentation.features.jsMain.iml" filepath="$PROJECT_DIR$/.idea/modules/common/presentation/features/features.mvi-multiplatform.common.presentation.features.jsMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/presentation/features/features.mvi-multiplatform.common.presentation.features.jsTest.iml" filepath="$PROJECT_DIR$/.idea/modules/common/presentation/features/features.mvi-multiplatform.common.presentation.features.jsTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/data/models/models.mvi-multiplatform.common.data.models.jsMain.iml" filepath="$PROJECT_DIR$/.idea/modules/common/data/models/models.mvi-multiplatform.common.data.models.jsMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/data/models/models.mvi-multiplatform.common.data.models.jsTest.iml" filepath="$PROJECT_DIR$/.idea/modules/common/data/models/models.mvi-multiplatform.common.data.models.jsTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mvi-multiplatform.iml" filepath="$PROJECT_DIR$/.idea/modules/mvi-multiplatform.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/mvi-multiplatform.android.iml" filepath="$PROJECT_DIR$/.idea/modules/android/mvi-multiplatform.android.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/app/mvi-multiplatform.android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/android/app/mvi-multiplatform.android.app.iml" />
@@ -106,6 +128,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/web/home/mvi-multiplatform.web.home.commonTest.iml" filepath="$PROJECT_DIR$/.idea/modules/web/home/mvi-multiplatform.web.home.commonTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/web/home/mvi-multiplatform.web.home.jsMain.iml" filepath="$PROJECT_DIR$/.idea/modules/web/home/mvi-multiplatform.web.home.jsMain.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/web/home/mvi-multiplatform.web.home.jsTest.iml" filepath="$PROJECT_DIR$/.idea/modules/web/home/mvi-multiplatform.web.home.jsTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/data/repository/repository.mvi-multiplatform.common.data.repository.jsMain.iml" filepath="$PROJECT_DIR$/.idea/modules/common/data/repository/repository.mvi-multiplatform.common.data.repository.jsMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/data/repository/repository.mvi-multiplatform.common.data.repository.jsTest.iml" filepath="$PROJECT_DIR$/.idea/modules/common/data/repository/repository.mvi-multiplatform.common.data.repository.jsTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/data/settings/settings.mvi-multiplatform.common.data.settings.jsMain.iml" filepath="$PROJECT_DIR$/.idea/modules/common/data/settings/settings.mvi-multiplatform.common.data.settings.jsMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/data/settings/settings.mvi-multiplatform.common.data.settings.jsTest.iml" filepath="$PROJECT_DIR$/.idea/modules/common/data/settings/settings.mvi-multiplatform.common.data.settings.jsTest.iml" />
     </modules>
   </component>
 </project>

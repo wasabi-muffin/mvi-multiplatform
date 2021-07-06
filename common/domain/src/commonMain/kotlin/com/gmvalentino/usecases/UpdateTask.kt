@@ -1,12 +1,13 @@
 package com.gmvalentino.usecases
 
+import co.touchlab.kermit.Kermit
 import com.gmvalentino.repositories.TaskRepository
 
 class UpdateTask(
     private val repository: TaskRepository
 ) : UpdateTaskUseCase {
     override suspend fun execute(arguments: UpdateTaskUseCase.Args) {
-        return repository.updateTask(arguments.id, arguments.isComplete)
+        repository.updateTask(arguments.id, arguments.isComplete)
     }
 }
 

@@ -15,27 +15,26 @@ class MainReducer : Reducer<MainState, MainResult> {
                 state.copy(isLoading = true)
             }
             is MainResult.Toggled -> {
-                state
-                // state.copy(
-                //     tasks = state.tasks.map {
-                //         if (it.id == result.id) {
-                //             it.copy(isComplete = result.isCompleted)
-                //         } else {
-                //             it
-                //         }
-                //     }
-                // )
+                state.copy(
+                    tasks = state.tasks.map {
+                        if (it.id == result.id) {
+                            it.copy(isComplete = result.isCompleted)
+                        } else {
+                            it
+                        }
+                    }
+                )
             }
             is MainResult.Deleted -> {
                 state.copy(
                     isLoading = false,
-                    // tasks = result.tasks
+                    tasks = result.tasks
                 )
             }
             is MainResult.Added -> {
                 state.copy(
                     isLoading = false,
-                    // tasks = result.tasks
+                    tasks = result.tasks
                 )
             }
             is MainResult.Error -> {

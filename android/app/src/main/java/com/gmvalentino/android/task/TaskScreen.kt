@@ -21,14 +21,14 @@ fun TaskScreen(
     val state = viewModel.state.collectAsState()
 
     Column {
-        Button(onClick = { viewModel.dispatch(MainIntent.DeleteClicked("1")) }) {
+        Button(onClick = { viewModel.dispatch(MainIntent.DeleteClicked(state.value.tasks.firstOrNull()?.id ?: "")) }) {
             Text("Delete")
         }
         Button(onClick = {
             viewModel.dispatch(
                 MainIntent.CreateClicked(
                     Task(
-                        id = "1",
+                        id = "New ${state.value.tasks.last().id}",
                         title = "Created Task",
                         details = "Details",
                         date = Clock.System.now().toLocalDateTime(
