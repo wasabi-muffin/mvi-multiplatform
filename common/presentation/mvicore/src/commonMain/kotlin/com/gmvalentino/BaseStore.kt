@@ -1,42 +1,25 @@
 package com.gmvalentino
 
-import co.touchlab.kermit.Kermit
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.FlowPreview
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.cancel
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharedFlow
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asFlow
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.flatMapMerge
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.merge
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.flow.shareIn
-import kotlinx.coroutines.launch
+import com.gmvalentino.modifiers.ActionModifier
+import com.gmvalentino.modifiers.IntentModifier
+import com.gmvalentino.modifiers.ResultModifier
+import com.gmvalentino.modifiers.StateModifier
+import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.sync.Mutex
 
 @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
 abstract class BaseStore<
-    INTENT : Intent,
-    in ACTION : Action,
-    in RESULT : Result,
-    STATE : State,
-    EVENT : Event>(
+        INTENT : Intent,
+        in ACTION : Action,
+        in RESULT : Result,
+        STATE : State,
+        EVENT : Event>(
     initialState: STATE,
     private val interpreter: Interpreter<INTENT, ACTION>,
     private val processor: BaseProcessor<STATE, ACTION, RESULT, EVENT>,
     private val reducer: Reducer<STATE, RESULT>,
-    private val loaders: Loader<ACTION> = Loader(),
-    private val applier: Applier<INTENT, ACTION, RESULT, STATE> = Applier()
+    private val modifiers: Modifiers<INTENT, ACTION, RESULT, STATE> = Modifiers()
 ) : Store<INTENT, STATE, EVENT> {
 
     private val scope = CoroutineScope(Dispatchers.Main + SupervisorJob())
@@ -53,26 +36,20 @@ abstract class BaseStore<
     init {
         @Suppress("UNCHECKED_CAST")
         scope.launch {
-            merge(
-                loaders.actions.asFlow(),
-                intents
-                    .applyIntentMiddlewares(applier.intentMiddlewares)
-                    .map { intent ->
-                        interpreter.interpret(intent)
-                    }
-            )
-                .applyActionMiddlewares(applier.actionMiddlewares)
-                .onEach {
-                    Kermit(defaultTag = "MARCO").d { "Current State: $currentState" }
+            intents
+                .applyIntentModifiers(modifiers.intentModifiers)
+                .map { intent ->
+                    interpreter.interpret(intent)
                 }
+                .applyActionModifiers(modifiers.actionModifiers)
                 .flatMapMerge { action ->
                     processor.process(state.value, action)
                 }
-                .applyResultMiddlewares(applier.resultMiddlewares)
+                .applyResultModifiers(modifiers.resultModifiers)
                 .map { result ->
                     reducer.reduce(state.value, result)
                 }
-                .applyStateMiddlewares(applier.stateMiddlewares)
+                .applyStateModifiers(modifiers.stateModifiers)
                 .collect { state ->
                     _state.value = state
                 }
@@ -97,26 +74,26 @@ abstract class BaseStore<
         events.collect { onEvent(it) }
     }
 
-    private fun <INTENT : Intent> Flow<INTENT>.applyIntentMiddlewares(
-        middlewares: List<IntentMiddleware<INTENT>>
+    private fun <INTENT : Intent> Flow<INTENT>.applyIntentModifiers(
+        middlewares: List<IntentModifier<INTENT>>
     ): Flow<INTENT> = middlewares.fold(this) { action, middleware ->
         middleware.apply(action)
     }
 
-    private fun <RESULT : Result> Flow<RESULT>.applyResultMiddlewares(
-        middlewares: List<ResultMiddleware<RESULT>>,
+    private fun <RESULT : Result> Flow<RESULT>.applyResultModifiers(
+        middlewares: List<ResultModifier<RESULT>>,
     ): Flow<RESULT> = middlewares.fold(this) { action, middleware ->
         middleware.apply(action)
     }
 
-    private fun <ACTION : Action> Flow<ACTION>.applyActionMiddlewares(
-        middlewares: List<ActionMiddleware<ACTION>>,
+    private fun <ACTION : Action> Flow<ACTION>.applyActionModifiers(
+        middlewares: List<ActionModifier<ACTION>>,
     ): Flow<ACTION> = middlewares.fold(this) { action, middleware ->
         middleware.apply(action)
     }
 
-    private fun <STATE : State> Flow<STATE>.applyStateMiddlewares(
-        middlewares: List<StateMiddleware<STATE>>
+    private fun <STATE : State> Flow<STATE>.applyStateModifiers(
+        middlewares: List<StateModifier<STATE>>
     ): Flow<STATE> = middlewares.fold(this) { action, middleware ->
         middleware.apply(action)
     }

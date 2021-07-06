@@ -1,15 +1,15 @@
-package com.gmvalentino.external
+package com.gmvalentino.modifiers.external
 
 import com.gmvalentino.Intent
 import com.gmvalentino.Result
-import com.gmvalentino.ResultMiddleware
+import com.gmvalentino.modifiers.ResultModifier
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.onEach
 
-abstract class ExternalIntentDispatcherMiddleware<RESULT : Result, INTENT : Intent>(
+abstract class ExternalIntentDispatcherModifier<RESULT : Result, INTENT : Intent>(
     private val externalIntents: MutableSharedFlow<INTENT>,
-) : ResultMiddleware<RESULT> {
+) : ResultModifier<RESULT> {
     override fun apply(input: Flow<RESULT>): Flow<RESULT> = input.onEach { result ->
         resultInterpreter(result)?.let { externalIntents.emit(it) }
     }

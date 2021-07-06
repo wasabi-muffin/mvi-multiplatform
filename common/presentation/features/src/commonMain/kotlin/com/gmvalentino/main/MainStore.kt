@@ -1,15 +1,11 @@
 package com.gmvalentino.main
 
-import com.gmvalentino.Applier
 import com.gmvalentino.BaseStore
-import com.gmvalentino.Loader
+import com.gmvalentino.Modifiers
 import com.gmvalentino.main.middlewares.ExternalIntentWrapper
-import com.gmvalentino.main.middlewares.MainExternalIntentDispatcherMiddleware
-import com.gmvalentino.main.middlewares.MainExternalIntentListenerMiddleware
-import com.gmvalentino.transformers.ActionLoggingMiddleware
-import com.gmvalentino.transformers.IntentLoggingMiddleware
-import com.gmvalentino.transformers.ResultLoggingMiddleware
-import com.gmvalentino.transformers.StateLoggingMiddleware
+import com.gmvalentino.main.middlewares.MainExternalIntentDispatcher
+import com.gmvalentino.main.middlewares.MainExternalIntentListener
+import com.gmvalentino.modifiers.*
 
 class MainStore(
     interpreter: MainInterpreter,
@@ -20,21 +16,17 @@ class MainStore(
     interpreter = interpreter,
     reducer = reducer,
     processor = processor,
-    loaders = Loader(MainAction.LoadTasks),
-    applier = Applier(
-        intentMiddlewares = listOf(IntentLoggingMiddleware()),
-        actionMiddlewares = listOf(
-            ActionLoggingMiddleware(),
-            MainExternalIntentListenerMiddleware(
-                ExternalIntentWrapper.externalIntents
-            )
+    modifiers = Modifiers(
+        intentModifiers = listOf(IntentLogger()),
+        actionModifiers = listOf(
+            ActionLoader(MainAction.LoadTasks),
+            ActionLogger(),
+            MainExternalIntentListener(ExternalIntentWrapper)
         ),
-        resultMiddlewares = listOf(
-            ResultLoggingMiddleware(),
-            MainExternalIntentDispatcherMiddleware(
-                ExternalIntentWrapper.externalIntents
-            )
+        resultModifiers = listOf(
+            ResultLogger(),
+            MainExternalIntentDispatcher(ExternalIntentWrapper)
         ),
-        stateMiddlewares = listOf(StateLoggingMiddleware())
+        stateModifiers = listOf(StateLogger())
     )
 )

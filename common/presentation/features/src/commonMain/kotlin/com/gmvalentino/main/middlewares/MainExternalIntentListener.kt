@@ -1,14 +1,15 @@
 package com.gmvalentino.main.middlewares
 
 import com.gmvalentino.entities.Task
-import com.gmvalentino.external.ExternalIntentListenerMiddleware
+import com.gmvalentino.modifiers.external.ExternalIntentListenerModifier
 import com.gmvalentino.main.MainAction
-import kotlinx.coroutines.flow.Flow
 import kotlinx.datetime.LocalDateTime
 
-class MainExternalIntentListenerMiddleware(
-    externalIntents: Flow<ExternalIntent>
-) : ExternalIntentListenerMiddleware<MainAction, ExternalIntent>(externalIntents) {
+class MainExternalIntentListener(
+    externalIntentWrapper: ExternalIntentWrapper
+) : ExternalIntentListenerModifier<MainAction, ExternalIntent>(
+    externalIntentWrapper.externalIntents
+) {
     override fun externalIntentInterpreter(externalIntent: ExternalIntent): MainAction? {
         return MainAction.Create(
             Task(
