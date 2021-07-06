@@ -15,11 +15,11 @@ import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asFlow
-import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flatMapMerge
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.merge
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.shareIn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
@@ -36,7 +36,7 @@ abstract class BaseStore<
     private val processor: BaseProcessor<STATE, ACTION, RESULT, EVENT>,
     private val reducer: Reducer<STATE, RESULT>,
     private val loaders: Loader<ACTION> = Loader(),
-    private vararg val middlewares: Middleware
+    private val applier: Applier<INTENT, ACTION, RESULT, STATE> = Applier()
 ) : Store<INTENT, STATE, EVENT> {
 
     private val scope = CoroutineScope(Dispatchers.Main + SupervisorJob())
@@ -45,6 +45,7 @@ abstract class BaseStore<
 
     private val _state = MutableStateFlow(initialState)
     override val state: StateFlow<STATE> = _state
+    private val currentState get() = _state.value
 
     override val events: SharedFlow<EVENT> =
         processor.events.shareIn(scope, SharingStarted.WhileSubscribed(), 1)
@@ -54,46 +55,26 @@ abstract class BaseStore<
         scope.launch {
             merge(
                 loaders.actions.asFlow(),
-                intents.map { intent ->
-                    interpreter.interpret(
-                        middlewares
-                            .filterIsInstance<IntentMiddleware>()
-                            .fold(intent) { value, middleware ->
-                                middleware.transform(value) as? INTENT ?: value
-                            }
-                    )
-                }
+                intents
+                    .applyIntentMiddlewares(applier.intentMiddlewares)
+                    .map { intent ->
+                        interpreter.interpret(intent)
+                    }
             )
+                .applyActionMiddlewares(applier.actionMiddlewares)
+                .onEach {
+                    Kermit(defaultTag = "MARCO").d { "Current State: $currentState" }
+                }
                 .flatMapMerge { action ->
-                    processor.process(
-                        state.value,
-                        middlewares
-                            .filterIsInstance<ActionMiddleware>()
-                            .fold(action) { value, middleware ->
-                                middleware.transform(value) as? ACTION ?: value
-                            }
-                    )
+                    processor.process(state.value, action)
                 }
+                .applyResultMiddlewares(applier.resultMiddlewares)
                 .map { result ->
-                    reducer.reduce(
-                        state.value,
-                        middlewares
-                            .filterIsInstance<ResultMiddleware>()
-                            .fold(result) { value, middleware ->
-                                middleware.transform(value) as? RESULT ?: value
-                            }
-                    )
+                    reducer.reduce(state.value, result)
                 }
-                .catch { e ->
-                    Kermit(defaultTag = "Error").d { "$e" }
-                    Kermit(defaultTag = "Error").d { e.stackTraceToString() }
-                }
+                .applyStateMiddlewares(applier.stateMiddlewares)
                 .collect { state ->
-                    _state.value = middlewares
-                        .filterIsInstance<StateMiddleware>()
-                        .fold(state) { value, middleware ->
-                            middleware.transform(value) as? STATE ?: value
-                        }
+                    _state.value = state
                 }
         }
     }
@@ -114,5 +95,29 @@ abstract class BaseStore<
     ): Job = scope.launch {
         state.collect { onState(it) }
         events.collect { onEvent(it) }
+    }
+
+    private fun <INTENT : Intent> Flow<INTENT>.applyIntentMiddlewares(
+        middlewares: List<IntentMiddleware<INTENT>>
+    ): Flow<INTENT> = middlewares.fold(this) { action, middleware ->
+        middleware.apply(action)
+    }
+
+    private fun <RESULT : Result> Flow<RESULT>.applyResultMiddlewares(
+        middlewares: List<ResultMiddleware<RESULT>>,
+    ): Flow<RESULT> = middlewares.fold(this) { action, middleware ->
+        middleware.apply(action)
+    }
+
+    private fun <ACTION : Action> Flow<ACTION>.applyActionMiddlewares(
+        middlewares: List<ActionMiddleware<ACTION>>,
+    ): Flow<ACTION> = middlewares.fold(this) { action, middleware ->
+        middleware.apply(action)
+    }
+
+    private fun <STATE : State> Flow<STATE>.applyStateMiddlewares(
+        middlewares: List<StateMiddleware<STATE>>
+    ): Flow<STATE> = middlewares.fold(this) { action, middleware ->
+        middleware.apply(action)
     }
 }

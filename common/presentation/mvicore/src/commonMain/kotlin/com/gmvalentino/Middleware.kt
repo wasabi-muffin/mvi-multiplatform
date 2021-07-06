@@ -1,19 +1,23 @@
 package com.gmvalentino
 
-interface Middleware
+import kotlinx.coroutines.flow.Flow
 
-fun interface IntentMiddleware : Middleware {
-    fun transform(intent: Intent): Intent
+interface Middleware<Any> {
+    fun apply(input: Flow<Any>): Flow<Any>
 }
 
-fun interface ActionMiddleware : Middleware {
-    fun transform(action: Action): Action
+fun interface IntentMiddleware<INTENT : Intent> : Middleware<INTENT> {
+    override fun apply(input: Flow<INTENT>): Flow<INTENT>
 }
 
-fun interface ResultMiddleware: Middleware {
-    fun transform(result: Result): Result
+fun interface ActionMiddleware<ACTION : Action> : Middleware<ACTION> {
+    override fun apply(input: Flow<ACTION>): Flow<ACTION>
 }
 
-fun interface StateMiddleware: Middleware {
-    fun transform(state: State): State
+fun interface ResultMiddleware<RESULT : Result> : Middleware<RESULT> {
+    override fun apply(input: Flow<RESULT>): Flow<RESULT>
+}
+
+fun interface StateMiddleware<STATE : State> : Middleware<STATE> {
+    override fun apply(input: Flow<STATE>): Flow<STATE>
 }

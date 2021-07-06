@@ -9,25 +9,29 @@ import com.gmvalentino.Result
 import com.gmvalentino.ResultMiddleware
 import com.gmvalentino.State
 import com.gmvalentino.StateMiddleware
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.onEach
 
-object LoggingMiddleware : IntentMiddleware, ActionMiddleware, ResultMiddleware, StateMiddleware {
-    override fun transform(intent: Intent): Intent {
-        Kermit().d { "Intent: $intent" }
-        return intent
+class StateLoggingMiddleware<STATE : State> : StateMiddleware<STATE> {
+    override fun apply(input: Flow<STATE>): Flow<STATE> = input.onEach {
+        Kermit(defaultTag = "State").d { "$it" }
     }
+}
 
-    override fun transform(action: Action): Action {
-        Kermit().d { "Action: $action" }
-        return action
+class ActionLoggingMiddleware<ACTION : Action> : ActionMiddleware<ACTION> {
+    override fun apply(input: Flow<ACTION>): Flow<ACTION> = input.onEach {
+        Kermit(defaultTag = "Action").d { "$it" }
     }
+}
 
-    override fun transform(result: Result): Result {
-        Kermit().d { "Result: $result" }
-        return result
+class IntentLoggingMiddleware<INTENT : Intent> : IntentMiddleware<INTENT> {
+    override fun apply(input: Flow<INTENT>): Flow<INTENT> = input.onEach {
+        Kermit(defaultTag = "Intent").d { "$it" }
     }
+}
 
-    override fun transform(state: State): State {
-        Kermit().d { "State: $state" }
-        return state
+class ResultLoggingMiddleware<RESULT : Result> : ResultMiddleware<RESULT> {
+    override fun apply(input: Flow<RESULT>): Flow<RESULT> = input.onEach {
+        Kermit(defaultTag = "Result").d { "$it" }
     }
 }
