@@ -1,11 +1,7 @@
 package com.gmvalentino.android.task
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Checkbox
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -20,7 +16,7 @@ import com.gmvalentino.android.AppTheme
 import com.gmvalentino.entities.Task
 import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
-import kotlinx.datetime.toLocalDateTime
+import kotlinx.datetime.todayAt
 
 @Composable
 fun TaskItemView(
@@ -38,7 +34,7 @@ fun TaskItemView(
         Column {
             Text(text = task.title, style = TextStyle(fontSize = 20.sp))
             Text(
-                text = task.details,
+                text = task.dueDate.toString(),
                 style = TextStyle(color = Color.DarkGray, fontSize = 14.sp)
             )
         }
@@ -61,8 +57,7 @@ fun TaskItemPreview() {
             task = Task(
                 "1",
                 "Title 1",
-                "Description 1",
-                Clock.System.now().toLocalDateTime(TimeZone.UTC),
+                Clock.System.todayAt(TimeZone.UTC),
                 true
             ),
             onClick = { }

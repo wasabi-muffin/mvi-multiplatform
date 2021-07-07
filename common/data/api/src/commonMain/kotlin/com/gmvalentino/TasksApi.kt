@@ -1,45 +1,40 @@
 package com.gmvalentino
 
-import com.gmvalentino.models.BaseResponse
-import com.gmvalentino.models.TaskModel
+import com.gmvalentino.models.requests.AddTaskRequest
+import com.gmvalentino.models.requests.EditTaskRequest
+import com.gmvalentino.models.responses.AddTaskResponse
+import com.gmvalentino.models.responses.EditTaskResponse
+import com.gmvalentino.models.responses.GetTaskResponse
 import com.gmvalentino.remote.TaskRemoteDataSource
-import io.ktor.client.call.receive
-import io.ktor.client.request.request
-import io.ktor.client.request.url
-import io.ktor.client.statement.HttpStatement
-import io.ktor.http.HttpMethod
+import io.ktor.client.request.*
+import io.ktor.http.*
 
 class TasksApi : TaskRemoteDataSource {
-    override suspend fun getTasks(): List<TaskModel> = httpClientFactory().request<HttpStatement> {
-        url("https://mvi-multiplatform-iohpvewgdq-du.a.run.app/tasks")
-        method = HttpMethod.Get
-    }.execute {
-        it.receive()
-    }
-
-    override suspend fun addTask(task: TaskModel): BaseResponse =
-        httpClientFactory().request<HttpStatement> {
+    override suspend fun getTasks(): GetTaskResponse =
+        httpClientFactory().request {
             url("https://mvi-multiplatform-iohpvewgdq-du.a.run.app/tasks")
+            method = HttpMethod.Get
+        }
+
+    override suspend fun addTask(request: AddTaskRequest): AddTaskResponse =
+        httpClientFactory().request {
+            url("https://mvi-multiplatform-iohpvewgdq-du.a.run.app/tasks")
+            body = request
             method = HttpMethod.Post
-        }.execute {
-            it.receive()
+            header(HttpHeaders.ContentType, ContentType.Application.Json)
         }
 
-    override suspend fun removeTask(id: String): BaseResponse =
-        httpClientFactory().request<HttpStatement> {
-            url("https://mvi-multiplatform-iohpvewgdq-du.a.run.app/tasks")
+    override suspend fun removeTask(id: String) =
+        httpClientFactory().request<Unit> {
+            url("https://mvi-multiplatform-iohpvewgdq-du.a.run.app/tasks/${id}")
             method = HttpMethod.Delete
-        }.execute {
-            it.receive()
         }
 
-    override suspend fun updateTask(
-        id: String,
-        isComplete: Boolean
-    ): BaseResponse = httpClientFactory().request<HttpStatement> {
-        url("https://mvi-multiplatform-iohpvewgdq-du.a.run.app/tasks")
-        method = HttpMethod.Put
-    }.execute {
-        it.receive()
-    }
+    override suspend fun updateTask(id: String, request: EditTaskRequest): EditTaskResponse =
+        httpClientFactory().request {
+            url("https://mvi-multiplatform-iohpvewgdq-du.a.run.app/tasks/${id}")
+            method = HttpMethod.Put
+            body = request
+            header(HttpHeaders.ContentType, ContentType.Application.Json)
+        }
 }

@@ -1,27 +1,25 @@
-CREATE TABLE Tasks(
+CREATE TABLE TasksDb(
 id TEXT NOT NULL PRIMARY KEY,
 title TEXT NOT NULL,
-description TEXT NOT NULL,
 date TEXT NOT NULL,
 is_complete INTEGER AS Boolean NOT NULL
 );
 
 getTasks:
 SELECT *
-FROM Tasks;
+FROM TasksDb;
 
 addTask:
-INSERT INTO Tasks
+INSERT INTO TasksDb
 VALUES :task;
 
 updateTask:
-UPDATE Tasks
-SET is_complete = :isComplete
-WHERE id = :id;
+REPLACE INTO TasksDb
+VALUES :task;
 
 deleteTask:
-DELETE FROM Tasks
+DELETE FROM TasksDb
 WHERE id = :id;
 
 deleteAll:
-DELETE FROM Tasks;
+DELETE FROM TasksDb;

@@ -43,6 +43,4 @@ sealed class Error(
     data class Unknown(
         override val throwable: Throwable
     ) : Error(throwable)
-
-    // ここで他のエラーを追加します
 }

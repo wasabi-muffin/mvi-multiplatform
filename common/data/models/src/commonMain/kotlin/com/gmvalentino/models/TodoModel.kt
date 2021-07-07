@@ -5,7 +5,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class TaskModel(
+data class TodoModel(
     val id: String,
     val title: String,
     @SerialName("description") val details: String,

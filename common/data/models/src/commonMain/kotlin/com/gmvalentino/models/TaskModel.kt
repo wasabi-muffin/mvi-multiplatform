@@ -1,8 +1,10 @@
-package com.gmvalentino.entities
+package com.gmvalentino.models
 
 import kotlinx.datetime.LocalDate
+import kotlinx.serialization.Serializable
 
-data class Task(
+@Serializable
+data class TaskModel(
     val id: String,
     val title: String,
     val dueDate: LocalDate,

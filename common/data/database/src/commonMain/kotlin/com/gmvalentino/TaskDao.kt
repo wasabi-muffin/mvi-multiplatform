@@ -1,14 +1,16 @@
 package com.gmvalentino
 
-import co.touchlab.kermit.Kermit
 import com.gmvalentino.db.Db
-import com.gmvalentino.db.Tasks
+import com.gmvalentino.db.TasksDb
 import com.gmvalentino.local.TaskLocalDataSource
 import com.gmvalentino.models.TaskModel
+import com.gmvalentino.models.TodoModel
+import com.gmvalentino.models.responses.GetTaskResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.single
+import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalDateTime
 
 @FlowPreview
@@ -25,8 +27,7 @@ class TaskDao(
                 TaskModel(
                     task.id,
                     task.title,
-                    task.description,
-                    LocalDateTime.parse(task.date),
+                    LocalDate.parse(task.date),
                     task.is_complete
                 )
             }
@@ -37,11 +38,10 @@ class TaskDao(
                 deleteAll()
                 tasks.forEach { task ->
                     addTask(
-                        Tasks(
+                        TasksDb(
                             id = task.id,
                             title = task.title,
-                            description = task.details,
-                            date = task.date.toString(),
+                            date = task.dueDate.toString(),
                             is_complete = task.isComplete
                         )
                     )
@@ -52,11 +52,10 @@ class TaskDao(
     override suspend fun addTask(task: TaskModel) =
         database.single()
             .tasksQueries.addTask(
-                Tasks(
+                TasksDb(
                     id = task.id,
                     title = task.title,
-                    description = task.details,
-                    date = task.date.toString(),
+                    date = task.dueDate.toString(),
                     is_complete = task.isComplete
                 )
             )
@@ -64,6 +63,13 @@ class TaskDao(
     override suspend fun removeTask(id: String) =
         database.single().tasksQueries.deleteTask(id)
 
-    override suspend fun updateTask(id: String, isComplete: Boolean) =
-        database.single().tasksQueries.updateTask(isComplete, id)
+    override suspend fun updateTask(task: TaskModel) =
+        database.single().tasksQueries.updateTask(
+            TasksDb(
+                id = task.id,
+                title = task.title,
+                date = task.dueDate.toString(),
+                is_complete = task.isComplete
+            )
+        )
 }

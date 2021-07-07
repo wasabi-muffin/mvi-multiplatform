@@ -53,6 +53,6 @@ fun httpClientFactory(): HttpClient = HttpClient {
     }
     install(Logging) {
         logger = Logger.DEFAULT
-        level = LogLevel.INFO
+        level = LogLevel.ALL
     }
 }

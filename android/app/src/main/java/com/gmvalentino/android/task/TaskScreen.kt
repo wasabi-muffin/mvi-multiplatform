@@ -6,11 +6,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
-import com.gmvalentino.entities.Task
 import com.gmvalentino.main.contract.MainIntent
 import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
-import kotlinx.datetime.toLocalDateTime
+import kotlinx.datetime.todayAt
 import org.koin.androidx.compose.getViewModel
 
 @Composable
@@ -21,20 +20,21 @@ fun TaskScreen(
     val state = viewModel.state.collectAsState()
 
     Column {
-        Button(onClick = { viewModel.dispatch(MainIntent.DeleteClicked(state.value.tasks.firstOrNull()?.id ?: "")) }) {
+        Button(onClick = {
+            viewModel.dispatch(
+                MainIntent.DeleteClicked(
+                    state.value.tasks.firstOrNull()?.id ?: ""
+                )
+            )
+        }) {
             Text("Delete")
         }
         Button(onClick = {
             viewModel.dispatch(
                 MainIntent.CreateClicked(
-                    Task(
-                        id = "New ${state.value.tasks.last().id}",
-                        title = "Created Task",
-                        details = "Details",
-                        date = Clock.System.now().toLocalDateTime(
-                            TimeZone.currentSystemDefault()
-                        ),
-                        isComplete = false
+                    title = "Created Task",
+                    dueDate = Clock.System.todayAt(
+                        TimeZone.currentSystemDefault()
                     )
                 )
             )

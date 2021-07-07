@@ -1,19 +1,20 @@
 package com.gmvalentino.usecases
 
-import co.touchlab.kermit.Kermit
 import com.gmvalentino.entities.Task
 import com.gmvalentino.repositories.TaskRepository
+import kotlinx.datetime.LocalDate
 
 class CreateTask(
     private val repository: TaskRepository
 ) : CreateTaskUseCase {
-    override suspend fun execute(arguments: CreateTaskUseCase.Args) {
-        repository.addTask(arguments.task)
+    override suspend fun execute(arguments: CreateTaskUseCase.Args): Task {
+        return repository.addTask(arguments.title, arguments.dueDate)
     }
 }
 
-interface CreateTaskUseCase : UseCase<Unit, CreateTaskUseCase.Args> {
+interface CreateTaskUseCase : UseCase<Task, CreateTaskUseCase.Args> {
     data class Args(
-        val task: Task
+        val title: String,
+        val dueDate: LocalDate
     ) : UseCase.Arguments()
 }

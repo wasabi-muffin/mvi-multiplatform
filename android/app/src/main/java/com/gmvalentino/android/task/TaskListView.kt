@@ -10,6 +10,7 @@ import com.gmvalentino.entities.Task
 import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
+import kotlinx.datetime.todayAt
 
 @Composable
 fun TaskListView(
@@ -38,15 +39,13 @@ fun TaskListPreview() {
                 Task(
                     "1",
                     "Title 1",
-                    "Description 1",
-                    Clock.System.now().toLocalDateTime(TimeZone.UTC),
+                    Clock.System.todayAt(TimeZone.UTC),
                     true
                 ),
                 Task(
                     "1",
                     "Title 1",
-                    "Description 1",
-                    Clock.System.now().toLocalDateTime(TimeZone.UTC),
+                    Clock.System.todayAt(TimeZone.UTC),
                     true
                 )
             ),

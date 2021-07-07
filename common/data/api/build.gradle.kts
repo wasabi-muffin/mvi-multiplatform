@@ -1,4 +1,4 @@
-buildTargets = setOf(BuildTarget.Android, BuildTarget.Ios, BuildTarget.Js)
+buildTargets = setOf(BuildTarget.Android, BuildTarget.Ios)
 projectDependencies = setOf(
     Module.Models,
     Module.Repository
@@ -40,10 +40,10 @@ kotlin {
             }
         }
 
-        jsMain {
-            dependencies {
-                implementation(Deps.Ktor.clientJs)
-            }
-        }
+//        jsMain {
+//            dependencies {
+//                implementation(Deps.Ktor.clientJs)
+//            }
+//        }
     }
 }

@@ -46,7 +46,7 @@ class MainProcessor(
             error("No task with id ${action.id} found")
         }
         updateTaskUseCase.execute(
-            UpdateTaskUseCase.Args(action.id, !isComplete)
+            UpdateTaskUseCase.Args(action.id, isComplete = isComplete)
         )
         emit(MainResult.Toggled(action.id, !isComplete))
     }
@@ -59,7 +59,7 @@ class MainProcessor(
         removeTaskUseCase.execute(
             RemoveTaskUseCase.Args(action.id)
         )
-        val currentTasks = state.tasks.filter { it.id != action.id }.sortedBy { it.date }
+        val currentTasks = state.tasks.filter { it.id != action.id }.sortedBy { it.dueDate }
         emit(MainResult.Deleted(currentTasks))
     }
 
@@ -68,12 +68,12 @@ class MainProcessor(
         action: MainAction.Create
     ): Flow<MainResult> = flow {
         emit(MainResult.Loading)
-        createTaskUseCase.execute(
-            CreateTaskUseCase.Args(action.task)
+        val newTask = createTaskUseCase.execute(
+            CreateTaskUseCase.Args(action.title, action.dueDate)
         )
-        val currentTasks = state.tasks + action.task
-        currentTasks.sortedBy { it.date }
-        emit(MainResult.Added(currentTasks))
+        val newTasks = state.tasks + newTask
+        newTasks.sortedBy { it.dueDate }
+        emit(MainResult.Added(newTasks))
     }
 
     private suspend fun handleResolveError(action: MainAction.ResolveError) = flow {

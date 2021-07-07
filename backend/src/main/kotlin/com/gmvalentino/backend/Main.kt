@@ -1,28 +1,21 @@
 package com.gmvalentino.backend
 
-import com.gmvalentino.models.BaseResponse
 import com.gmvalentino.models.TaskModel
-import io.ktor.application.call
-import io.ktor.application.install
-import io.ktor.features.CORS
-import io.ktor.features.ContentNegotiation
-import io.ktor.http.HttpHeaders
-import io.ktor.http.HttpMethod
-import io.ktor.response.respond
-import io.ktor.response.respondText
-import io.ktor.routing.delete
-import io.ktor.routing.get
-import io.ktor.routing.post
-import io.ktor.routing.put
-import io.ktor.routing.routing
-import io.ktor.serialization.json
-import io.ktor.server.engine.embeddedServer
-import io.ktor.server.netty.Netty
-import kotlinx.datetime.Clock
-import kotlinx.datetime.DateTimeUnit
-import kotlinx.datetime.TimeZone
-import kotlinx.datetime.plus
-import kotlinx.datetime.toLocalDateTime
+import com.gmvalentino.models.requests.AddTaskRequest
+import com.gmvalentino.models.requests.EditTaskRequest
+import com.gmvalentino.models.responses.AddTaskResponse
+import com.gmvalentino.models.responses.EditTaskResponse
+import com.gmvalentino.models.responses.GetTaskResponse
+import io.ktor.application.*
+import io.ktor.features.*
+import io.ktor.http.*
+import io.ktor.request.*
+import io.ktor.response.*
+import io.ktor.routing.*
+import io.ktor.serialization.*
+import io.ktor.server.engine.*
+import io.ktor.server.netty.*
+import kotlinx.datetime.*
 
 fun main() {
     val port = System.getenv().getOrDefault("PORT", "8080").toInt()
@@ -46,54 +39,65 @@ fun main() {
         }
 
         routing {
+            val now = Clock.System.todayAt(TimeZone.UTC)
+
             get("/tasks") {
-                val timeZone = TimeZone.currentSystemDefault()
-                val now = Clock.System.now()
                 val result = listOf(
                     TaskModel(
                         "1",
                         "Title 1",
-                        "Description 1",
-                        now.plus(-1, DateTimeUnit.DAY, timeZone).toLocalDateTime(timeZone),
+                        now.plus(-1, DateTimeUnit.DAY),
                         true
                     ),
                     TaskModel(
                         "2",
                         "Title 2",
-                        "Description 2",
-                        now.plus(-2, DateTimeUnit.DAY, timeZone).toLocalDateTime(timeZone),
+                        now,
                         false
                     ),
                     TaskModel(
                         "3",
                         "Title 3",
-                        "Description 3",
-                        now.plus(-3, DateTimeUnit.DAY, timeZone).toLocalDateTime(timeZone),
+                        now.plus(1, DateTimeUnit.DAY),
                         false
                     ),
                     TaskModel(
                         "4",
                         "Title 4",
-                        "Description 4",
-                        now.plus(-4, DateTimeUnit.DAY, timeZone).toLocalDateTime(timeZone),
+                        now.plus(2, DateTimeUnit.DAY),
                         false
                     )
                 )
-                call.respond(result)
+                call.respond(GetTaskResponse(result))
             }
             post("/tasks") {
+                val request = call.receive<AddTaskRequest>()
                 call.respond(
-                    BaseResponse(msgId = "1", msgTitle = "Post", msg = "Successful")
+                    AddTaskResponse(
+                        TaskModel(
+                            (0..Int.MAX_VALUE).random().toString(),
+                            request.title,
+                            now.plus(3, DateTimeUnit.DAY),
+                            false
+                        )
+                    )
                 )
             }
-            delete("/tasks") {
-                call.respond(
-                    BaseResponse(msgId = "1", msgTitle = "Delete", msg = "Successful")
-                )
+            delete("/tasks/{id}") {
+                call.respondText("{}")
             }
-            put("/tasks") {
+            put("/tasks/{id}") {
+                val id = call.parameters["id"] ?: ""
+                val request = call.receive<EditTaskRequest>()
                 call.respond(
-                    BaseResponse(msgId = "1", msgTitle = "Put", msg = "Successful")
+                    EditTaskResponse(
+                        TaskModel(
+                            id,
+                            request.title ?: "Title $id Changed",
+                            now.plus(-2, DateTimeUnit.DAY),
+                            request.isComplete ?: false
+                        )
+                    )
                 )
             }
         }
