@@ -16,6 +16,8 @@ import io.ktor.serialization.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 import kotlinx.datetime.*
+import kotlinx.datetime.TimeZone
+import java.util.*
 
 fun main() {
     val port = System.getenv().getOrDefault("PORT", "8080").toInt()
@@ -44,25 +46,25 @@ fun main() {
             get("/tasks") {
                 val result = listOf(
                     TaskModel(
-                        "1",
+                        UUID.randomUUID().toString(),
                         "Title 1",
                         now.plus(-1, DateTimeUnit.DAY),
                         true
                     ),
                     TaskModel(
-                        "2",
+                        UUID.randomUUID().toString(),
                         "Title 2",
                         now,
                         false
                     ),
                     TaskModel(
-                        "3",
+                        UUID.randomUUID().toString(),
                         "Title 3",
                         now.plus(1, DateTimeUnit.DAY),
                         false
                     ),
                     TaskModel(
-                        "4",
+                        UUID.randomUUID().toString(),
                         "Title 4",
                         now.plus(2, DateTimeUnit.DAY),
                         false
@@ -75,9 +77,9 @@ fun main() {
                 call.respond(
                     AddTaskResponse(
                         TaskModel(
-                            (0..Int.MAX_VALUE).random().toString(),
+                            UUID.randomUUID().toString(),
                             request.title,
-                            now.plus(3, DateTimeUnit.DAY),
+                            request.dueDate,
                             false
                         )
                     )

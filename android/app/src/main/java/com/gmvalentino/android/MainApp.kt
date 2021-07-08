@@ -5,7 +5,7 @@ import com.gmvalentino.MultiplatformApplication
 import com.gmvalentino.StoreInjector
 import com.gmvalentino.addtask.components.AddTaskStore
 import com.gmvalentino.android.task.AddTaskViewModel
-import com.gmvalentino.android.task.OverviewViewModel
+import com.gmvalentino.android.overview.OverviewViewModel
 import com.gmvalentino.getStore
 import com.gmvalentino.overview.components.OverviewStore
 import org.koin.androidx.viewmodel.dsl.viewModel

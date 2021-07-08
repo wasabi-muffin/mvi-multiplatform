@@ -4,6 +4,7 @@ import com.gmvalentino.components.BaseStore
 import com.gmvalentino.components.Modifiers
 import com.gmvalentino.modifiers.*
 import com.gmvalentino.overview.contract.*
+import com.gmvalentino.overview.modifiers.OverviewGlobalIntentSubscriber
 
 class OverviewStore(
     interpreter: OverviewInterpreter,
@@ -19,6 +20,7 @@ class OverviewStore(
             IntentLogger()
         ),
         actionModifiers = listOf(
+            OverviewGlobalIntentSubscriber(),
             ActionLoader(OverviewAction.LoadTasks),
             ActionLogger()
         ),

@@ -28,6 +28,7 @@ class OverviewProcessor(
         is OverviewAction.CreateTask -> handleCreateTask()
         is OverviewAction.EditTask -> handleEditTask(action)
         is OverviewAction.SwipedTask -> handleOpenSwipeMenuTask(action, state)
+        is OverviewAction.InsertTask -> handleInsertTask(action, state)
     }
 
     private fun handleLoadTasks(): Flow<OverviewResult> = flow {
@@ -95,5 +96,12 @@ class OverviewProcessor(
         state: OverviewState
     ): Flow<OverviewResult> = flow {
         emit(OverviewResult.TaskSwiped(action.id, action.isReveal))
+    }
+
+    private fun handleInsertTask(
+        action: OverviewAction.InsertTask,
+        state: OverviewState
+    ): Flow<OverviewResult> = flow {
+        emit(OverviewResult.TaskInserted(action.task))
     }
 }

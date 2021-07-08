@@ -13,11 +13,18 @@ class TaskDataRepository(
     private val localDataSource: TaskLocalDataSource,
     private val remoteDataSource: TaskRemoteDataSource
 ) : TaskRepository {
-    override suspend fun getTasks(): List<Task> {
-        val response = remoteDataSource.getTasks()
-        localDataSource.saveTasks(response.tasks)
-        return response.tasks.map(TaskMapper::modelToEntity)
-    }
+    override suspend fun getTasks(): List<Task> = runCatching {
+        remoteDataSource.getTasks().also {
+            localDataSource.saveTasks(it.tasks)
+        }
+    }.fold(
+        onSuccess = {
+            it.tasks.map(TaskMapper::modelToEntity)
+        },
+        onFailure = {
+            localDataSource.getTasks().map(TaskMapper::modelToEntity)
+        }
+    )
 
     override suspend fun addTask(
         title: String,

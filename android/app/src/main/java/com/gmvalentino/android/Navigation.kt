@@ -5,7 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.gmvalentino.android.task.AddTaskScreen
-import com.gmvalentino.android.task.OverviewScreen
+import com.gmvalentino.android.overview.OverviewScreen
 
 internal sealed class Screen(val route: String) {
     object Overview : Screen("overview")

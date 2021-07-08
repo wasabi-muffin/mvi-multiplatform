@@ -25,10 +25,10 @@ class TaskDao(
             .executeAsList()
             .map { task ->
                 TaskModel(
-                    task.id,
-                    task.title,
-                    LocalDate.parse(task.date),
-                    task.is_complete
+                    id = task.id,
+                    title = task.title,
+                    dueDate = LocalDate.parse(task.date),
+                    isComplete = task.is_complete
                 )
             }
 

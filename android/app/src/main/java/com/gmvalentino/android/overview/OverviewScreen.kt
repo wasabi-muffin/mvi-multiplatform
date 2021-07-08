@@ -1,9 +1,10 @@
-package com.gmvalentino.android.task
+package com.gmvalentino.android.overview
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
@@ -15,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.gmvalentino.android.task.TaskListView
 import com.gmvalentino.overview.contract.OverviewEvent
 import com.gmvalentino.overview.contract.OverviewIntent
 import kotlinx.coroutines.flow.collect
@@ -68,6 +70,12 @@ fun OverviewScreen(
             onClick = { viewModel.dispatch(OverviewIntent.CreateTaskClicked) }
         ) {
             Icon(imageVector = Icons.Rounded.Add, contentDescription = "Add task")
+        }
+        if (state.value.isLoading) {
+            CircularProgressIndicator(
+                modifier = Modifier
+                    .align(Alignment.Center)
+            )
         }
     }
 }

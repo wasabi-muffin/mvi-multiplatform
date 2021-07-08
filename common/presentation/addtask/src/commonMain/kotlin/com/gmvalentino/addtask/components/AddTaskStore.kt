@@ -1,6 +1,7 @@
 package com.gmvalentino.addtask.components
 
 import com.gmvalentino.addtask.contract.*
+import com.gmvalentino.addtask.modifiers.AddTaskGlobalIntentDispatcher
 import com.gmvalentino.components.BaseStore
 import com.gmvalentino.components.Modifiers
 import com.gmvalentino.modifiers.ActionLogger
@@ -25,7 +26,8 @@ class AddTaskStore(
             ActionLogger()
         ),
         resultModifiers = listOf(
-            ResultLogger()
+            ResultLogger(),
+            AddTaskGlobalIntentDispatcher()
         ),
         stateModifiers = listOf(
             StateLogger()

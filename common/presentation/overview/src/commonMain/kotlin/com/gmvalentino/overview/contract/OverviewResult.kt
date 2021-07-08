@@ -10,4 +10,5 @@ sealed class OverviewResult : Result {
     class TaskToggled(val id: String, val isComplete: Boolean): OverviewResult()
     class TaskSwiped(val id: String, val isReveal: Boolean): OverviewResult()
     class Error(val error: Throwable) : OverviewResult()
+    class TaskInserted(val task: Task) : OverviewResult()
 }

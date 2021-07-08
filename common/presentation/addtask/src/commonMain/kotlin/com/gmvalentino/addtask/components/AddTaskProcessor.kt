@@ -8,6 +8,7 @@ import com.gmvalentino.components.BaseProcessor
 import com.gmvalentino.usecases.CreateTaskUseCase
 import com.gmvalentino.usecases.FormatAndValidateTaskDateUseCase
 import com.gmvalentino.usecases.ValidateTaskTitleUseCase
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
@@ -57,6 +58,8 @@ class AddTaskProcessor(
             )
         }.fold(
             onSuccess = {
+                emit(AddTaskResult.TaskCreated(it))
+                delay(500)
                 publish(AddTaskEvent.Close)
             },
             onFailure = {

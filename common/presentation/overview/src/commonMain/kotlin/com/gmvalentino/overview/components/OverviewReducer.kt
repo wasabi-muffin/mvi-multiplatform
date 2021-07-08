@@ -13,6 +13,7 @@ class OverviewReducer : Reducer<OverviewResult, OverviewState> {
             is OverviewResult.Error -> handleError(result, state)
             is OverviewResult.TaskToggled -> handleTaskToggled(result, state)
             is OverviewResult.TaskSwiped -> handleTaskSwiped(result, state)
+            is OverviewResult.TaskInserted -> handleTaskInserted(result, state)
         }
 
     private fun handleLoading(state: OverviewState): OverviewState {
@@ -28,7 +29,7 @@ class OverviewReducer : Reducer<OverviewResult, OverviewState> {
     ): OverviewState {
         return state.copy(
             isLoading = false,
-            tasks = result.task,
+            tasks = result.task.sortedBy { it.dueDate },
             revealedTaskIds = setOf()
         )
     }
@@ -74,6 +75,17 @@ class OverviewReducer : Reducer<OverviewResult, OverviewState> {
                     remove(result.id)
                 }
             }
+        )
+    }
+
+    private fun handleTaskInserted(
+        result: OverviewResult.TaskInserted,
+        state: OverviewState
+    ) : OverviewState {
+        return state.copy(
+            tasks = state.tasks.toMutableList().apply {
+                add(result.task)
+            }.sortedBy { it.dueDate }
         )
     }
 }

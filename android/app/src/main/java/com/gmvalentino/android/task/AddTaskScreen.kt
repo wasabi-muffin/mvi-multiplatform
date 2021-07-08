@@ -3,6 +3,7 @@ package com.gmvalentino.android.task
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Button
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -38,49 +39,60 @@ fun AddTaskScreen(
             .collect()
     }
 
-    Column(
-        modifier = Modifier.padding(24.dp)
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
     ) {
-        OutlinedTextField(
-            modifier = Modifier.fillMaxWidth(),
-            value = state.value.title,
-            onValueChange = {
-                if (it != state.value.title) {
-                    viewModel.dispatch(AddTaskIntent.InputTitle(it))
-                }
-            },
-            label = { Text("Title") }
-        )
-        
-        Spacer(modifier = Modifier.height(24.dp))
-
-        OutlinedTextField(
-            modifier = Modifier.fillMaxWidth(),
-            value = TextFieldValue(
-                state.value.date,
-                TextRange(
-                    state.value.date.length
-                ),
-            ),
-            onValueChange = {
-                if (it.text != state.value.date) {
-                    viewModel.dispatch(AddTaskIntent.InputDate(it.text))
-                }
-            },
-            label = { Text("Date") },
-            keyboardOptions = KeyboardOptions(
-                keyboardType = KeyboardType.Number
-            )
-        )
-
-        Spacer(modifier = Modifier.height(24.dp))
-
-        Button(
-            modifier = Modifier.align(Alignment.CenterHorizontally),
-            onClick = { viewModel.dispatch(AddTaskIntent.CreateClicked) },
-            enabled = state.value.isCreateEnabled
+        Column(
+            modifier = Modifier.padding(24.dp)
         ) {
-            Text("Create")
+            OutlinedTextField(
+                modifier = Modifier.fillMaxWidth(),
+                value = state.value.title,
+                onValueChange = {
+                    if (it != state.value.title) {
+                        viewModel.dispatch(AddTaskIntent.InputTitle(it))
+                    }
+                },
+                label = { Text("Title") }
+            )
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            OutlinedTextField(
+                modifier = Modifier.fillMaxWidth(),
+                value = TextFieldValue(
+                    state.value.date,
+                    TextRange(
+                        state.value.date.length
+                    ),
+                ),
+                onValueChange = {
+                    if (it.text != state.value.date) {
+                        viewModel.dispatch(AddTaskIntent.InputDate(it.text))
+                    }
+                },
+                label = { Text("Date") },
+                keyboardOptions = KeyboardOptions(
+                    keyboardType = KeyboardType.Number
+                )
+            )
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            Button(
+                modifier = Modifier.align(Alignment.CenterHorizontally),
+                onClick = { viewModel.dispatch(AddTaskIntent.CreateClicked) },
+                enabled = state.value.isCreateEnabled
+            ) {
+                Text("Create")
+            }
+        }
+        if (state.value.isLoading) {
+            CircularProgressIndicator(
+                modifier = Modifier
+                    .align(Alignment.Center)
+            )
         }
     }
 }

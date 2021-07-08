@@ -10,4 +10,6 @@ sealed class OverviewAction : Action {
     object CreateTask : OverviewAction()
     data class EditTask(val task: Task) : OverviewAction()
     data class SwipedTask(val id: String, val isReveal: Boolean) : OverviewAction()
+
+    data class InsertTask(val task: Task) : OverviewAction()
 }
