@@ -68,12 +68,12 @@ class MainProcessor(
         action: MainAction.Create
     ): Flow<MainResult> = flow {
         emit(MainResult.Loading)
-        val newTask = createTaskUseCase.execute(
-            CreateTaskUseCase.Args(action.title, action.dueDate)
-        )
-        val newTasks = state.tasks + newTask
-        newTasks.sortedBy { it.dueDate }
-        emit(MainResult.Added(newTasks))
+//        val newTask = createTaskUseCase.execute(
+//            CreateTaskUseCase.Args(action.title, action.dueDate)
+//        )
+//        val newTasks = state.tasks + newTask
+//        newTasks.sortedBy { it.dueDate }
+//        emit(MainResult.Added(newTasks))
     }
 
     private suspend fun handleResolveError(action: MainAction.ResolveError) = flow {

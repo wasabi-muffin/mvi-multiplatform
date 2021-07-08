@@ -9,6 +9,7 @@ projectDependencies = setOf(
     Module.MviCore,
     Module.Test,
     Module.Overview,
+    Module.AddTask
 )
 setupMultiplatform()
 

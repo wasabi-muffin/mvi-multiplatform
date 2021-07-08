@@ -23,7 +23,8 @@ fun initApplication(appModule: Module) {
             sqliteDriverModule,
             settingsModule,
             mainModule,
-            overviewModule
+            overviewModule,
+            addTaskModule
         )
     )
 }

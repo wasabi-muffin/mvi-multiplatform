@@ -21,3 +21,4 @@ pluginManagement {
     }
 }
 include(":common:presentation:overview")
+include(":common:presentation:addtask")

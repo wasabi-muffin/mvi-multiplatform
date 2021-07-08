@@ -22,7 +22,7 @@ import kotlinx.coroutines.flow.onEach
 import org.koin.androidx.compose.getViewModel
 
 @Composable
-fun TaskScreen(
+fun OverviewScreen(
     navController: NavController,
     modifier: Modifier = Modifier,
 ) {

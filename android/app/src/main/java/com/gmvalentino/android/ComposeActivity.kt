@@ -3,8 +3,7 @@ package com.gmvalentino.android
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.gmvalentino.android.task.MainScreen
-import com.gmvalentino.android.task.TaskScreen
+import androidx.navigation.compose.rememberNavController
 
 class ComposeActivity : ComponentActivity() {
 
@@ -13,7 +12,8 @@ class ComposeActivity : ComponentActivity() {
 
         setContent {
             AppTheme {
-                MainScreen()
+                val navController = rememberNavController()
+                AppNavigation(navController = navController)
             }
         }
     }

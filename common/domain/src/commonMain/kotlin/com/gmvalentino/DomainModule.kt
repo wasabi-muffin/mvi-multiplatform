@@ -1,13 +1,6 @@
 package com.gmvalentino
 
-import com.gmvalentino.usecases.CreateTask
-import com.gmvalentino.usecases.CreateTaskUseCase
-import com.gmvalentino.usecases.GetTasks
-import com.gmvalentino.usecases.GetTasksUseCase
-import com.gmvalentino.usecases.RemoveTask
-import com.gmvalentino.usecases.RemoveTaskUseCase
-import com.gmvalentino.usecases.UpdateTask
-import com.gmvalentino.usecases.UpdateTaskUseCase
+import com.gmvalentino.usecases.*
 import org.koin.dsl.module
 
 val domainModule = module {
@@ -31,6 +24,21 @@ val domainModule = module {
 
     factory<CreateTaskUseCase> {
         CreateTask(
+            get()
+        )
+    }
+
+    factory<ValidateTaskTitleUseCase> {
+        ValidateTaskTitle()
+    }
+
+    factory<ValidateTaskDateUseCase> {
+        ValidateTaskDate()
+    }
+
+    factory<FormatAndValidateTaskDateUseCase> {
+        FormatAndValidateTaskDate(
+            get(),
             get()
         )
     }

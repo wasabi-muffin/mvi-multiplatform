@@ -12,6 +12,7 @@ enum class Module(val path: String) {
     MviCore(":common:presentation:mvicore"),
     Test(":common:presentation:test"),
     Overview(":common:presentation:overview"),
+    AddTask(":common:presentation:addtask"),
     ;
 }
 
