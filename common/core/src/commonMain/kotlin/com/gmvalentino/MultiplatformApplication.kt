@@ -1,5 +1,6 @@
 package com.gmvalentino
 
+import com.gmvalentino.addtask.addTaskModule
 import com.gmvalentino.main.di.mainModule
 import com.gmvalentino.overview.overviewModule
 import kotlinx.datetime.Clock

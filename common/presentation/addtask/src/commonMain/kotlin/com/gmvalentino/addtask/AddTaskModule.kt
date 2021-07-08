@@ -6,7 +6,7 @@ import com.gmvalentino.addtask.components.AddTaskReducer
 import com.gmvalentino.addtask.components.AddTaskStore
 import org.koin.dsl.module
 
-val overviewModule = module {
+val addTaskModule = module {
 
     single {
         AddTaskInterpreter()
