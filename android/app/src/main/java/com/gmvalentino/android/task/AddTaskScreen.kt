@@ -2,10 +2,7 @@ package com.gmvalentino.android.task
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.Button
-import androidx.compose.material.CircularProgressIndicator
-import androidx.compose.material.OutlinedTextField
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -18,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.gmvalentino.addtask.contract.AddTaskEvent
 import com.gmvalentino.addtask.contract.AddTaskIntent
+import com.gmvalentino.android.components.AutoDismissSnackbar
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import org.koin.androidx.compose.getViewModel
@@ -92,6 +90,12 @@ fun AddTaskScreen(
             CircularProgressIndicator(
                 modifier = Modifier
                     .align(Alignment.Center)
+            )
+        }
+        if (state.value.error != null) {
+            AutoDismissSnackbar(
+                modifier = Modifier.align(Alignment.BottomCenter),
+                text = "Error"
             )
         }
     }

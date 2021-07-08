@@ -1,12 +1,7 @@
 package com.gmvalentino.android.overview
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.CircularProgressIndicator
-import androidx.compose.material.FloatingActionButton
-import androidx.compose.material.Icon
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.runtime.Composable
@@ -16,6 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.gmvalentino.android.components.AutoDismissSnackbar
 import com.gmvalentino.android.task.TaskListView
 import com.gmvalentino.overview.contract.OverviewEvent
 import com.gmvalentino.overview.contract.OverviewIntent
@@ -75,6 +71,13 @@ fun OverviewScreen(
             CircularProgressIndicator(
                 modifier = Modifier
                     .align(Alignment.Center)
+            )
+        }
+        if (state.value.error != null) {
+            AutoDismissSnackbar(
+                modifier = Modifier.align(Alignment.BottomCenter)
+                    .height(48.dp),
+                text = "Error"
             )
         }
     }
