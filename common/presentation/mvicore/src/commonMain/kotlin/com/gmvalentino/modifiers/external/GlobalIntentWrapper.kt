@@ -5,8 +5,8 @@ import com.gmvalentino.entities.Task
 import kotlinx.coroutines.flow.MutableSharedFlow
 
 /**
- * Using as example, use a class and inject instead
- * Delete later
+ * Using as an example
+ * TODO: Delete this
  */
 object GlobalIntentWrapper {
     val externalIntents = MutableSharedFlow<ExternalIntent>()

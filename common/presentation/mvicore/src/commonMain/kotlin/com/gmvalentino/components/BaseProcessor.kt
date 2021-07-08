@@ -9,6 +9,9 @@ import kotlinx.coroutines.channels.Channel.Factory.UNLIMITED
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.receiveAsFlow
 
+/**
+ * Abstract class to handle [Event]s during processiing
+ */
 abstract class BaseProcessor<in STATE : State, ACTION : Action, RESULT : Result, EVENT : Event> :
     Processor<STATE, ACTION, RESULT, EVENT> {
 

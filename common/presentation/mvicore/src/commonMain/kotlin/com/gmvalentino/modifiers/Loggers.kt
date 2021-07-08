@@ -12,6 +12,9 @@ import com.gmvalentino.contract.State
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.onEach
 
+/**
+ * Implementations of [Modifier] that logs events of that type
+ */
 class StateLogger<STATE : State> : StateModifier<STATE> {
     override fun apply(input: Flow<STATE>): Flow<STATE> = input.onEach {
         Kermit(defaultTag = "State").d { "$it" }

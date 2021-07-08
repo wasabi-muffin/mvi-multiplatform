@@ -7,6 +7,11 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.onEach
 
+/**
+ * Abstract implementation of [Modifier] that publishes [Intent] to an external source
+ *
+ * Use this together with [ExternalIntentSubscriber] to communicate between [Store]s
+ */
 abstract class ExternalIntentPublisher<RESULT : Result, INTENT : Intent>(
     private val intents: MutableSharedFlow<INTENT>,
 ) : ResultModifier<RESULT> {

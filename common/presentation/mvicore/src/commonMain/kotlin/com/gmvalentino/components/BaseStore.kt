@@ -5,6 +5,9 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.sync.Mutex
 
+/**
+ * Abstract class that implements a [Store] that provides unidirectional dataflow logic
+ */
 @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
 abstract class BaseStore<
         INTENT : Intent,
@@ -70,6 +73,9 @@ abstract class BaseStore<
         events.collect { onEvent(it) }
     }
 
+    /**
+     * Helper functions to apply [Modifier] to their intended stream
+     */
     private fun <INTENT : Intent> Flow<INTENT>.applyIntentModifiers(
         middlewares: List<IntentModifier<INTENT>>
     ): Flow<INTENT> = middlewares.fold(this) { action, middleware ->

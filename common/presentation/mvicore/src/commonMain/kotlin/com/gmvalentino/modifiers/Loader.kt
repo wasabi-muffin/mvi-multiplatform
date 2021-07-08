@@ -6,6 +6,9 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.merge
 
+/**
+ * Implementation of a modifier that loads [Action] when the [Store] is created
+ */
 class ActionLoader<ACTION : Action>(
     vararg val actions: ACTION
 ) : ActionModifier<ACTION> {
