@@ -50,7 +50,7 @@ android {
 
 dependencies {
     implementation(project(":common:domain"))
-    implementation(project(":common:presentation:features"))
+    implementation(project(":common:presentation:overview"))
     implementation(project(":common:presentation:mvicore"))
     implementation(project(":common:core"))
 
@@ -75,6 +75,7 @@ dependencies {
         implementation(uiTooling)
         implementation(foundationLayout)
         implementation(material)
+        implementation(materialIcons)
         implementation(navigation)
         implementation(accompanistCoil)
         implementation(accompanistPlaceholder)

@@ -7,7 +7,8 @@ projectDependencies = setOf(
     Module.Settings,
     Module.Models,
     Module.MviCore,
-    Module.Features
+    Module.Test,
+    Module.Overview,
 )
 setupMultiplatform()
 

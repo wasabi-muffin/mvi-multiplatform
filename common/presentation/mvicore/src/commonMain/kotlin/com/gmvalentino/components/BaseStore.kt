@@ -15,7 +15,7 @@ abstract class BaseStore<
     initialState: STATE,
     private val interpreter: Interpreter<INTENT, ACTION>,
     private val processor: BaseProcessor<STATE, ACTION, RESULT, EVENT>,
-    private val reducer: Reducer<STATE, RESULT>,
+    private val reducer: Reducer<RESULT, STATE>,
     private val modifiers: Modifiers<INTENT, ACTION, RESULT, STATE> = Modifiers()
 ) : Store<INTENT, STATE, EVENT> {
 
@@ -27,8 +27,7 @@ abstract class BaseStore<
     override val state: StateFlow<STATE> = _state
     private val currentState get() = _state.value
 
-    override val events: SharedFlow<EVENT> =
-        processor.events.shareIn(scope, SharingStarted.WhileSubscribed(), 1)
+    override val events: Flow<EVENT> = processor.events
 
     init {
         @Suppress("UNCHECKED_CAST")
@@ -44,7 +43,7 @@ abstract class BaseStore<
                 }
                 .applyResultModifiers(modifiers.resultModifiers)
                 .map { result ->
-                    reducer.reduce(state.value, result)
+                    reducer.reduce(result, state.value)
                 }
                 .applyStateModifiers(modifiers.stateModifiers)
                 .collect { state ->

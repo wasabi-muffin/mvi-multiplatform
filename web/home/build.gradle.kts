@@ -18,7 +18,7 @@ kotlin {
             dependencies {
                 implementation(project(Module.Domain.path))
                 implementation(project(Module.MviCore.path))
-                implementation(project(Module.Features.path))
+                implementation(project(Module.Test.path))
                 implementation(project(Module.Core.path))
                 implementation(compose.web.core)
                 implementation(compose.runtime)

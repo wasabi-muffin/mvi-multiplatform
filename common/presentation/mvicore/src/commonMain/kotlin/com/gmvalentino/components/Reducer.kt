@@ -3,6 +3,6 @@ package com.gmvalentino.components
 import com.gmvalentino.contract.Result
 import com.gmvalentino.contract.State
 
-interface Reducer<STATE : State, in RESULT : Result> {
-    suspend fun reduce(state: STATE, result: RESULT): STATE
+interface Reducer<in RESULT : Result, STATE : State> {
+    suspend fun reduce(result: RESULT, state: STATE): STATE
 }

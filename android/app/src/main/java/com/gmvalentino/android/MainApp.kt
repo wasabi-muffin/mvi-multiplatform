@@ -3,9 +3,9 @@ package com.gmvalentino.android
 import android.app.Application
 import com.gmvalentino.MultiplatformApplication
 import com.gmvalentino.StoreInjector
-import com.gmvalentino.android.task.TaskViewModel
+import com.gmvalentino.android.task.OverviewViewModel
 import com.gmvalentino.getStore
-import com.gmvalentino.main.components.MainStore
+import com.gmvalentino.overview.components.OverviewStore
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
@@ -23,8 +23,8 @@ class MainApp : Application() {
             modules(
                 module {
                     viewModel {
-                        TaskViewModel(
-                            StoreInjector { getStore<MainStore>() }.store()
+                        OverviewViewModel(
+                            StoreInjector { getStore<OverviewStore>() }.store()
                         )
                     }
                 }

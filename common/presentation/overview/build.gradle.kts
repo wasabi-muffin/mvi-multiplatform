@@ -1,9 +1,22 @@
-plugins {
-    id("java-library")
-    id("kotlin")
-}
+buildTargets = setOf(BuildTarget.Android, BuildTarget.Ios, BuildTarget.Js)
+projectDependencies = setOf(
+    Module.MviCore,
+    Module.Domain,
+    Module.Repository,
+    Module.Api
+)
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_7
-    targetCompatibility = JavaVersion.VERSION_1_7
+setupMultiplatform()
+
+kotlin {
+    sourceSets {
+        commonMain {
+            dependencies {
+                implementation(Deps.Kotlinx.coroutinesCore)
+                implementation(Deps.Koin.core)
+                api(Deps.Log.kermit)
+                implementation(Deps.Kotlinx.dateTime)
+            }
+        }
+    }
 }

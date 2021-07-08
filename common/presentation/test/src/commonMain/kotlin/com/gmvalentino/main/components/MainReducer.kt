@@ -5,8 +5,8 @@ import com.gmvalentino.main.contract.MainAction
 import com.gmvalentino.main.contract.MainResult
 import com.gmvalentino.main.contract.MainState
 
-class MainReducer : Reducer<MainState, MainResult> {
-    override suspend fun reduce(state: MainState, result: MainResult): MainState {
+class MainReducer : Reducer<MainResult, MainState> {
+    override suspend fun reduce(result: MainResult, state: MainState): MainState {
         return when (result) {
             is MainResult.Tasks -> {
                 state.copy(

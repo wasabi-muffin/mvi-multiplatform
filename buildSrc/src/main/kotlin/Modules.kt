@@ -10,7 +10,9 @@ enum class Module(val path: String) {
     Repository(":common:data:repository"),
     Settings(":common:data:settings"),
     MviCore(":common:presentation:mvicore"),
-    Features(":common:presentation:features");
+    Test(":common:presentation:test"),
+    Overview(":common:presentation:overview"),
+    ;
 }
 
 
