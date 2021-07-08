@@ -29,7 +29,7 @@ internal fun AppNavigation(
         composable(
             route = Screen.AddTask.route
         ) {
-            AddTaskScreen()
+            AddTaskScreen(navController)
         }
     }
 }

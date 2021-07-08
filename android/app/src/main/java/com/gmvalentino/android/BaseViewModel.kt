@@ -14,4 +14,9 @@ open class BaseViewModel<in INTENT : Intent, out STATE : State, out EVENT : Even
     fun dispatch(intent: INTENT) {
         store.dispatch(intent)
     }
+
+    override fun onCleared() {
+        store.dispose()
+        super.onCleared()
+    }
 }

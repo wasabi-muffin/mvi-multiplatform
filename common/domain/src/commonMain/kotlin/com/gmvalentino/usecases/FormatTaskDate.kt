@@ -1,7 +1,5 @@
 package com.gmvalentino.usecases
 
-import kotlinx.datetime.*
-
 class FormatTaskDate : FormatTaskDateUseCase {
 
     /**
@@ -17,7 +15,7 @@ class FormatTaskDate : FormatTaskDateUseCase {
             builder.insert(7, '-')
         }
         if (digits.length > 8) {
-            builder.take(10)
+            builder.deleteRange(9, builder.lastIndex)
         }
         return builder.toString()
     }

@@ -57,9 +57,7 @@ class AddTaskProcessor(
             )
         }.fold(
             onSuccess = {
-                emit(
-                    AddTaskResult.TaskCreated(it)
-                )
+                publish(AddTaskEvent.Close)
             },
             onFailure = {
                 emit(AddTaskResult.Error(it))

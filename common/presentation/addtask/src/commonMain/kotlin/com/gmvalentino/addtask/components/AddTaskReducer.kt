@@ -31,7 +31,7 @@ class AddTaskReducer : Reducer<AddTaskResult, AddTaskState> {
 
     private fun AddTaskState.reduceDateChanged(result: AddTaskResult.DateChanged): AddTaskState {
         return copy(
-            title = result.date,
+            date = result.date,
             isValidDate = result.isValid
         )
     }

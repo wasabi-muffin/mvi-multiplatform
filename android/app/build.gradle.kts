@@ -51,6 +51,7 @@ android {
 dependencies {
     implementation(project(":common:domain"))
     implementation(project(":common:presentation:overview"))
+    implementation(project(":common:presentation:addtask"))
     implementation(project(":common:presentation:mvicore"))
     implementation(project(":common:core"))
 

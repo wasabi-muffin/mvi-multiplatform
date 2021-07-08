@@ -36,6 +36,10 @@ val domainModule = module {
         ValidateTaskDate()
     }
 
+    factory<FormatTaskDateUseCase> {
+        FormatTaskDate()
+    }
+
     factory<FormatAndValidateTaskDateUseCase> {
         FormatAndValidateTaskDate(
             get(),

@@ -3,6 +3,8 @@ package com.gmvalentino.android
 import android.app.Application
 import com.gmvalentino.MultiplatformApplication
 import com.gmvalentino.StoreInjector
+import com.gmvalentino.addtask.components.AddTaskStore
+import com.gmvalentino.android.task.AddTaskViewModel
 import com.gmvalentino.android.task.OverviewViewModel
 import com.gmvalentino.getStore
 import com.gmvalentino.overview.components.OverviewStore
@@ -25,6 +27,12 @@ class MainApp : Application() {
                     viewModel {
                         OverviewViewModel(
                             StoreInjector { getStore<OverviewStore>() }.store()
+                        )
+                    }
+
+                    viewModel {
+                        AddTaskViewModel(
+                            StoreInjector { getStore<AddTaskStore>() }.store()
                         )
                     }
                 }

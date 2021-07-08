@@ -26,7 +26,7 @@ fun AppTheme(
 private val DarkColorPalette = darkColors(
     primary = maroon200,
     primaryVariant = maroon700,
-    secondary = teal200
+    secondary = teal200,
 )
 
 private val LightColorPalette = lightColors(
