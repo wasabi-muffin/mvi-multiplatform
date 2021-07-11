@@ -69,7 +69,7 @@ var ExtensionAware.buildTargets: Set<BuildTarget>
 inline fun <reified T : BuildTarget> ExtensionAware.isBuildTargetAvailable(): Boolean =
     buildType.buildTargets.any { it is T } && buildTargets.any { it is T }
 
-inline fun <reified T : BuildTarget> ExtensionAware.doIfBuildTargetAvailable(block: () -> Unit) {
+inline fun <reified T : BuildTarget> ExtensionAware.setup(block: () -> Unit) {
     if (isBuildTargetAvailable<T>()) {
         block()
     }

@@ -7,16 +7,13 @@ import org.gradle.kotlin.dsl.repositories
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.cocoapods.CocoapodsExtension
-import org.jetbrains.kotlin.gradle.plugin.mpp.Framework
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 fun Project.setupMultiplatform() {
     plugins.apply("kotlin-multiplatform")
 
-    doIfBuildTargetAvailable<BuildTarget.Android> {
+    setup<BuildTarget.Android> {
         plugins.apply("com.android.library")
-
         setupAndroidSdkVersions()
     }
 
@@ -26,24 +23,30 @@ fun Project.setupMultiplatform() {
     }
 
     kotlin {
-        doIfBuildTargetAvailable<BuildTarget.Js> {
+        setup<BuildTarget.Js> {
             js(IR) {
                 useCommonJs()
                 browser()
             }
         }
 
-        doIfBuildTargetAvailable<BuildTarget.Android> {
+        setup<BuildTarget.Android> {
             android {
                 // publishLibraryVariants("release", "debug")
             }
         }
 
-        doIfBuildTargetAvailable<BuildTarget.Jvm> {
-            jvm()
+        setup<BuildTarget.Jvm> {
+            jvm {
+                compilations.all {
+                    kotlinOptions {
+                        jvmTarget = "1.8"
+                    }
+                }
+            }
         }
 
-        doIfBuildTargetAvailable<BuildTarget.Ios> {
+        setup<BuildTarget.Ios> {
             val onPhone = System.getenv("SDK_NAME")?.startsWith("iphoneos") ?: false
             if (onPhone) {
                 iosArm64("ios")
@@ -52,7 +55,7 @@ fun Project.setupMultiplatform() {
             }
         }
 
-        doIfBuildTargetAvailable<BuildTarget.MacOsX64> {
+        setup<BuildTarget.MacOsX64> {
             macosX64()
         }
 

@@ -1,11 +1,15 @@
 plugins {
-    id("kotlin-platform-jvm")
+    kotlin("jvm")
+    kotlin("plugin.serialization")
     application
-    id("kotlinx-serialization")
+}
+
+application {
+    mainClass.set("com.gmvalentino.backend.MainKt")
 }
 
 dependencies {
-    implementation(project(":common:data:models"))
+    implementation(project(Module.Models.path))
 
     with(Deps.Kotlinx) {
         implementation(serializationCore) // JVM dependency
@@ -29,14 +33,4 @@ dependencies {
     with(Deps.Log) {
         implementation(logback)
     }
-
-
-}
-
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
-}
-
-application {
-    mainClass.set("com.gmvalentino.backend.MainKt")
 }

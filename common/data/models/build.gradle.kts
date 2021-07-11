@@ -1,10 +1,10 @@
-buildTargets = setOf(BuildTarget.Android, BuildTarget.Ios, BuildTarget.Jvm, BuildTarget.Js)
+buildTargets = setOf(BuildTarget.Ios, BuildTarget.Jvm, BuildTarget.Js)
 
 setupMultiplatform()
 
 plugins {
     kotlin("multiplatform")
-    id("kotlinx-serialization")
+    kotlin("plugin.serialization")
 }
 
 kotlin {

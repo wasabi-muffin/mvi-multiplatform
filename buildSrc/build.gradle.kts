@@ -22,7 +22,7 @@ repositories {
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10")
-    implementation("com.android.tools.build:gradle:7.0.0-beta05")
+    implementation("com.android.tools.build:gradle:4.2.0")
     implementation(kotlin("script-runtime"))
 }
 
